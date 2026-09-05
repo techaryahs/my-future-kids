@@ -12,6 +12,11 @@ const navLinks = [
   { name: "Technology", href: "/technology" },
   { name: "Schools", href: "#" },
   { name: "Innovation Labs", href: "#" },
+  { name: "Technology", href: "#" },
+  { name: "Schools", href: "/schools" },
+  { name: "School Solutions", href: "/school-solutions" },
+  { name: "Innovation Labs", href: "/innovation-labs" },
+  { name: "School Programs", href: "/school-programs" },
   { name: "About Us", href: "/about" },
 ];
 
@@ -81,7 +86,9 @@ export default function Navbar() {
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 className="text-gray-700 hover:text-blue-600 focus:outline-none rounded-md p-2 -mr-2"
-                aria-label={mobileMenuOpen ? "Close main menu" : "Open main menu"}
+                aria-label={
+                  mobileMenuOpen ? "Close main menu" : "Open main menu"
+                }
                 aria-expanded={mobileMenuOpen}
               >
                 {mobileMenuOpen ? (
@@ -133,7 +140,7 @@ export default function Navbar() {
                   {link.name}
                 </Link>
               ))}
-              
+
               <div className="my-6 border-t border-slate-100"></div>
 
               <Link
@@ -147,15 +154,15 @@ export default function Navbar() {
 
             <div className="mt-8 pt-6 border-t border-slate-100">
               <div className="flex flex-col space-y-3">
-                <Link 
-                  href="/privacy-policy" 
+                <Link
+                  href="/privacy-policy"
                   className="text-sm font-medium text-slate-500 hover:text-slate-900"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Privacy Policy
                 </Link>
-                <Link 
-                  href="/terms-and-conditions" 
+                <Link
+                  href="/terms-and-conditions"
                   className="text-sm font-medium text-slate-500 hover:text-slate-900"
                   onClick={() => setMobileMenuOpen(false)}
                 >
