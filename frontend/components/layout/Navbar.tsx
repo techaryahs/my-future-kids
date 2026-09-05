@@ -10,8 +10,10 @@ const navLinks = [
   { name: "Home", href: "/" },
   { name: "Programs", href: "#" },
   { name: "Technology", href: "#" },
-  { name: "Schools", href: "#" },
-  { name: "Innovation Labs", href: "#" },
+  { name: "Schools", href: "/schools" },
+  { name: "School Solutions", href: "/school-solutions" },
+  { name: "Innovation Labs", href: "/innovation-labs" },
+  { name: "School Programs", href: "/school-programs" },
   { name: "About Us", href: "#" },
 ];
 
