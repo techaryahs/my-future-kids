@@ -9,17 +9,18 @@ interface LogoProps {
 
 export default function Logo({ className = "", isLight = false, onClick }: LogoProps) {
   // Toggle this boolean when an actual logo image is available
-  const hasImageLogo = false; 
+  const hasImageLogo = true; 
 
   return (
     <Link href="/" className={`flex-shrink-0 flex items-center group ${className}`} onClick={onClick} aria-label="BeFutureKids Home">
       {hasImageLogo ? (
-        <div className="relative w-32 h-10">
+        <div className="relative flex items-center">
           <Image 
-            src={isLight ? "/logo-light.svg" : "/logo.svg"} 
+            src="/logo.png" 
             alt="BeFutureKids Logo" 
-            fill
-            className="object-contain"
+            width={160}
+            height={160}
+            className="object-contain w-auto h-12 md:h-16"
             priority
           />
         </div>

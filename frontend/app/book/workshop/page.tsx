@@ -34,7 +34,7 @@ export default function WorkshopBooking() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6">
+    <div className="min-h-screen bg-gray-50 pt-32 pb-12 px-4 sm:px-6">
       <div className="max-w-xl mx-auto bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
         <div className="bg-purple-600 px-6 py-8 text-center text-white">
           <h2 className="text-3xl font-bold">Join a Workshop</h2>
@@ -44,7 +44,7 @@ export default function WorkshopBooking() {
         <form onSubmit={handleSubmit} className="p-8 space-y-6">
           {error && <div className="p-4 bg-red-50 text-red-700 rounded-lg">{error}</div>}
 
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label className="block text-sm font-medium text-gray-700">Name *</label>
               <input type="text" name="full_name" required className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-purple-500 focus:ring-purple-500 p-2 border" />
@@ -59,7 +59,7 @@ export default function WorkshopBooking() {
             <input type="email" name="email" required className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-purple-500 focus:ring-purple-500 p-2 border" />
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label className="block text-sm font-medium text-gray-700">Student Name</label>
               <input type="text" name="student_name" className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-purple-500 focus:ring-purple-500 p-2 border" />
@@ -80,7 +80,7 @@ export default function WorkshopBooking() {
             </select>
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label className="block text-sm font-medium text-gray-700">Preferred Date</label>
               <input type="date" name="preferred_date" className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-purple-500 focus:ring-purple-500 p-2 border" />
