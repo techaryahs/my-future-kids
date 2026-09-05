@@ -26,15 +26,15 @@ export default async function LeadsPage({
 
   return (
     <div className="space-y-6">
-      <div className="flex justify-between items-end">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
         <div>
           <h1 className="text-2xl font-bold text-gray-900">Leads Management</h1>
           <p className="text-gray-500 mt-1">Manage and track all incoming enquiries.</p>
         </div>
-        <div className="flex gap-2">
+        <div className="flex flex-wrap gap-2">
           <Link href="?type=b2b" className="px-4 py-2 bg-white border border-gray-200 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50">B2B Only</Link>
           <Link href="?type=b2c" className="px-4 py-2 bg-white border border-gray-200 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50">B2C Only</Link>
-          <Link href="?" className="px-4 py-2 bg-gray-900 text-white rounded-lg text-sm font-medium hover:bg-gray-800">Clear Filters</Link>
+          <Link href="?" className="px-4 py-2 bg-gray-900 text-white rounded-lg text-sm font-medium hover:bg-gray-800">Clear</Link>
         </div>
       </div>
 
