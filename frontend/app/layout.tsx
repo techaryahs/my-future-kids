@@ -14,22 +14,23 @@ const geistMono = Geist_Mono({
 
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import { ConditionalLayout } from "@/components/layout/ConditionalLayout";
 
 export const metadata: Metadata = {
   title: "BeFutureKids | Learn Today. Be The Future.",
   description: "Empowering young minds through future-ready education including Robotics, STEM, AI, and Innovation.",
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
-        <Navbar />
-        <main className="flex-grow">{children}</main>
-        <Footer />
+      <body className="min-h-full flex flex-col m-0 p-0">
+        <ConditionalLayout navbar={<Navbar />} footer={<Footer />}>
+          {children}
+        </ConditionalLayout>
       </body>
     </html>
   );
