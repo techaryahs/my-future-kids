@@ -14,8 +14,9 @@ const navLinks = [
   { name: "School Solutions", href: "/school-solutions" },
   { name: "Innovation Labs", href: "/innovation-labs" },
   { name: "School Programs", href: "/school-programs" },
-  { name: "About Us", href: "#" },
+  { name: "About Us", href: "/about" },
 ];
+
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
