@@ -34,7 +34,7 @@ export default function StudentProgramBooking() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6">
+    <div className="min-h-screen bg-gray-50 pt-32 pb-12 px-4 sm:px-6">
       <div className="max-w-xl mx-auto bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
         <div className="bg-emerald-600 px-6 py-8 text-center text-white">
           <h2 className="text-3xl font-bold">Explore Programs</h2>
@@ -44,7 +44,7 @@ export default function StudentProgramBooking() {
         <form onSubmit={handleSubmit} className="p-8 space-y-6">
           {error && <div className="p-4 bg-red-50 text-red-700 rounded-lg">{error}</div>}
 
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label className="block text-sm font-medium text-gray-700">Parent Name *</label>
               <input type="text" name="full_name" required className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-emerald-500 focus:ring-emerald-500 p-2 border" />
@@ -55,7 +55,7 @@ export default function StudentProgramBooking() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label className="block text-sm font-medium text-gray-700">Email *</label>
               <input type="email" name="email" required className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-emerald-500 focus:ring-emerald-500 p-2 border" />
@@ -66,7 +66,7 @@ export default function StudentProgramBooking() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label className="block text-sm font-medium text-gray-700">Student Age</label>
               <input type="text" name="student_age" className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-emerald-500 focus:ring-emerald-500 p-2 border" />
@@ -89,7 +89,7 @@ export default function StudentProgramBooking() {
             </select>
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label className="block text-sm font-medium text-gray-700">Experience Level</label>
               <select name="experience_level" className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-emerald-500 focus:ring-emerald-500 p-2 border">
