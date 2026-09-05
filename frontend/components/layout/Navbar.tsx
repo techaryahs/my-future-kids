@@ -8,7 +8,7 @@ import Logo from "@/components/branding/Logo";
 
 const navLinks = [
   { name: "Home", href: "/" },
-  { name: "Programs", href: "#" },
+  { name: "Programs", href: "/programs" },   // ✅ fix
   { name: "Technology", href: "#" },
   { name: "Schools", href: "#" },
   { name: "Innovation Labs", href: "#" },
