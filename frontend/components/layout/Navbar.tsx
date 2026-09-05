@@ -12,7 +12,7 @@ const navLinks = [
   { name: "Technology", href: "#" },
   { name: "Schools", href: "#" },
   { name: "Innovation Labs", href: "#" },
-  { name: "About Us", href: "#" },
+  { name: "About Us", href: "/about" },
 ];
 
 export default function Navbar() {
