@@ -148,7 +148,7 @@ export default function TechnologyPage() {
 
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Link
-                href="/book-demo"
+                href="book/school-demo"
                 className="group inline-flex items-center gap-2 rounded-full bg-slate-950 px-7 py-4 font-semibold text-white transition hover:bg-blue-600"
               >
                 Bring Technology to Your School
@@ -353,7 +353,7 @@ export default function TechnologyPage() {
           </p>
 
           <Link
-            href="/book-demo"
+            href="/book/school-demo"
             className="group mt-9 inline-flex items-center gap-2 rounded-full bg-slate-950 px-8 py-4 font-semibold text-white transition hover:bg-blue-600"
           >
             Book a Free Demo

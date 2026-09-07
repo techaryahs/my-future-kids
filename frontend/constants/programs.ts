@@ -6,7 +6,8 @@ export const programs: Program[] = [
     title: "Robotics",
     tagline: "Build. Code. Innovate.",
     ageGroups: ["6-9 yrs", "10-13 yrs", "14-17 yrs"],
-    overview: "Hands-on robotics learning with real projects and outcomes.",
+    overview:
+      "Hands-on robotics learning where students build, program, and bring intelligent machines to life.",
     benefits: [
       "Hands-on building with real robotics kits",
       "Improves logical and problem-solving skills",
@@ -14,100 +15,218 @@ export const programs: Program[] = [
       "Builds a strong foundation for future STEM careers",
     ],
     curriculum: [
-      { title: "Intro to Robotics", description: "Basics of robots, parts and how they work." },
-      { title: "Sensors & Actuators", description: "Understanding how robots sense and move." },
+      {
+        title: "Introduction to Robotics",
+        description:
+          "Understand robots, their components, and how intelligent machines work.",
+      },
+      {
+        title: "Sensors & Actuators",
+        description:
+          "Learn how robots sense their environment and perform actions.",
+      },
+      {
+        title: "Programming Robots",
+        description:
+          "Write programs that control robotic movement and decision making.",
+      },
     ],
-    outcomes: ["Problem solving", "Circuit design", "Teamwork"],
+    outcomes: [
+      "Problem solving",
+      "Circuit design",
+      "Programming basics",
+      "Teamwork",
+    ],
     projects: [
-      { title: "Line Follower Robot", image: "/images/robotics1.jpg", description: "Build a robot that follows a path automatically." },
+      {
+        title: "Line Follower Robot",
+        image: "/images/robotics1.jpg",
+        description:
+          "Build an autonomous robot capable of detecting and following a path.",
+      },
     ],
     ctaText: "Explore Robotics Program",
   },
+
   {
     slug: "stem",
     title: "STEM",
-    tagline: "Science meets creativity",
+    tagline: "Science Meets Creativity",
     ageGroups: ["6-9 yrs", "10-13 yrs", "14-17 yrs"],
-    overview: "Covering Science, Technology, Engineering and Mathematics through hands-on activities.",
+    overview:
+      "Explore Science, Technology, Engineering, and Mathematics through exciting experiments and creative projects.",
     benefits: [
-      "Integrates 4 core subjects into fun activities",
-      "Builds scientific temper and curiosity early",
-      "Develops analytical and experimental thinking",
-      "Prepares kids for engineering and research fields",
+      "Integrates four core subjects through practical activities",
+      "Builds scientific curiosity and experimentation skills",
+      "Develops analytical and creative thinking",
+      "Encourages students to solve real-world problems",
     ],
     curriculum: [
-      { title: "Science Foundations", description: "Core scientific concepts through experiments." },
-      { title: "Engineering Basics", description: "Design and build simple structures and machines." },
+      {
+        title: "Science Foundations",
+        description:
+          "Explore scientific concepts through interactive experiments.",
+      },
+      {
+        title: "Engineering Basics",
+        description:
+          "Design and build structures, machines, and creative solutions.",
+      },
+      {
+        title: "Mathematics in Action",
+        description: "Apply mathematical concepts to real-world challenges.",
+      },
     ],
-    outcomes: ["Critical thinking", "Experimentation", "Analytical skills"],
+    outcomes: [
+      "Critical thinking",
+      "Experimentation",
+      "Analytical skills",
+      "Scientific curiosity",
+    ],
     projects: [
-      { title: "Volcano Model", image: "/images/stem1.jpg", description: "A hands-on chemistry and engineering project." },
+      {
+        title: "Volcano Model",
+        image: "/images/stem1.jpg",
+        description:
+          "Create a hands-on science project combining chemistry and engineering.",
+      },
     ],
     ctaText: "Explore STEM Program",
   },
+
   {
     slug: "ai",
     title: "Artificial Intelligence",
-    tagline: "Learn AI the fun way",
+    tagline: "Learn AI the Fun Way",
     ageGroups: ["10-13 yrs", "14-17 yrs"],
-    overview: "AI basics, Generative AI and responsible AI use for young learners.",
+    overview:
+      "Discover Artificial Intelligence, Machine Learning, Generative AI, and responsible technology use.",
     benefits: [
-      "Understand how AI works in simple, practical terms",
-      "Learn to use AI tools responsibly and ethically",
-      "Builds future-ready digital literacy skills",
-      "Hands-on projects using real AI concepts",
+      "Understand AI through simple and practical examples",
+      "Learn to use AI tools responsibly",
+      "Build future-ready digital literacy skills",
+      "Explore real-world AI applications",
     ],
     curriculum: [
-      { title: "AI Fundamentals", description: "What is AI and how it works, in simple terms." },
-      { title: "Generative AI", description: "Introduction to how AI creates text, images and more." },
+      {
+        title: "AI Fundamentals",
+        description:
+          "Understand what Artificial Intelligence is and how it works.",
+      },
+      {
+        title: "Machine Learning",
+        description: "Explore how machines learn patterns from data.",
+      },
+      {
+        title: "Generative AI",
+        description:
+          "Discover how AI creates text, images, and other creative content.",
+      },
     ],
-    outcomes: ["AI literacy", "Ethical thinking", "Creative problem solving"],
+    outcomes: [
+      "AI literacy",
+      "Ethical thinking",
+      "Creative problem solving",
+      "Digital skills",
+    ],
     projects: [
-      { title: "Chatbot Builder", image: "/images/ai1.jpg", description: "Build a simple AI-powered chatbot." },
+      {
+        title: "AI Chatbot Builder",
+        image: "/images/ai1.jpg",
+        description:
+          "Create a simple AI-powered chatbot and understand conversational AI.",
+      },
     ],
     ctaText: "Explore AI Program",
   },
+
   {
     slug: "ar-vr",
-    title: "AR/VR",
-    tagline: "Step into immersive learning",
+    title: "AR / VR",
+    tagline: "Step Into Immersive Learning",
     ageGroups: ["10-13 yrs", "14-17 yrs"],
-    overview: "Immersive and 3D learning experiences using Augmented and Virtual Reality.",
+    overview:
+      "Experience learning beyond screens through immersive Augmented Reality and Virtual Reality experiences.",
     benefits: [
-      "Learning through immersive, interactive experiences",
-      "Improves spatial awareness and 3D visualization",
-      "Makes abstract concepts easy to understand visually",
-      "Introduces cutting-edge technology skills early",
+      "Learn through immersive interactive experiences",
+      "Improve spatial awareness and visualization",
+      "Understand complex concepts in three dimensions",
+      "Explore next-generation digital experiences",
     ],
     curriculum: [
-      { title: "AR Basics", description: "Understanding Augmented Reality and its applications." },
-      { title: "VR Design", description: "Creating simple virtual environments." },
+      {
+        title: "Introduction to AR",
+        description:
+          "Understand Augmented Reality and how digital content interacts with the real world.",
+      },
+      {
+        title: "Virtual Reality",
+        description: "Explore immersive virtual environments and experiences.",
+      },
+      {
+        title: "3D Experience Design",
+        description:
+          "Learn the basics of designing interactive three-dimensional worlds.",
+      },
     ],
-    outcomes: ["Spatial thinking", "3D design skills", "Immersive storytelling"],
+    outcomes: [
+      "Spatial thinking",
+      "3D design awareness",
+      "Creative storytelling",
+      "Immersive technology knowledge",
+    ],
     projects: [
-      { title: "AR Learning App", image: "/images/arvr1.jpg", description: "Build a basic AR experience using a mobile app." },
+      {
+        title: "AR Learning Experience",
+        image: "/images/arvr1.jpg",
+        description:
+          "Design an interactive Augmented Reality learning experience.",
+      },
     ],
-    ctaText: "Explore AR/VR Program",
+    ctaText: "Explore AR / VR Program",
   },
+
   {
     slug: "coding",
     title: "Coding",
-    tagline: "From Scratch to real apps",
+    tagline: "From Scratch to Real Apps",
     ageGroups: ["6-9 yrs", "10-13 yrs", "14-17 yrs"],
-    overview: "Coding journey from Scratch to Python, Web and Game Development.",
+    overview:
+      "A structured coding journey that takes students from visual programming to real-world applications.",
     benefits: [
-      "Step-by-step path from visual coding to real programming",
-      "Builds logical thinking and computational skills",
-      "Kids create their own games and apps",
-      "Strong foundation for future software careers",
+      "Step-by-step learning from beginner to advanced coding",
+      "Develops logical and computational thinking",
+      "Students build games, apps, and websites",
+      "Creates a strong foundation for future technology careers",
     ],
     curriculum: [
-      { title: "Scratch Programming", description: "Visual, block-based coding for beginners." },
-      { title: "Python & Web Dev", description: "Real-world coding using Python and web technologies." },
+      {
+        title: "Scratch Programming",
+        description:
+          "Learn programming fundamentals through visual block-based coding.",
+      },
+      {
+        title: "Python Programming",
+        description: "Explore real programming concepts using Python.",
+      },
+      {
+        title: "Web & Game Development",
+        description: "Build interactive websites and creative digital games.",
+      },
     ],
-    outcomes: ["Logical thinking", "Programming fundamentals", "Project building"],
+    outcomes: [
+      "Logical thinking",
+      "Programming fundamentals",
+      "Creative development",
+      "Project building",
+    ],
     projects: [
-      { title: "Simple Game in Scratch", image: "/images/coding1.jpg", description: "Build and publish a small interactive game." },
+      {
+        title: "Interactive Game",
+        image: "/images/coding1.jpg",
+        description:
+          "Design and build an interactive game using programming concepts.",
+      },
     ],
     ctaText: "Explore Coding Program",
   },

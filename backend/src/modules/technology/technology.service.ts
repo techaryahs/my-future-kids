@@ -2,7 +2,7 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { CreateTechnologyDto } from './dto/create-technology.dto.js';
 import { UpdateTechnologyDto } from './dto/update-technology.dto.js';
 
-interface Technology {
+export interface Technology {
   id: number;
   name: string;
   slug: string;
