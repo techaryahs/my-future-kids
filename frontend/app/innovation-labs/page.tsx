@@ -1,518 +1,648 @@
-import Link from "next/link";
+import type { Metadata } from "next";
+import Image from "next/image";
 
-const labs = [
+import { CtaBand } from "@/components/edtech/cta-band";
+import { Icon, type IconName } from "@/components/edtech/icons";
+import { PremiumCard } from "@/components/edtech/premium-card";
+import { SectionHeader } from "@/components/edtech/section-header";
+import { cn } from "@/src/lib/utils";
+
+export const metadata: Metadata = {
+  title: "Innovation Labs | BeFutureKids",
+  description:
+    "Premium STEM, robotics, AI, AR/VR, and coding innovation labs for future-ready schools.",
+};
+
+type Lab = {
+  accent: string;
+  features: string[];
+  icon: IconName;
+  id: string;
+  metric: string;
+  outcomes: string[];
+  summary: string;
+  title: string;
+};
+
+type Equipment = {
+  category: string;
+  icon: IconName;
+  items: string[];
+};
+
+const navItems = [
+  { href: "#overview", label: "Overview" },
+  { href: "#labs", label: "Labs" },
+  { href: "#equipment", label: "Equipment" },
+  { href: "#outcomes", label: "Outcomes" },
+  { href: "#process", label: "Process" },
+];
+
+const heroStats = [
+  { label: "Lab formats", value: "5" },
+  { label: "Hands-on modules", value: "80+" },
+  { label: "Launch roadmap", value: "30 days" },
+];
+
+const overviewCards = [
   {
-    number: "01",
-    title: "Robotics Lab",
-    subtitle: "Build. Program. Engineer.",
     description:
-      "A hands-on environment where students explore robotics, electronics, mechanics and automation by building and programming real systems.",
-    equipment: [
-      "Robotics kits",
-      "Sensors & electronics",
-      "Motors & controllers",
-      "Programming tools",
-    ],
-    activities: [
-      "Robot building",
-      "Automation challenges",
-      "Sensor experiments",
-      "Robotics competitions",
-    ],
-    outcome: "Engineering thinking and practical technology skills.",
+      "Every lab is mapped to age-appropriate milestones, clear rubrics, and school-friendly session plans.",
+    icon: "book",
+    title: "Curriculum-led by design",
   },
   {
-    number: "02",
+    description:
+      "Equipment, room planning, facilitator training, and launch support come together as one implementation system.",
+    icon: "lab",
+    title: "Built for real campuses",
+  },
+  {
+    description:
+      "Students build visible projects that schools can showcase in assemblies, exhibitions, competitions, and parent events.",
+    icon: "award",
+    title: "Showcase-ready outcomes",
+  },
+];
+
+const labs: Lab[] = [
+  {
+    accent: "bg-amber-300/[0.2]",
+    features: [
+      "Inquiry stations",
+      "Electronics experiments",
+      "Sustainability builds",
+      "Design journals",
+    ],
+    icon: "flask",
+    id: "stem-lab",
+    metric: "24 guided experiments",
+    outcomes: [
+      "Scientific reasoning",
+      "Prototype thinking",
+      "Measurement confidence",
+    ],
+    summary:
+      "A premium STEM Lab turns science and mathematics into active problem-solving through experiments, maker challenges, and real-world engineering prompts.",
     title: "STEM Lab",
-    subtitle: "Explore. Experiment. Discover.",
-    description:
-      "An interactive learning environment that connects science, technology, engineering and mathematics through real-world experimentation.",
-    equipment: [
-      "STEM activity kits",
-      "Science equipment",
-      "Engineering tools",
-      "Measurement instruments",
-    ],
-    activities: [
-      "Science experiments",
-      "Engineering challenges",
-      "Model building",
-      "Design projects",
-    ],
-    outcome: "Curiosity, creativity and analytical thinking.",
   },
   {
-    number: "03",
+    accent: "bg-cyan-300/[0.2]",
+    features: [
+      "Sensor kits",
+      "Arena challenges",
+      "Mechanical builds",
+      "Competition prep",
+    ],
+    icon: "robotics",
+    id: "robotics-lab",
+    metric: "32 robotics missions",
+    outcomes: [
+      "Systems thinking",
+      "Automation logic",
+      "Collaborative engineering",
+    ],
+    summary:
+      "The Robotics Lab gives students a structured path from first builds to autonomous systems, team challenges, and showcase-ready machines.",
+    title: "Robotics Lab",
+  },
+  {
+    accent: "bg-emerald-300/[0.2]",
+    features: [
+      "AI literacy",
+      "Model training",
+      "Prompt labs",
+      "Responsible AI debates",
+    ],
+    icon: "ai",
+    id: "ai-lab",
+    metric: "18 AI learning quests",
+    outcomes: [
+      "Data awareness",
+      "Ethical judgment",
+      "AI-assisted creation",
+    ],
+    summary:
+      "The AI Lab introduces students to machine learning, generative tools, data patterns, and responsible decision-making with classroom-safe workflows.",
     title: "AI Lab",
-    subtitle: "Understand the intelligence behind technology.",
-    description:
-      "Introduce students to artificial intelligence through practical projects, experiments and responsible technology exploration.",
-    equipment: [
-      "AI learning platforms",
-      "Computing systems",
-      "Camera & vision tools",
-      "AI software environments",
-    ],
-    activities: [
-      "AI experiments",
-      "Computer vision",
-      "Machine learning concepts",
-      "AI prototypes",
-    ],
-    outcome: "AI literacy and computational thinking.",
   },
   {
-    number: "04",
-    title: "AR / VR Lab",
-    subtitle: "Experience learning differently.",
-    description:
-      "Immersive learning environments that allow students to explore concepts, places and experiences beyond the physical classroom.",
-    equipment: [
-      "VR headsets",
-      "AR-enabled devices",
-      "3D learning resources",
-      "Immersive software",
+    accent: "bg-fuchsia-300/[0.18]",
+    features: [
+      "Immersive field trips",
+      "3D visualisation",
+      "AR worksheets",
+      "Spatial storytelling",
     ],
-    activities: [
-      "Virtual exploration",
-      "3D experiences",
-      "Immersive simulations",
-      "Interactive learning",
+    icon: "vr",
+    id: "ar-vr-lab",
+    metric: "40 immersive scenes",
+    outcomes: [
+      "Spatial reasoning",
+      "Concept retention",
+      "Creative presentation",
     ],
-    outcome: "Visualization, engagement and digital fluency.",
+    summary:
+      "The AR/VR Lab makes abstract concepts memorable through immersive simulations, augmented activities, and guided exploration across subjects.",
+    title: "AR/VR Lab",
   },
   {
-    number: "05",
-    title: "Coding Lab",
-    subtitle: "Turn ideas into digital products.",
-    description:
-      "A dedicated environment where students learn programming through creative projects, problem solving and digital product development.",
-    equipment: [
-      "Computing systems",
-      "Coding platforms",
-      "Development tools",
-      "Digital learning resources",
-    ],
-    activities: [
-      "Game development",
+    accent: "bg-lime-300/[0.18]",
+    features: [
+      "Scratch logic",
+      "Python foundations",
       "Web projects",
-      "App concepts",
-      "Coding challenges",
+      "Game prototypes",
     ],
-    outcome: "Logical thinking and digital creation skills.",
-  },
-  {
-    number: "06",
-    title: "Future Innovation Lab",
-    subtitle: "Where multiple technologies come together.",
-    description:
-      "A multidisciplinary innovation space combining robotics, AI, coding, STEM and emerging technologies for advanced project-based learning.",
-    equipment: [
-      "Multi-technology workstations",
-      "Prototyping tools",
-      "Robotics systems",
-      "Digital technology",
+    icon: "code",
+    id: "coding-lab",
+    metric: "5 coding tracks",
+    outcomes: [
+      "Computational thinking",
+      "Product confidence",
+      "Debugging discipline",
     ],
-    activities: [
-      "Innovation challenges",
-      "Team projects",
-      "Prototype development",
-      "Student showcases",
-    ],
-    outcome: "Innovation mindset, collaboration and real-world problem solving.",
+    summary:
+      "The Coding Lab helps students progress from visual blocks to text-based programming, creative web builds, games, and problem-solving projects.",
+    title: "Coding Lab",
   },
 ];
 
-const ecosystem = [
+const equipment: Equipment[] = [
   {
-    number: "01",
-    title: "Infrastructure",
-    text: "Purpose-built spaces, equipment and technology selected around your school's requirements.",
+    category: "Robotics and Making",
+    icon: "robotics",
+    items: ["Programmable robots", "Sensor modules", "Motors", "Build arenas"],
   },
   {
-    number: "02",
-    title: "Curriculum",
-    text: "Structured learning experiences that turn technology into meaningful education.",
+    category: "STEM Exploration",
+    icon: "flask",
+    items: [
+      "Experiment kits",
+      "Electronics boards",
+      "Measuring tools",
+      "Maker materials",
+    ],
   },
   {
-    number: "03",
-    title: "Training",
-    text: "Teacher enablement so educators can confidently support future-ready learning.",
+    category: "AI and Computing",
+    icon: "ai",
+    items: [
+      "Student devices",
+      "AI dashboards",
+      "Data cards",
+      "Project templates",
+    ],
   },
   {
-    number: "04",
-    title: "Activities",
-    text: "Workshops, challenges and hands-on experiences that keep students engaged.",
-  },
-  {
-    number: "05",
-    title: "Projects",
-    text: "Students apply concepts by designing, building and presenting their own solutions.",
-  },
-  {
-    number: "06",
-    title: "Support",
-    text: "Continuous guidance, activities and program support as your ecosystem grows.",
+    category: "Immersive Learning",
+    icon: "vr",
+    items: ["VR headsets", "AR markers", "3D content", "Facilitator controls"],
   },
 ];
+
+const outcomes = [
+  "Students move from curiosity to working prototypes through weekly hands-on challenges.",
+  "Teachers receive repeatable session flows, assessment rubrics, and confidence-building support.",
+  "School leaders get visible proof of innovation through demos, portfolios, and showcase events.",
+  "Parents see future skills expressed in real student work, not only in brochure language.",
+];
+
+const processSteps = [
+  {
+    label: "Campus Audit",
+    text: "Map room readiness, grade bands, timetable fit, teacher capacity, and preferred lab mix.",
+  },
+  {
+    label: "Lab Blueprint",
+    text: "Finalize equipment, safety flow, curriculum tracks, launch calendar, and showcase milestones.",
+  },
+  {
+    label: "Setup and Training",
+    text: "Install the lab environment, onboard facilitators, and rehearse the first month of sessions.",
+  },
+  {
+    label: "Student Activation",
+    text: "Run guided modules, track progress, capture project artifacts, and prepare demo-day outputs.",
+  },
+  {
+    label: "Review and Scale",
+    text: "Use outcome reports to refine adoption, plan competitions, and expand across more grades.",
+  },
+];
+
+function IconBadge({
+  className,
+  icon,
+}: {
+  className?: string;
+  icon: IconName;
+}) {
+  return (
+    <span
+      className={cn(
+        "inline-flex h-12 w-12 items-center justify-center rounded-lg border",
+        className ?? "border-white/[0.18] bg-white/[0.1] text-white",
+      )}
+    >
+      <Icon className="h-5 w-5" name={icon} />
+    </span>
+  );
+}
 
 export default function InnovationLabsPage() {
   return (
-    <main className="min-h-screen bg-white text-gray-950">
-
-      {/* HERO */}
-      <section className="relative overflow-hidden bg-gray-950 px-6 py-28 text-white lg:px-10 lg:py-36">
-        <div className="relative z-10 mx-auto max-w-7xl">
-          <div className="max-w-5xl">
-
-            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-blue-400">
-              Innovation Labs
-            </p>
-
-            <h1 className="mt-6 text-5xl font-bold leading-[1.05] tracking-tight md:text-7xl lg:text-8xl">
-              Build the Innovation Lab
-              <span className="block text-white/40">
-                Your Students Deserve.
-              </span>
-            </h1>
-
-            <p className="mt-8 max-w-3xl text-lg leading-8 text-white/65 md:text-xl">
-              Transform a physical space into a future-ready learning
-              environment where students can build, experiment, code,
-              collaborate and solve real-world problems.
-            </p>
-
-            <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-              <button
-                type="button"
-                className="rounded-full bg-white px-7 py-4 text-sm font-semibold text-gray-950 transition hover:-translate-y-1 hover:shadow-xl"
-              >
-                Book a School Demo →
-              </button>
-
-              <Link
-                href="/school-solutions"
-                className="rounded-full border border-white/20 px-7 py-4 text-center text-sm font-semibold text-white transition hover:bg-white/10"
-              >
-                Explore Solutions
-              </Link>
-            </div>
-          </div>
-        </div>
-
-        {/* Abstract lab visual */}
-        <div className="pointer-events-none absolute right-[-10%] top-[15%] hidden h-[500px] w-[500px] lg:block">
-          <div className="absolute inset-0 rounded-full border border-white/10" />
-          <div className="absolute inset-[12%] rounded-full border border-white/10" />
-          <div className="absolute inset-[25%] rounded-full border border-blue-400/20" />
-
-          <div className="absolute left-1/2 top-1/2 h-32 w-32 -translate-x-1/2 -translate-y-1/2 rounded-[2rem] border border-white/20 bg-white/[0.06] backdrop-blur-xl" />
-        </div>
-      </section>
-
-      {/* INTRO */}
-      <section className="px-6 py-24 lg:px-10">
-        <div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-2 lg:items-center">
-
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">
-              Beyond Equipment
-            </p>
-
-            <h2 className="mt-5 text-4xl font-bold tracking-tight md:text-6xl">
-              A lab is not just a room filled with equipment.
-            </h2>
-          </div>
-
-          <div>
-            <p className="text-lg leading-8 text-gray-600">
-              The real value of an innovation lab comes from what students do
-              inside it. BeFutureKids brings together infrastructure,
-              curriculum, teacher training, activities, projects and ongoing
-              support to create a complete learning ecosystem.
-            </p>
-
-            <div className="mt-8 flex flex-wrap gap-3">
-              {[
-                "Infrastructure",
-                "Curriculum",
-                "Training",
-                "Activities",
-                "Projects",
-                "Support",
-              ].map((item) => (
-                <span
-                  key={item}
-                  className="rounded-full border border-black/10 px-4 py-2 text-sm font-medium"
-                >
-                  {item}
-                </span>
-              ))}
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      {/* LABS */}
-      <section className="bg-gray-50 px-6 py-24 lg:px-10">
+    <main className="min-h-screen overflow-hidden bg-[#f6f8fb] text-[#071015]">
+      <section className="relative isolate overflow-hidden bg-[#050708] px-4 pb-20 pt-5 text-white sm:px-6 sm:pb-24 lg:px-8">
+        <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_15%_18%,rgba(45,212,191,0.18),transparent_30%),radial-gradient(circle_at_82%_12%,rgba(250,204,21,0.1),transparent_28%),radial-gradient(circle_at_72%_84%,rgba(34,197,94,0.12),transparent_32%),linear-gradient(135deg,#050708,#0b100f_48%,#11100b)]" />
+        <div className="absolute inset-0 -z-10 bg-[linear-gradient(rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.035)_1px,transparent_1px)] bg-[size:64px_64px] opacity-[0.22] motion-safe:animate-[grid-drift_18s_linear_infinite]" />
         <div className="mx-auto max-w-7xl">
+          <header className="flex items-center justify-between rounded-lg border border-white/[0.16] bg-[#071015]/[0.88] px-3 py-3 shadow-[0_16px_70px_rgba(0,0,0,0.28)] backdrop-blur-md">
+            <a
+              aria-label="BeFutureKids innovation labs page"
+              className="flex items-center gap-3 rounded-full pr-2 focus:outline-none focus:ring-2 focus:ring-cyan-200"
+              href="/schools"
+            >
+              <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-white text-sm font-black text-[#071015]">
+                BF
+              </span>
+              <span className="hidden text-sm font-semibold tracking-tight text-white sm:inline">
+                BeFutureKids
+              </span>
+            </a>
+            <nav
+              aria-label="Innovation labs page navigation"
+              className="hidden items-center gap-1 rounded-full border border-white/[0.16] bg-black/[0.32] p-1 lg:flex"
+            >
+              {navItems.map((item) => (
+                <a
+                  className="rounded-full px-4 py-2 text-sm font-medium text-white/[0.82] transition hover:bg-white/[0.12] hover:text-white focus:outline-none focus:ring-2 focus:ring-cyan-200"
+                  href={item.href}
+                  key={item.href}
+                >
+                  {item.label}
+                </a>
+              ))}
+            </nav>
+            <a
+              className="inline-flex min-h-10 items-center justify-center gap-2 rounded-full bg-white px-4 text-sm font-semibold text-[#071015] transition hover:-translate-y-0.5 hover:bg-cyan-50 focus:outline-none focus:ring-2 focus:ring-cyan-200"
+              href="#request-demo"
+            >
+              Demo
+              <Icon className="h-4 w-4" name="arrowRight" />
+            </a>
+          </header>
 
-          <div className="max-w-3xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">
-              Lab Experiences
-            </p>
-
-            <h2 className="mt-5 text-4xl font-bold tracking-tight md:text-6xl">
-              One campus.
-              <br />
-              Multiple possibilities.
-            </h2>
-
-            <p className="mt-6 text-lg leading-8 text-gray-600">
-              Design one focused lab or combine multiple technology
-              environments to create a complete innovation ecosystem.
-            </p>
-          </div>
-
-          <div className="mt-16 space-y-8">
-
-            {labs.map((lab) => (
-              <article
-                key={lab.number}
-                className="group overflow-hidden rounded-[2.5rem] border border-black/10 bg-white transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl"
-              >
-                <div className="grid lg:grid-cols-[0.7fr_1.3fr]">
-
-                  {/* Visual */}
-                  <div className="relative min-h-[320px] overflow-hidden bg-gray-950 p-8 text-white lg:min-h-[500px]">
-
-                    <span className="text-sm font-bold text-blue-400">
-                      {lab.number}
-                    </span>
-
-                    <div className="absolute inset-x-8 bottom-8">
-                      <p className="text-sm uppercase tracking-widest text-white/40">
-                        BeFutureKids
-                      </p>
-
-                      <div className="mt-4 h-px w-full bg-white/10" />
-
-                      <p className="mt-4 text-sm text-white/50">
-                        Future-ready learning environment
-                      </p>
-                    </div>
-
-                    <div className="absolute right-[-70px] top-[-70px] h-64 w-64 rounded-full border border-white/10 transition-transform duration-700 group-hover:scale-125" />
-
-                    <div className="absolute bottom-20 right-16 h-24 w-24 rounded-3xl border border-blue-400/20 bg-white/[0.05] backdrop-blur-xl transition-transform duration-500 group-hover:rotate-6" />
+          <div className="grid gap-10 pt-16 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:pt-20">
+            <div>
+              <div className="inline-flex items-center gap-2 rounded-full border border-white/[0.18] bg-[#071015]/[0.76] px-3 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-cyan-50 shadow-[0_16px_60px_rgba(20,184,166,0.14)] backdrop-blur-md">
+                <Icon className="h-4 w-4 text-emerald-200" name="lab" />
+                Innovation labs for schools
+              </div>
+              <h1 className="mt-7 max-w-4xl text-balance text-5xl font-semibold tracking-tight sm:text-6xl lg:text-7xl">
+                Future-skills labs that feel like a school advantage.
+              </h1>
+              <p className="mt-6 max-w-2xl text-pretty text-lg leading-8 text-white/[0.84] sm:text-xl">
+                Build a premium campus ecosystem for STEM, robotics, AI, AR/VR,
+                and coding with guided curriculum, modern equipment, teacher
+                support, and showcase-ready student outcomes.
+              </p>
+              <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+                <a
+                  className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-white px-6 text-sm font-semibold text-[#071015] shadow-[0_22px_60px_rgba(255,255,255,0.18)] transition hover:-translate-y-0.5 hover:bg-cyan-50 focus:outline-none focus:ring-2 focus:ring-cyan-200 focus:ring-offset-2 focus:ring-offset-[#050708]"
+                  href="#request-demo"
+                >
+                  Request a School Demo
+                  <Icon className="h-4 w-4" name="arrowRight" />
+                </a>
+                <a
+                  className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/[0.18] px-6 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:border-white/[0.45] hover:bg-white/[0.1] focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-[#050708]"
+                  href="#labs"
+                >
+                  Explore Lab Stack
+                </a>
+              </div>
+              <dl className="mt-10 grid max-w-xl grid-cols-3 gap-3">
+                {heroStats.map((stat) => (
+                  <div
+                    className="rounded-lg border border-white/[0.16] bg-[#071015]/[0.74] p-4 shadow-[0_14px_40px_rgba(0,0,0,0.22)] backdrop-blur-md"
+                    key={stat.label}
+                  >
+                    <dt className="text-xs leading-5 text-white/[0.78]">
+                      {stat.label}
+                    </dt>
+                    <dd className="mt-2 text-2xl font-semibold tracking-tight text-white">
+                      {stat.value}
+                    </dd>
                   </div>
+                ))}
+              </dl>
+            </div>
 
-                  {/* Content */}
-                  <div className="p-8 lg:p-12">
-
-                    <p className="text-sm font-semibold text-blue-600">
-                      {lab.subtitle}
-                    </p>
-
-                    <h3 className="mt-3 text-4xl font-bold tracking-tight">
-                      {lab.title}
-                    </h3>
-
-                    <p className="mt-5 max-w-2xl text-lg leading-8 text-gray-600">
-                      {lab.description}
-                    </p>
-
-                    <div className="mt-10 grid gap-8 sm:grid-cols-2">
-
-                      <div>
-                        <p className="text-xs font-bold uppercase tracking-widest text-gray-400">
-                          Key Equipment
-                        </p>
-
-                        <ul className="mt-4 space-y-3">
-                          {lab.equipment.map((item) => (
-                            <li
-                              key={item}
-                              className="text-sm text-gray-700"
-                            >
-                              <span className="mr-2 text-blue-600">+</span>
-                              {item}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      <div>
-                        <p className="text-xs font-bold uppercase tracking-widest text-gray-400">
-                          Learning Activities
-                        </p>
-
-                        <ul className="mt-4 space-y-3">
-                          {lab.activities.map((item) => (
-                            <li
-                              key={item}
-                              className="text-sm text-gray-700"
-                            >
-                              <span className="mr-2 text-blue-600">+</span>
-                              {item}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
-                    </div>
-
-                    <div className="mt-10 border-t border-black/10 pt-7">
-                      <p className="text-xs font-bold uppercase tracking-widest text-gray-400">
-                        Student Outcome
-                      </p>
-
-                      <p className="mt-2 font-medium text-gray-900">
-                        {lab.outcome}
+            <div className="relative">
+              <div className="absolute -inset-4 -z-10 rounded-lg bg-gradient-to-r from-cyan-300/[0.14] via-emerald-300/[0.1] to-amber-300/[0.12] blur-2xl" />
+              <div className="relative min-h-[420px] overflow-hidden rounded-lg border border-white/[0.12] bg-white/[0.06] shadow-[0_35px_120px_rgba(0,0,0,0.38)] lg:min-h-[560px]">
+                <Image
+                  alt="Students collaborating inside a futuristic school innovation lab"
+                  className="object-cover"
+                  fill
+                  priority
+                  sizes="(min-width: 1024px) 52vw, 100vw"
+                  src="/befuturekids-school-lab-hero.png"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#050708]/[0.88] via-[#050708]/[0.14] to-transparent" />
+                <div className="absolute bottom-4 left-4 right-4 grid gap-3 sm:grid-cols-3">
+                  {["STEM", "Robotics", "AI + AR/VR"].map((label) => (
+                    <div
+                      className="rounded-lg border border-white/20 bg-[#061011]/[0.86] p-4 shadow-[0_14px_45px_rgba(0,0,0,0.3)] backdrop-blur-md"
+                      key={label}
+                    >
+                      <p className="text-xs text-white/[0.78]">Lab track</p>
+                      <p className="mt-1 text-sm font-semibold text-white">
+                        {label}
                       </p>
                     </div>
+                  ))}
+                </div>
+              </div>
+              <div className="absolute -right-2 top-10 hidden rounded-lg border border-white/[0.18] bg-[#071015]/[0.88] p-4 text-white shadow-[0_20px_80px_rgba(0,0,0,0.28)] backdrop-blur-md motion-safe:animate-[float-y_7s_ease-in-out_infinite] xl:block">
+                <div className="flex items-center gap-3">
+                  <IconBadge
+                    className="border-emerald-200/[0.35] bg-emerald-300/[0.18] text-emerald-50"
+                    icon="rocket"
+                  />
+                  <div>
+                    <p className="text-xs uppercase tracking-[0.2em] text-white/[0.76]">
+                      Launch-ready
+                    </p>
+                    <p className="mt-1 text-lg font-semibold">Campus labs</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
+      <section
+        className="bg-white px-4 py-20 sm:px-6 sm:py-24 lg:px-8"
+        id="overview"
+      >
+        <div className="mx-auto max-w-7xl">
+          <SectionHeader
+            description="BeFutureKids innovation labs combine curriculum, equipment, training, and visible student output into one premium B2B school experience."
+            eyebrow="Innovation labs overview"
+            title="A future-ready learning environment, not just a room full of devices."
+          />
+          <div className="mt-12 grid gap-5 md:grid-cols-3">
+            {overviewCards.map((card) => (
+              <PremiumCard
+                accentClassName="bg-cyan-300/[0.16]"
+                key={card.title}
+                variant="light"
+              >
+                <IconBadge
+                  className="border-black/10 bg-[#e8fbf6] text-teal-700"
+                  icon={card.icon as IconName}
+                />
+                <h2 className="mt-6 text-xl font-semibold tracking-tight text-[#061014]">
+                  {card.title}
+                </h2>
+                <p className="mt-4 text-sm leading-7 text-[#3f5056]">
+                  {card.description}
+                </p>
+              </PremiumCard>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section
+        className="relative bg-[#f6f8fb] px-4 py-20 sm:px-6 sm:py-24 lg:px-8"
+        id="labs"
+      >
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-black/10 to-transparent" />
+        <div className="mx-auto max-w-7xl">
+          <SectionHeader
+            description="Each lab can stand alone or combine into a complete school innovation ecosystem for exploratory, project-based, and competition-ready learning."
+            eyebrow="Lab categories"
+            title="Five signature lab experiences under one future-skills strategy."
+          />
+          <div className="mt-12 grid gap-5">
+            {labs.map((lab, index) => (
+              <article
+                className="grid overflow-hidden rounded-lg border border-black/10 bg-white shadow-[0_22px_80px_rgba(15,23,42,0.08)] lg:grid-cols-[0.82fr_1.18fr]"
+                id={lab.id}
+                key={lab.title}
+              >
+                <div
+                  className={cn(
+                    "relative isolate min-h-72 overflow-hidden bg-[#071015] p-6 text-white sm:p-8 lg:min-h-full",
+                    index % 2 === 1 && "lg:order-2",
+                  )}
+                >
+                  <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_18%,rgba(45,212,191,0.18),transparent_34%),radial-gradient(circle_at_78%_78%,rgba(250,204,21,0.1),transparent_30%),linear-gradient(135deg,#071015,#0d1718_48%,#11140d)]" />
+                  <div className="absolute inset-0 -z-10 bg-[linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:48px_48px] opacity-[0.22]" />
+                  <div className="flex h-full flex-col justify-between gap-12">
+                    <div>
+                      <IconBadge
+                        className={cn(
+                          "border-white/[0.18] text-white",
+                          lab.accent,
+                        )}
+                        icon={lab.icon}
+                      />
+                      <p className="mt-6 text-xs font-semibold uppercase tracking-[0.28em] text-cyan-100">
+                        {lab.metric}
+                      </p>
+                      <h2 className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
+                        {lab.title}
+                      </h2>
+                    </div>
+                    <div className="grid grid-cols-2 gap-3">
+                      {lab.features.slice(0, 4).map((feature) => (
+                        <div
+                          className="rounded-lg border border-white/[0.16] bg-white/[0.1] p-3 text-sm font-medium text-white/[0.84] backdrop-blur-md"
+                          key={feature}
+                        >
+                          {feature}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                <div className="p-6 sm:p-8">
+                  <p className="text-pretty text-lg leading-8 text-[#33454c]">
+                    {lab.summary}
+                  </p>
+                  <div className="mt-8 grid gap-4 sm:grid-cols-3">
+                    {lab.outcomes.map((outcome) => (
+                      <div
+                        className="rounded-lg border border-black/10 bg-[#f8fbfb] p-4"
+                        key={outcome}
+                      >
+                        <Icon className="h-5 w-5 text-teal-700" name="check" />
+                        <p className="mt-3 text-sm font-semibold leading-6 text-[#071015]">
+                          {outcome}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="mt-8 flex flex-wrap gap-2">
+                    {lab.features.map((feature) => (
+                      <span
+                        className="rounded-full border border-black/10 bg-white px-3 py-1 text-xs font-semibold text-[#26343a]"
+                        key={feature}
+                      >
+                        {feature}
+                      </span>
+                    ))}
                   </div>
                 </div>
               </article>
             ))}
-
           </div>
         </div>
       </section>
 
-      {/* ECOSYSTEM */}
-      <section className="bg-gray-950 px-6 py-24 text-white lg:px-10">
+      <section
+        className="bg-white px-4 py-20 sm:px-6 sm:py-24 lg:px-8"
+        id="equipment"
+      >
         <div className="mx-auto max-w-7xl">
-
-          <div className="max-w-4xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-400">
-              The Complete Ecosystem
-            </p>
-
-            <h2 className="mt-5 text-4xl font-bold tracking-tight md:text-6xl">
-              We build the environment.
-              <span className="block text-white/40">
-                You build the future.
-              </span>
-            </h2>
-
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-white/60">
-              A successful innovation lab needs more than technology. Every
-              layer works together to create meaningful student experiences.
-            </p>
-          </div>
-
-          <div className="mt-16 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {ecosystem.map((item) => (
-              <div
-                key={item.number}
-                className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-8 transition hover:bg-white/[0.08]"
-              >
-                <span className="text-sm font-bold text-blue-400">
-                  {item.number}
-                </span>
-
-                <h3 className="mt-8 text-2xl font-semibold">
-                  {item.title}
-                </h3>
-
-                <p className="mt-4 leading-7 text-white/55">
-                  {item.text}
-                </p>
+          <div className="grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-end">
+            <SectionHeader
+              align="left"
+              description="A premium lab experience needs tools that feel intentional, durable, and easy for teachers to run week after week."
+              eyebrow="Equipment showcase"
+              title="Curated equipment for active learning and polished demonstrations."
+            />
+            <div className="rounded-lg border border-black/10 bg-[#f8fbfb] p-4 shadow-[0_18px_70px_rgba(15,23,42,0.06)]">
+              <div className="grid gap-3 sm:grid-cols-3">
+                {["Plan", "Procure", "Operate"].map((step, index) => (
+                  <div className="rounded-lg bg-white p-4" key={step}>
+                    <p className="text-xs font-semibold uppercase tracking-[0.22em] text-teal-800">
+                      Kit 0{index + 1}
+                    </p>
+                    <p className="mt-2 text-sm font-semibold text-[#071015]">
+                      {step}
+                    </p>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
-
-        </div>
-      </section>
-
-      {/* IMPLEMENTATION */}
-      <section className="px-6 py-24 lg:px-10">
-        <div className="mx-auto max-w-7xl">
-
-          <div className="max-w-3xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">
-              From Space to Experience
-            </p>
-
-            <h2 className="mt-5 text-4xl font-bold tracking-tight md:text-6xl">
-              We help you bring the lab to life.
-            </h2>
-          </div>
-
-          <div className="mt-16 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-
-            {[
-              ["01", "Assess", "Understand your school's space, goals and requirements."],
-              ["02", "Design", "Create a lab concept tailored to your learning vision."],
-              ["03", "Implement", "Set up infrastructure, equipment and learning systems."],
-              ["04", "Activate", "Train educators and launch student programs and projects."],
-            ].map(([number, title, text]) => (
-              <div
-                key={number}
-                className="rounded-[2rem] border border-black/10 p-7"
-              >
-                <span className="text-sm font-bold text-blue-600">
-                  {number}
-                </span>
-
-                <h3 className="mt-8 text-2xl font-semibold">
-                  {title}
-                </h3>
-
-                <p className="mt-3 leading-7 text-gray-600">
-                  {text}
-                </p>
-              </div>
-            ))}
-
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="px-6 pb-24 lg:px-10">
-        <div className="mx-auto max-w-7xl overflow-hidden rounded-[2.5rem] bg-gray-950 px-8 py-16 text-white md:px-16 md:py-24">
-
-          <div className="max-w-4xl">
-
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-400">
-              Build Your Lab
-            </p>
-
-            <h2 className="mt-5 text-4xl font-bold tracking-tight md:text-6xl">
-              What could your students build here?
-            </h2>
-
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-white/60">
-              Talk to our education team about designing an innovation lab
-              aligned with your school's vision, infrastructure and students.
-            </p>
-
-            <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-
-              <button
-                type="button"
-                className="rounded-full bg-white px-7 py-4 text-sm font-semibold text-gray-950 transition hover:-translate-y-1 hover:shadow-xl"
-              >
-                Book a School Demo →
-              </button>
-
-              <button
-                type="button"
-                className="rounded-full border border-white/20 px-7 py-4 text-sm font-semibold text-white transition hover:bg-white/10"
-              >
-                Request a Proposal
-              </button>
-
             </div>
-
+          </div>
+          <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+            {equipment.map((kit) => (
+              <PremiumCard
+                accentClassName="bg-emerald-300/[0.16]"
+                key={kit.category}
+                variant="light"
+              >
+                <IconBadge
+                  className="border-black/10 bg-[#eef5ff] text-cyan-700"
+                  icon={kit.icon}
+                />
+                <h2 className="mt-6 text-xl font-semibold tracking-tight text-[#061014]">
+                  {kit.category}
+                </h2>
+                <ul className="mt-5 space-y-3">
+                  {kit.items.map((item) => (
+                    <li
+                      className="flex items-center gap-3 text-sm font-medium text-[#3f5056]"
+                      key={item}
+                    >
+                      <span className="h-1.5 w-1.5 rounded-full bg-teal-600" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </PremiumCard>
+            ))}
           </div>
         </div>
       </section>
 
+      <section
+        className="relative isolate overflow-hidden bg-[#071015] px-4 py-20 text-white sm:px-6 sm:py-24 lg:px-8"
+        id="outcomes"
+      >
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_12%_0%,rgba(45,212,191,0.14),transparent_30%),radial-gradient(circle_at_86%_72%,rgba(244,114,182,0.08),transparent_32%),linear-gradient(135deg,#071015,#0d1412_50%,#11100b)]" />
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-10 lg:grid-cols-[0.74fr_1.26fr] lg:items-start">
+            <SectionHeader
+              align="left"
+              description="The strongest labs do more than impress visitors. They change what students can make, explain, and present."
+              eyebrow="Learning outcomes"
+              inverse
+              title="Future skills that become visible through student work."
+            />
+            <div className="grid gap-4 sm:grid-cols-2">
+              {outcomes.map((outcome, index) => (
+                <div
+                  className="rounded-lg border border-white/[0.16] bg-white/[0.11] p-6 shadow-[0_18px_70px_rgba(0,0,0,0.22)] backdrop-blur-md"
+                  key={outcome}
+                >
+                  <span className="text-sm font-semibold text-cyan-100">
+                    Outcome 0{index + 1}
+                  </span>
+                  <p className="mt-4 text-base leading-7 text-white/[0.84]">
+                    {outcome}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        className="bg-[#f6f8fb] px-4 py-20 sm:px-6 sm:py-24 lg:px-8"
+        id="process"
+      >
+        <div className="mx-auto max-w-7xl">
+          <SectionHeader
+            description="A clear implementation process helps school leaders understand how the lab moves from idea to daily student experience."
+            eyebrow="Implementation process timeline"
+            title="From campus audit to a confident innovation lab launch."
+          />
+          <div className="relative mt-14">
+            <div className="absolute left-6 top-0 hidden h-full w-px bg-gradient-to-b from-teal-500 via-cyan-500 to-emerald-500 md:block" />
+            <div className="grid gap-5">
+              {processSteps.map((step, index) => (
+                <article
+                  className="relative grid gap-4 rounded-lg border border-black/10 bg-white p-6 shadow-[0_18px_60px_rgba(15,23,42,0.06)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_80px_rgba(15,23,42,0.1)] md:grid-cols-[auto_1fr]"
+                  key={step.label}
+                >
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#071015] text-sm font-semibold text-white shadow-[0_14px_40px_rgba(7,16,21,0.2)]">
+                    {String(index + 1).padStart(2, "0")}
+                  </div>
+                  <div>
+                    <h2 className="text-xl font-semibold tracking-tight text-[#071015]">
+                      {step.label}
+                    </h2>
+                    <p className="mt-3 max-w-3xl text-sm leading-7 text-[#48585e]">
+                      {step.text}
+                    </p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div id="request-demo">
+        <CtaBand
+          description="Bring your leadership team a premium walkthrough of lab categories, equipment, implementation timelines, teacher support, and student showcase outcomes."
+          eyebrow="Request a school demo"
+          primaryHref="mailto:schools@befuturekids.com?subject=Innovation%20Labs%20Demo%20Request"
+          primaryLabel="Request a School Demo"
+          secondaryHref="/schools"
+          secondaryLabel="Back to Schools"
+          title="Ready to turn your campus into a future-skills showcase?"
+        />
+      </div>
     </main>
   );
 }
