@@ -31,8 +31,8 @@ export default async function LeadDetailPage({ params }: { params: { id: string 
         </Link>
         <div className="flex justify-between items-end">
           <div>
-            <h1 className="text-2xl font-bold text-gray-900">{lead.full_name}</h1>
-            <p className="text-gray-500 mt-1">Ref: {lead.reference_id}</p>
+            <h1 className="text-2xl font-bold text-gray-900">{lead.booking_type === 'b2b' ? lead.school_name || lead.contact_person : lead.parent_name}</h1>
+            <p className="text-gray-500 mt-1">ID: {lead.id}</p>
           </div>
           <div>
             <span className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium capitalize">
@@ -57,8 +57,8 @@ export default async function LeadDetailPage({ params }: { params: { id: string 
               </div>
               {lead.city && (
                 <div>
-                  <p className="text-gray-500">Location</p>
-                  <p className="font-medium text-gray-900">{lead.city}{lead.state ? `, ${lead.state}` : ''}</p>
+                  <p className="text-gray-500">City</p>
+                  <p className="font-medium text-gray-900">{lead.city}</p>
                 </div>
               )}
             </div>
@@ -67,10 +67,22 @@ export default async function LeadDetailPage({ params }: { params: { id: string 
           <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
             <h2 className="text-lg font-bold text-gray-900 mb-4 border-b pb-2">Details</h2>
             <div className="grid grid-cols-2 gap-4 text-sm">
-              {lead.organization_name && (
+              {lead.booking_type === 'b2b' && lead.school_name && (
                 <div>
-                  <p className="text-gray-500">Organization</p>
-                  <p className="font-medium text-gray-900">{lead.organization_name}</p>
+                  <p className="text-gray-500">School / Organization</p>
+                  <p className="font-medium text-gray-900">{lead.school_name}</p>
+                </div>
+              )}
+              {lead.school_type && (
+                <div>
+                  <p className="text-gray-500">School Type</p>
+                  <p className="font-medium text-gray-900">{lead.school_type}</p>
+                </div>
+              )}
+              {lead.contact_person && (
+                <div>
+                  <p className="text-gray-500">Contact Person</p>
+                  <p className="font-medium text-gray-900">{lead.contact_person}</p>
                 </div>
               )}
               {lead.designation && (
@@ -87,14 +99,20 @@ export default async function LeadDetailPage({ params }: { params: { id: string 
               )}
               {lead.student_age && (
                 <div>
-                  <p className="text-gray-500">Student Age / Count</p>
+                  <p className="text-gray-500">Student Age</p>
                   <p className="font-medium text-gray-900">{lead.student_age}</p>
                 </div>
               )}
-              {lead.program_interest && (
+              {lead.number_of_students && (
+                <div>
+                  <p className="text-gray-500">Number of Students</p>
+                  <p className="font-medium text-gray-900">{lead.number_of_students}</p>
+                </div>
+              )}
+              {lead.interested_in && (
                 <div className="col-span-2">
                   <p className="text-gray-500">Interests</p>
-                  <p className="font-medium text-gray-900">{lead.program_interest}</p>
+                  <p className="font-medium text-gray-900">{lead.interested_in}</p>
                 </div>
               )}
               {lead.preferred_date && (

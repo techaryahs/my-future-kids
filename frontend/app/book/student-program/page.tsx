@@ -18,12 +18,19 @@ export default function StudentProgramBooking() {
     const formData = new FormData(e.currentTarget)
     const data = Object.fromEntries(formData.entries())
     
-    const res = await submitBooking({
-      ...data,
-      booking_type: 'student_program',
-      user_type: 'b2c',
-      source: 'website'
-    })
+    const dbData = {
+      booking_type: 'b2c',
+      parent_name: data.full_name,
+      student_name: data.student_name,
+      email: data.email,
+      phone: data.phone,
+      student_age: data.student_age,
+      city: data.city,
+      interested_in: data.program_interest,
+      message: `Experience: ${data.experience_level || 'N/A'}\nLearning Type: ${data.learning_type || 'N/A'}\n\n${data.message || ''}`,
+    }
+    
+    const res = await submitBooking(dbData)
     
     setLoading(false)
     if (res.success) {

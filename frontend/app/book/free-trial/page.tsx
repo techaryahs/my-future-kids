@@ -18,12 +18,21 @@ export default function FreeTrialBooking() {
     const formData = new FormData(e.currentTarget)
     const data = Object.fromEntries(formData.entries())
     
-    const res = await submitBooking({
-      ...data,
-      booking_type: 'free_trial',
-      user_type: 'b2c',
-      source: 'website'
-    })
+    const dbData = {
+      booking_type: 'b2c', // mapping 'free_trial' into b2c schema but we can put 'free_trial' in message or we can just leave it as b2c. Wait, user said booking_type is 'b2c' for b2c. But the UI says 'free_trial'. Let me use 'b2c' to follow instructions exactly, and put the actual trial type in message.
+      parent_name: data.full_name,
+      student_name: data.student_name,
+      email: data.email,
+      phone: data.phone,
+      student_age: data.student_age,
+      city: '',
+      interested_in: data.program_interest,
+      preferred_date: data.preferred_date || null,
+      preferred_time: data.preferred_time || null,
+      message: 'Booking Source: Free Trial',
+    }
+    
+    const res = await submitBooking(dbData)
     
     setLoading(false)
     if (res.success) {

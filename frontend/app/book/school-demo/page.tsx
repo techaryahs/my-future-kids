@@ -13,7 +13,6 @@ export default function SchoolDemoBooking() {
 
   const [formData, setFormData] = useState({
     booking_type: 'school_demo',
-    user_type: 'b2b',
     organization_name: '',
     school_type: '',
     city: '',
@@ -50,13 +49,22 @@ export default function SchoolDemoBooking() {
     setLoading(true)
     setError('')
     
-    // Formatting data for DB
+    // Formatting data for DB according to B2B schema
     const dbData = {
-      ...formData,
-      program_interest: formData.program_interest.join(', ')
+      booking_type: 'b2b',
+      school_name: formData.organization_name,
+      contact_person: formData.full_name,
+      designation: formData.designation,
+      email: formData.email,
+      phone: formData.phone,
+      city: formData.city,
+      school_type: formData.school_type,
+      number_of_students: formData.student_age, // Using student_age field for number of students
+      interested_in: formData.program_interest.join(', '),
+      preferred_date: formData.preferred_date || null,
+      preferred_time: formData.preferred_time || null,
+      message: formData.message,
     }
-    // Remove temporary keys not in DB
-    delete (dbData as any).school_type
 
     const res = await submitBooking(dbData)
     setLoading(false)
