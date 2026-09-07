@@ -30,14 +30,6 @@ type Equipment = {
   items: string[];
 };
 
-const navItems = [
-  { href: "#overview", label: "Overview" },
-  { href: "#labs", label: "Labs" },
-  { href: "#equipment", label: "Equipment" },
-  { href: "#outcomes", label: "Outcomes" },
-  { href: "#process", label: "Process" },
-];
-
 const heroStats = [
   { label: "Lab formats", value: "5" },
   { label: "Hands-on modules", value: "80+" },
@@ -117,11 +109,7 @@ const labs: Lab[] = [
     icon: "ai",
     id: "ai-lab",
     metric: "18 AI learning quests",
-    outcomes: [
-      "Data awareness",
-      "Ethical judgment",
-      "AI-assisted creation",
-    ],
+    outcomes: ["Data awareness", "Ethical judgment", "AI-assisted creation"],
     summary:
       "The AI Lab introduces students to machine learning, generative tools, data patterns, and responsible decision-making with classroom-safe workflows.",
     title: "AI Lab",
@@ -257,7 +245,7 @@ export default function InnovationLabsPage() {
         <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_15%_18%,rgba(45,212,191,0.18),transparent_30%),radial-gradient(circle_at_82%_12%,rgba(250,204,21,0.1),transparent_28%),radial-gradient(circle_at_72%_84%,rgba(34,197,94,0.12),transparent_32%),linear-gradient(135deg,#050708,#0b100f_48%,#11100b)]" />
         <div className="absolute inset-0 -z-10 bg-[linear-gradient(rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.035)_1px,transparent_1px)] bg-[size:64px_64px] opacity-[0.22] motion-safe:animate-[grid-drift_18s_linear_infinite]" />
         <div className="mx-auto max-w-7xl">
-          <header className="flex items-center justify-between rounded-lg border border-white/[0.16] bg-[#071015]/[0.88] px-3 py-3 shadow-[0_16px_70px_rgba(0,0,0,0.28)] backdrop-blur-md">
+          {/* <header className="flex items-center justify-between rounded-lg border border-white/[0.16] bg-[#071015]/[0.88] px-3 py-3 shadow-[0_16px_70px_rgba(0,0,0,0.28)] backdrop-blur-md">
             <a
               aria-label="BeFutureKids innovation labs page"
               className="flex items-center gap-3 rounded-full pr-2 focus:outline-none focus:ring-2 focus:ring-cyan-200"
@@ -270,20 +258,6 @@ export default function InnovationLabsPage() {
                 BeFutureKids
               </span>
             </a>
-            <nav
-              aria-label="Innovation labs page navigation"
-              className="hidden items-center gap-1 rounded-full border border-white/[0.16] bg-black/[0.32] p-1 lg:flex"
-            >
-              {navItems.map((item) => (
-                <a
-                  className="rounded-full px-4 py-2 text-sm font-medium text-white/[0.82] transition hover:bg-white/[0.12] hover:text-white focus:outline-none focus:ring-2 focus:ring-cyan-200"
-                  href={item.href}
-                  key={item.href}
-                >
-                  {item.label}
-                </a>
-              ))}
-            </nav>
             <a
               className="inline-flex min-h-10 items-center justify-center gap-2 rounded-full bg-white px-4 text-sm font-semibold text-[#071015] transition hover:-translate-y-0.5 hover:bg-cyan-50 focus:outline-none focus:ring-2 focus:ring-cyan-200"
               href="#request-demo"
@@ -291,7 +265,7 @@ export default function InnovationLabsPage() {
               Demo
               <Icon className="h-4 w-4" name="arrowRight" />
             </a>
-          </header>
+          </header> */}
 
           <div className="grid gap-10 pt-16 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:pt-20">
             <div>
