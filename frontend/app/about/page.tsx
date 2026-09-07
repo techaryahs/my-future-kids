@@ -87,7 +87,7 @@ export default function AboutPage() {
       </section>
 
       {/* Mission & Vision */}
-      <section className="bg-slate-50 py-20">
+      <section id="mission" className="bg-slate-50 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div className="bg-white p-10 rounded-3xl shadow-sm border border-slate-100">
