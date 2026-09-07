@@ -610,7 +610,7 @@ export default function InnovationLabsPage() {
         <CtaBand
           description="Bring your leadership team a premium walkthrough of lab categories, equipment, implementation timelines, teacher support, and student showcase outcomes."
           eyebrow="Request a school demo"
-          primaryHref="mailto:schools@befuturekids.com?subject=Innovation%20Labs%20Demo%20Request"
+          primaryHref="/book/school-demo"
           primaryLabel="Request a School Demo"
           secondaryHref="/schools"
           secondaryLabel="Back to Schools"

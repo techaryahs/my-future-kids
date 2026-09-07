@@ -1,10 +1,30 @@
 import nodemailer from "nodemailer";
 import { NextResponse } from "next/server";
+import { supabase } from "@/lib/supabase";
 
 export async function POST(req: Request) {
   try {
     const data = await req.json();
 
+    // 1️⃣ Database मध्ये save कर
+    const { error: dbError } = await supabase.from("program_enquiries").insert({
+      parent_name: data.parentName,
+      student_name: data.studentName,
+      email: data.email,
+      phone: data.phone,
+      student_age: data.studentAge,
+      city: data.city,
+      interested_in: data.interestedIn,
+      experience_level: data.experienceLevel,
+      preferred_learning: data.preferredLearning,
+      message: data.message,
+    });
+
+    if (dbError) {
+      console.error("Database insert error:", dbError);
+    }
+
+    // 2️⃣ Email पाठवण्यासाठी transporter
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
@@ -13,7 +33,7 @@ export async function POST(req: Request) {
       },
     });
 
-    // 1️⃣ Company la notification mail
+    // Company la notification mail
     await transporter.sendMail({
       from: `"BeFutureKids Website" <${process.env.EMAIL_USER}>`,
       to: process.env.NOTIFY_EMAIL,
@@ -33,7 +53,7 @@ export async function POST(req: Request) {
       `,
     });
 
-    // 2️⃣ User la confirmation mail (jo book karel tyala)
+    // User la confirmation mail
     await transporter.sendMail({
       from: `"BeFutureKids" <${process.env.EMAIL_USER}>`,
       to: data.email,
