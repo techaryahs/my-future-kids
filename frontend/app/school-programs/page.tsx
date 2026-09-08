@@ -168,7 +168,7 @@ export default function SchoolProgramsPage() {
 
               <Link
                 href="/book/school-demo"
-                className="inline-flex items-center justify-center rounded-full bg-white px-7 py-4 text-sm font-semibold text-gray-950 transition hover:-translate-y-1 hover:shadow-xl focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                className="rounded-full bg-white px-7 py-4 text-sm font-semibold text-gray-950 transition hover:-translate-y-1 hover:shadow-xl"
               >
                 Book a School Demo →
               </Link>
@@ -434,7 +434,7 @@ export default function SchoolProgramsPage() {
 
           <Link
             href="/book/school-demo"
-            className="mt-9 inline-flex items-center justify-center rounded-full bg-gray-950 dark:bg-blue-600 px-8 py-4 text-sm font-semibold text-white transition hover:-translate-y-1 hover:bg-slate-800 dark:hover:bg-blue-500 hover:shadow-xl focus:ring-2 focus:ring-blue-500 focus:outline-none"
+            className="mt-9 rounded-full bg-gray-950 px-8 py-4 text-sm font-semibold text-white transition hover:-translate-y-1 hover:shadow-xl"
           >
             Book a School Demo →
           </Link>
