@@ -1,219 +1,219 @@
 "use client";
 
-import { motion } from "framer-motion";
-import Link from "next/link";
 import {
   Bot,
-  FlaskConical,
-  BrainCircuit,
-  Glasses,
-  Code2,
-  ArrowUpRight,
+  Wifi,
+  Cpu,
+  Boxes,
+  ArrowRight,
+  CheckCircle2,
+  CircuitBoard,
+  Lightbulb,
 } from "lucide-react";
 
-const labs = [
+const labTypes = [
   {
     icon: Bot,
-    number: "01",
     title: "Robotics Lab",
+    subtitle: "Build. Program. Innovate.",
     description:
-      "A hands-on environment where students learn robotics, engineering, automation and problem-solving by building real projects.",
-    features: ["Robotics Kits", "Sensors", "Automation", "Project Building"],
-    href: "/programs#robotics",
+      "A hands-on environment where students design, build, and program intelligent machines using real robotics hardware.",
+    features: [
+      "Robotics kits & controllers",
+      "Motors, sensors & actuators",
+      "Autonomous robot projects",
+      "Mechanical design activities",
+    ],
+    tag: "MOST POPULAR",
   },
   {
-    icon: FlaskConical,
-    number: "02",
-    title: "STEM Innovation Lab",
+    icon: Wifi,
+    title: "IoT & Smart Lab",
+    subtitle: "Connect Ideas to the Real World.",
     description:
-      "A collaborative space designed for experimentation, scientific thinking, prototyping and project-based STEM learning.",
-    features: ["Science Tools", "Experiments", "Prototyping", "Maker Activities"],
-    href: "/programs#stem",
+      "Students explore connected devices, automation, sensors, wireless communication, and real-world smart systems.",
+    features: [
+      "Arduino & ESP32 boards",
+      "IoT sensors & modules",
+      "Smart automation projects",
+      "Wireless connectivity",
+    ],
+    tag: "FUTURE READY",
   },
   {
-    icon: BrainCircuit,
-    number: "03",
-    title: "AI Learning Space",
+    icon: Cpu,
+    title: "AI & Coding Lab",
+    subtitle: "Create with Intelligence.",
     description:
-      "Introduce students to artificial intelligence through age-appropriate concepts, experiments and practical applications.",
-    features: ["AI Concepts", "Machine Learning", "Computer Vision", "AI Projects"],
-    href: "/programs#ai",
+      "A future-ready environment for students to explore programming, artificial intelligence, computational thinking, and digital creation.",
+    features: [
+      "Coding workstations",
+      "AI learning tools",
+      "Programming projects",
+      "Creative technology",
+    ],
+    tag: "NEXT GENERATION",
   },
-  {
-    icon: Glasses,
-    number: "04",
-    title: "AR / VR Experience Zone",
-    description:
-      "Create immersive learning experiences that help students explore concepts through interactive virtual and augmented environments.",
-    features: ["VR Experiences", "AR Learning", "3D Content", "Immersive Projects"],
-    href: "/programs#ar-vr",
-  },
-  {
-    icon: Code2,
-    number: "05",
-    title: "Coding & Digital Skills Space",
-    description:
-      "A dedicated technology environment where students develop coding, computational thinking and digital creation skills.",
-    features: ["Programming", "Web Development", "App Ideas", "Digital Projects"],
-    href: "/programs#coding",
-  },
+];
+
+const equipment = [
+  "Arduino & Microcontrollers",
+  "Raspberry Pi",
+  "IoT Sensors",
+  "Motors & Actuators",
+  "Robotics Kits",
+  "Electronic Components",
+  "3D Design Tools",
+  "Project Equipment",
 ];
 
 export default function LabShowcase() {
   return (
     <section className="relative overflow-hidden bg-white py-24 sm:py-28">
       {/* Background */}
-      <div className="pointer-events-none absolute right-0 top-20 h-96 w-96 rounded-full bg-blue-50/70 blur-3xl" />
+      <div className="absolute inset-0">
+        <div className="absolute left-0 top-20 h-80 w-80 rounded-full bg-blue-100/70 blur-[100px]" />
+        <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-cyan-100/60 blur-[120px]" />
+      </div>
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         {/* Heading */}
-        <motion.div
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="max-w-3xl"
-        >
-          <span className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">
-            Built For Your Campus
-          </span>
+        <div className="mx-auto mb-16 max-w-3xl text-center">
+          <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-blue-600">
+            <CircuitBoard className="h-4 w-4" />
+            FUTURE-READY INFRASTRUCTURE
+          </div>
 
-          <h2 className="mt-4 text-4xl font-bold tracking-tight text-slate-950 sm:text-5xl">
-            What We Can Build{" "}
-            <span className="text-blue-600">
-              For Your School
+          <h2 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
+            More Than a Classroom.
+            <span className="block text-blue-600">
+              A Space Built for Innovation.
             </span>
           </h2>
 
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
-            Transform classrooms and dedicated learning spaces into environments
-            where students can build, experiment, create and solve real-world
-            problems.
+          <p className="mt-6 text-lg leading-relaxed text-slate-600">
+            We help schools create technology-rich learning environments with
+            the right infrastructure, hardware, devices, and practical tools
+            students need to experiment and bring ideas to life.
           </p>
-        </motion.div>
+        </div>
 
-        {/* Lab grid */}
-        <div className="mt-14 grid gap-5 lg:grid-cols-12">
-          {labs.map((lab, index) => {
+        {/* Lab Cards */}
+        <div className="grid gap-6 lg:grid-cols-3">
+          {labTypes.map((lab) => {
             const Icon = lab.icon;
 
-            /*
-             * First card gets a larger layout.
-             * Remaining cards use normal grid sizing.
-             */
-            const largeCard = index === 0;
-            const hasLink = lab.href;
-
-            const card = (
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.15 }}
-                transition={{
-                  duration: 0.55,
-                  delay: index * 0.08,
-                }}
-                className={`group relative overflow-hidden rounded-[2rem] border border-slate-100 bg-slate-950 p-7 text-white shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl h-full ${hasLink ? "cursor-pointer" : ""} ${
-                  largeCard
-                    ? "lg:min-h-[420px]"
-                    : ""
-                }`}
-              >
-                {/* Decorative circles */}
-                <div className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-blue-600/20 blur-2xl transition-transform duration-700 group-hover:scale-125" />
-
-                <div className="absolute bottom-[-100px] left-[-100px] h-64 w-64 rounded-full bg-cyan-500/10 blur-3xl" />
-
-                <div className="relative flex h-full flex-col">
-                  {/* Top */}
-                  <div className="flex items-start justify-between">
-                    <div className="flex items-center gap-4">
-                      <div className="rounded-2xl bg-white/10 p-4 backdrop-blur-sm">
-                        <Icon className="h-7 w-7 text-blue-300" />
-                      </div>
-
-                      <span className="text-sm font-semibold tracking-wider text-white/40">
-                        {lab.number}
-                      </span>
-                    </div>
-
-                    <div className="rounded-full border border-white/10 p-2 transition-all duration-300 group-hover:border-blue-400/50 group-hover:bg-blue-500/10">
-                      <ArrowUpRight className="h-5 w-5 text-white/50 transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-blue-300" />
-                    </div>
-                  </div>
-
-                  {/* Content */}
-                  <div className="mt-auto pt-14">
-                    <h3
-                      className={`font-bold tracking-tight ${
-                        largeCard
-                          ? "text-3xl sm:text-4xl"
-                          : "text-2xl"
-                      }`}
-                    >
-                      {lab.title}
-                    </h3>
-
-                    <p className="mt-4 max-w-xl text-sm leading-6 text-white/60">
-                      {lab.description}
-                    </p>
-
-                    {/* Features */}
-                    <div className="mt-6 flex flex-wrap gap-2">
-                      {lab.features.map((feature) => (
-                        <span
-                          key={feature}
-                          className="rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-medium text-white/70"
-                        >
-                          {feature}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            );
-
-            return hasLink ? (
-              <Link
+            return (
+              <div
                 key={lab.title}
-                href={lab.href as string}
-                className={`block ${largeCard ? "lg:col-span-7" : "lg:col-span-5"}`}
+                className="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-blue-200 hover:shadow-2xl"
               >
-                {card}
-              </Link>
-            ) : (
-              <div key={lab.title} className={largeCard ? "lg:col-span-7" : "lg:col-span-5"}>
-                {card}
+                {/* Background Glow */}
+                <div className="absolute -right-16 -top-16 h-40 w-40 rounded-full bg-blue-100 opacity-0 blur-3xl transition-opacity duration-300 group-hover:opacity-100" />
+
+                <div className="relative">
+                  {/* Tag */}
+                  <div className="mb-6 flex items-center justify-between">
+                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-600 to-cyan-500 shadow-lg shadow-blue-500/20">
+                      <Icon className="h-7 w-7 text-white" />
+                    </div>
+
+                    <span className="rounded-full bg-slate-100 px-3 py-1 text-[10px] font-bold tracking-wider text-slate-500">
+                      {lab.tag}
+                    </span>
+                  </div>
+
+                  <p className="mb-2 text-sm font-semibold text-blue-600">
+                    {lab.subtitle}
+                  </p>
+
+                  <h3 className="text-2xl font-bold text-slate-900">
+                    {lab.title}
+                  </h3>
+
+                  <p className="mt-4 leading-relaxed text-slate-600">
+                    {lab.description}
+                  </p>
+
+                  {/* Features */}
+                  <div className="mt-7 space-y-3">
+                    {lab.features.map((feature) => (
+                      <div
+                        key={feature}
+                        className="flex items-center gap-3 text-sm text-slate-600"
+                      >
+                        <CheckCircle2 className="h-4 w-4 shrink-0 text-cyan-500" />
+                        {feature}
+                      </div>
+                    ))}
+                  </div>
+
+                  <button className="mt-8 flex items-center gap-2 text-sm font-bold text-blue-600 transition-all group-hover:gap-3">
+                    Explore Lab Solution
+                    <ArrowRight className="h-4 w-4" />
+                  </button>
+                </div>
               </div>
             );
           })}
         </div>
 
-        {/* Bottom message */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mt-10 flex flex-col justify-between gap-6 rounded-3xl border border-blue-100 bg-blue-50/60 p-7 sm:flex-row sm:items-center sm:p-8"
-        >
-          <div>
-            <p className="text-lg font-bold text-slate-900">
-              More than a room filled with equipment.
-            </p>
+        {/* Equipment Section */}
+        <div className="mt-16 overflow-hidden rounded-3xl bg-slate-950 p-8 sm:p-12">
+          <div className="grid items-center gap-10 lg:grid-cols-[1fr_1.3fr]">
+            {/* Left */}
+            <div>
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-cyan-400/10">
+                <Boxes className="h-6 w-6 text-cyan-400" />
+              </div>
 
-            <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-600">
-              We combine infrastructure, curriculum, teacher training,
-              activities, projects and continuous support to create a complete
-              learning ecosystem.
-            </p>
-          </div>
+              <p className="mb-3 text-sm font-bold tracking-widest text-cyan-400">
+                HARDWARE & EQUIPMENT
+              </p>
 
-          <div className="shrink-0 rounded-full bg-white px-5 py-3 text-sm font-semibold text-blue-600 shadow-sm">
-            Infrastructure + Curriculum + Support
+              <h3 className="text-3xl font-bold text-white sm:text-4xl">
+                We Provide the Tools
+                <span className="block text-cyan-400">
+                  Behind Great Ideas.
+                </span>
+              </h3>
+
+              <p className="mt-5 leading-relaxed text-slate-400">
+                From individual project kits to complete school technology
+                infrastructure, we help provide the right equipment based on
+                your learning goals and requirements.
+              </p>
+            </div>
+
+            {/* Right */}
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-2">
+              {equipment.map((item) => (
+                <div
+                  key={item}
+                  className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-4 transition hover:border-cyan-400/30 hover:bg-white/10"
+                >
+                  <Lightbulb className="h-4 w-4 shrink-0 text-cyan-400" />
+                  <span className="text-sm font-medium text-slate-300">
+                    {item}
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
-        </motion.div>
+        </div>
+
+        {/* Bottom Statement */}
+        <div className="mx-auto mt-14 max-w-4xl text-center">
+          <p className="text-xl font-medium leading-relaxed text-slate-700">
+            Every school is different. That's why we don't believe in
+            one-size-fits-all labs.
+            <span className="font-bold text-blue-600">
+              {" "}
+              We design solutions around your students, space, goals, and
+              technology requirements.
+            </span>
+          </p>
+        </div>
       </div>
     </section>
   );
