@@ -17,8 +17,8 @@ export default async function AdminDashboard() {
     .order('created_at', { ascending: false })
   
   const totalLeads = bookings?.length || 0
-  const b2bLeads = bookings?.filter(b => b.user_type === 'b2b').length || 0
-  const b2cLeads = bookings?.filter(b => b.user_type === 'b2c').length || 0
+  const b2bLeads = bookings?.filter(b => b.booking_type === 'b2b').length || 0
+  const b2cLeads = bookings?.filter(b => b.booking_type === 'b2c').length || 0
   const newLeads = bookings?.filter(b => b.status === 'new').length || 0
 
   const recentBookings = bookings?.slice(0, 5) || []
@@ -83,11 +83,11 @@ export default async function AdminDashboard() {
                 <tr key={b.id} className="hover:bg-gray-50">
                   <td className="px-6 py-4 font-medium text-gray-900">
                     <Link href={`${ADMIN_ROUTES.LEADS}/${b.id}`} className="hover:text-blue-600">
-                      {b.full_name}
-                      {b.organization_name && <span className="block text-xs text-gray-500 font-normal">{b.organization_name}</span>}
+                      {b.booking_type === 'b2b' ? b.school_name : b.parent_name}
+                      {b.booking_type === 'b2b' && b.contact_person && <span className="block text-xs text-gray-500 font-normal">{b.contact_person}</span>}
                     </Link>
                   </td>
-                  <td className="px-6 py-4 capitalize">{b.booking_type.replace('_', ' ')}</td>
+                  <td className="px-6 py-4 uppercase">{b.booking_type}</td>
                   <td className="px-6 py-4">{new Date(b.created_at).toLocaleDateString()}</td>
                   <td className="px-6 py-4">
                     <span className={`px-2 py-1 text-xs font-medium rounded-full ${

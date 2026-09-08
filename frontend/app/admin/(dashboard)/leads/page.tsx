@@ -19,7 +19,7 @@ export default async function LeadsPage({
     query = query.eq('status', searchParams.status)
   }
   if (searchParams.type) {
-    query = query.eq('user_type', searchParams.type)
+    query = query.eq('booking_type', searchParams.type)
   }
 
   const { data: leads } = await query
@@ -54,13 +54,13 @@ export default async function LeadsPage({
               {leads?.map((lead) => (
                 <tr key={lead.id} className="hover:bg-gray-50 border-b border-gray-100 last:border-0">
                   <td className="px-6 py-4">
-                    <div className="font-medium text-gray-900">{lead.full_name}</div>
+                    <div className="font-medium text-gray-900">{lead.booking_type === 'b2b' ? lead.school_name : lead.parent_name}</div>
                     <div className="text-xs text-gray-500">{lead.email}</div>
-                    {lead.organization_name && <div className="text-xs font-medium text-indigo-600 mt-1">{lead.organization_name}</div>}
+                    {lead.booking_type === 'b2b' && lead.contact_person && <div className="text-xs font-medium text-indigo-600 mt-1">{lead.contact_person}</div>}
                   </td>
                   <td className="px-6 py-4">
                     <div className="capitalize">{lead.booking_type.replace('_', ' ')}</div>
-                    <div className="text-xs text-gray-500 uppercase">{lead.user_type}</div>
+                    <div className="text-xs text-gray-500 uppercase">{lead.booking_type}</div>
                   </td>
                   <td className="px-6 py-4">
                     <div className="flex flex-col items-start gap-1">

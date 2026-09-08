@@ -18,12 +18,20 @@ export default function WorkshopBooking() {
     const formData = new FormData(e.currentTarget)
     const data = Object.fromEntries(formData.entries())
     
-    const res = await submitBooking({
-      ...data,
-      booking_type: 'workshop',
-      user_type: 'b2c',
-      source: 'website'
-    })
+    const dbData = {
+      booking_type: 'b2c', // Following B2C mapping rules
+      parent_name: data.full_name,
+      student_name: data.student_name,
+      email: data.email,
+      phone: data.phone,
+      student_age: data.student_age,
+      city: '',
+      interested_in: data.program_interest,
+      preferred_date: data.preferred_date || null,
+      message: `Booking Source: Workshop\nParticipants: ${data.number_of_participants || 1}`,
+    }
+    
+    const res = await submitBooking(dbData)
     
     setLoading(false)
     if (res.success) {

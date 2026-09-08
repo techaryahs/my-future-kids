@@ -18,12 +18,19 @@ export default function PartnershipBooking() {
     const formData = new FormData(e.currentTarget)
     const data = Object.fromEntries(formData.entries())
     
-    const res = await submitBooking({
-      ...data,
-      booking_type: 'partnership',
-      user_type: 'b2b',
-      source: 'website'
-    })
+    const dbData = {
+      booking_type: 'b2b', // Using b2b to match schema instructions
+      school_name: data.organization_name,
+      contact_person: data.full_name,
+      designation: data.designation,
+      email: data.email,
+      phone: data.phone,
+      city: '',
+      interested_in: data.program_interest,
+      message: `Booking Source: Partnership Request\n\n${data.message || ''}`,
+    }
+    
+    const res = await submitBooking(dbData)
     
     setLoading(false)
     if (res.success) {

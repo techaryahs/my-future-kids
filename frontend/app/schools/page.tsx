@@ -1,4 +1,5 @@
 import SchoolHero from "@/components/schools/SchoolHero";
+import SchoolOptions from "@/components/schools/SchoolOptions";
 import ProblemOpportunity from "@/components/schools/ProblemOpportunity";
 import EcosystemGrid from "@/components/schools/EcosystemGrid";
 import LabShowcase from "@/components/schools/LabShowcase";
@@ -12,6 +13,8 @@ export default function SchoolsPage() {
   return (
     <main className="min-h-screen bg-white">
       <SchoolHero />
+
+      <SchoolOptions />
 
       <ProblemOpportunity />
 
