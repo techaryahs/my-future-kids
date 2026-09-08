@@ -11,9 +11,7 @@ const navLinks = [
   { name: "Programs", href: "/programs" },
   { name: "Technology", href: "/technology" },
   { name: "Schools", href: "/schools" },
-  { name: "School Solutions", href: "/school-solutions" },
   { name: "Innovation Labs", href: "/innovation-labs" },
-  { name: "School Programs", href: "/school-programs" },
   { name: "About Us", href: "/about" },
 ];
 

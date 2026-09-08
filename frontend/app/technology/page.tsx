@@ -20,7 +20,7 @@ const technologies = [
     title: "Robotics",
     subtitle: "Build. Program. Innovate.",
     description:
-      "Students transform ideas into working machines while learning engineering, electronics, sensors, motors, and programming through hands-on projects.",
+      "Robotics introduces students to the exciting world of designing, building, and programming machines. Through hands-on projects, students learn how sensors, motors, electronics, and code work together to create robots that can respond to their environment. These activities build engineering skills, logical thinking, creativity, teamwork, and real-world problem-solving abilities.",
     icon: Bot,
     features: [
       "Hands-on Robot Building",
@@ -35,7 +35,7 @@ const technologies = [
     title: "Artificial Intelligence",
     subtitle: "Understand the Intelligence of Tomorrow.",
     description:
-      "Students explore how Artificial Intelligence works and discover real-world applications through engaging activities and practical experiments.",
+      "Artificial Intelligence helps students understand how computers can learn, recognize patterns, make predictions, and perform tasks that normally require human intelligence. Students explore machine learning, computer vision, generative AI, and practical AI tools through engaging activities and experiments. The program encourages curiosity, critical thinking, creativity, and responsible use of AI technology.",
     icon: Brain,
     features: [
       "AI Fundamentals",
@@ -50,7 +50,7 @@ const technologies = [
     title: "AR & VR",
     subtitle: "Step Inside the Learning Experience.",
     description:
-      "Immersive technologies allow students to explore concepts, environments, and ideas beyond the limitations of traditional classrooms.",
+      "Augmented Reality and Virtual Reality transform learning into an immersive experience where students can explore places, objects, and concepts beyond the traditional classroom. Through virtual environments, simulations, and interactive experiences, students can visualize difficult concepts and learn by exploration. This approach encourages curiosity, creativity, spatial understanding, and active participation.",
     icon: Glasses,
     features: [
       "Virtual Exploration",
@@ -65,7 +65,7 @@ const technologies = [
     title: "Interactive 3D Learning",
     subtitle: "See It. Explore It. Understand It.",
     description:
-      "Complex concepts become easier to understand when students can interact with realistic 3D models and visual learning experiences.",
+      "Interactive 3D Learning allows students to explore realistic digital models and understand complex concepts through visual and interactive experiences. Students can examine objects, structures, systems, and environments from different perspectives instead of relying only on textbooks or static images. This makes learning more engaging, memorable, and easier to connect with real-world applications.",
     icon: Box,
     features: [
       "Interactive 3D Models",
@@ -80,7 +80,7 @@ const technologies = [
     title: "Coding & Logic",
     subtitle: "Think Like a Creator.",
     description:
-      "Students develop computational thinking and problem-solving skills through coding, algorithms, games, and creative digital projects.",
+      "Coding and Logic helps students develop computational thinking by teaching them how to break complex problems into smaller, manageable steps. Students create programs, games, animations, and digital projects while learning algorithms, sequences, conditions, loops, and programming logic. The experience develops problem-solving, creativity, logical reasoning, and confidence in building technology.",
     icon: Code2,
     features: [
       "Block Coding",
@@ -95,7 +95,7 @@ const technologies = [
     title: "IoT & Smart Technology",
     subtitle: "Connect Ideas to the Real World.",
     description:
-      "Students explore connected devices, smart systems, sensors, and automation to understand the technology shaping modern life.",
+      "IoT and Smart Technology introduces students to the connected world of smart devices, sensors, automation, and intelligent systems. Students discover how devices communicate, collect information, and respond to real-world conditions through practical activities and projects. This helps them understand the connection between the physical and digital worlds while developing creativity, technical thinking, and problem-solving skills.",
     icon: Cpu,
     features: [
       "Internet of Things",
