@@ -120,7 +120,10 @@ export default function ProgramsPage() {
                 href={`/${program.slug}`}
                 className="group relative"
               >
-                <article className="relative flex h-full flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-2 hover:border-blue-200 hover:shadow-2xl hover:shadow-blue-900/10">
+                <article
+                  id={program.slug}
+                  className="relative flex h-full flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-2 hover:border-blue-200 hover:shadow-2xl hover:shadow-blue-900/10"
+                >
                   {/* Top Gradient */}
                   <div
                     className={`absolute left-0 top-0 h-1 w-full bg-gradient-to-r ${gradient}`}

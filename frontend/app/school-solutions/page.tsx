@@ -155,12 +155,12 @@ export default function SchoolSolutionsPage() {
                 ← Back to Schools
               </Link>
 
-              <button
-                type="button"
+              <Link
+                href="/book/school-demo"
                 className="rounded-full border border-white/20 px-7 py-4 text-sm font-semibold text-white transition hover:bg-white/10"
               >
                 Book a School Demo →
-              </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -213,6 +213,14 @@ export default function SchoolSolutionsPage() {
             {solutions.map((solution) => (
               <article
                 key={solution.number}
+                id={
+                  solution.number === "01" ? "robotics-education" :
+                  solution.number === "02" ? "stem-learning" :
+                  solution.number === "03" ? "artificial-intelligence" :
+                  solution.number === "04" ? "coding-programs" :
+                  solution.number === "05" ? "ar-vr-learning" :
+                  solution.number === "06" ? "innovation-programs" : undefined
+                }
                 className="group overflow-hidden rounded-[2rem] border border-black/10 bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
               >
                 <div className="grid lg:grid-cols-[0.3fr_1fr_1fr]">
@@ -341,12 +349,12 @@ export default function SchoolSolutionsPage() {
             programs, labs and learning experiences for your school.
           </p>
 
-          <button
-            type="button"
+          <Link
+            href="/book/school-demo"
             className="mt-9 rounded-full bg-gray-950 px-8 py-4 text-sm font-semibold text-white transition hover:-translate-y-1 hover:shadow-xl"
           >
             Book a School Demo →
-          </button>
+          </Link>
         </div>
       </section>
     </main>
