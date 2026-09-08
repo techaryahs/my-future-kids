@@ -60,47 +60,6 @@ const impactAreas = [
 
 export default function SuccessStories() {
   return (
-<<<<<<< HEAD
-    <section className="bg-slate-50 dark:bg-[#090d16] px-4 py-20 sm:px-6 sm:py-24 lg:px-8 transition-colors duration-200">
-      <div className="mx-auto max-w-7xl">
-        <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600 dark:text-blue-400">
-              Success Stories
-            </p>
-
-            <h2 className="mt-5 text-3xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-4xl md:text-5xl">
-              Built for measurable impact.
-            </h2>
-          </div>
-
-          <p className="max-w-md text-base text-slate-600 dark:text-slate-300">
-            Verified school partnerships, student projects and impact stories
-            will appear here.
-          </p>
-        </div>
-
-        <div className="mt-14 grid gap-6 lg:grid-cols-3">
-          {stories.map((story) => (
-            <article
-              key={story.title}
-              className="overflow-hidden rounded-[2rem] border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/90 shadow-sm"
-            >
-              <div className="aspect-[16/10] bg-slate-200 dark:bg-slate-800" />
-
-              <div className="p-5 sm:p-7">
-                <p className="text-xs font-semibold uppercase tracking-widest text-blue-600 dark:text-blue-400">
-                  {story.label}
-                </p>
-
-                <h3 className="mt-4 text-xl font-semibold text-slate-950 dark:text-white sm:text-2xl">
-                  {story.title}
-                </h3>
-
-                <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300 sm:text-base sm:leading-7">
-                  {story.text}
-                </p>
-=======
     <section className="relative overflow-hidden bg-slate-950 py-24 sm:py-28">
       {/* Background Effects */}
       <div className="absolute inset-0">
@@ -147,7 +106,6 @@ export default function SuccessStories() {
             <div>
               <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-yellow-400 to-orange-500 shadow-lg shadow-orange-500/20">
                 <Trophy className="h-8 w-8 text-white" />
->>>>>>> 2f067ad90cd85d8bbf09c2143870541a4578eef7
               </div>
 
               <p className="mt-7 text-sm font-bold tracking-[0.2em] text-cyan-400">

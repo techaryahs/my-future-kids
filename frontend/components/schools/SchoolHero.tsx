@@ -48,11 +48,7 @@ export default function SchoolHero() {
           <div className="mt-9 flex flex-col gap-4 sm:flex-row">
             <Link
               href="/book/school-demo"
-<<<<<<< HEAD
-              className="group inline-flex items-center justify-center gap-3 rounded-full bg-blue-600 px-7 py-4 text-base font-semibold text-white shadow-lg shadow-blue-600/20 transition-all duration-300 hover:-translate-y-1 hover:bg-blue-700 hover:shadow-xl focus:ring-2 focus:ring-blue-500 focus:outline-none"
-=======
               className="group inline-flex items-center justify-center gap-3 rounded-full bg-blue-600 px-7 py-4 text-base font-semibold text-white shadow-lg shadow-blue-600/20 transition-all duration-300 hover:-translate-y-1 hover:bg-blue-700 hover:shadow-xl"
->>>>>>> 2f067ad90cd85d8bbf09c2143870541a4578eef7
             >
               Book a School Demo
               <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />

@@ -73,24 +73,6 @@ const ecosystemItems = [
 
 export default function EcosystemGrid() {
   return (
-<<<<<<< HEAD
-    <section
-      id="solutions"
-      className="relative overflow-hidden bg-[#f8fbff] dark:bg-[#090d16] py-24 sm:py-28 transition-colors duration-200"
-    >
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Heading */}
-        <motion.div
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end"
-        >
-          <div className="max-w-3xl">
-            <span className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600 dark:text-blue-400">
-              Our Ecosystem
-=======
     <section className="relative overflow-hidden bg-slate-950 py-24 sm:py-28">
       {/* Background Effects */}
       <div className="absolute inset-0">
@@ -119,77 +101,9 @@ export default function EcosystemGrid() {
             Everything Students Need to
             <span className="block bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-400 bg-clip-text text-transparent">
               Build the Future
->>>>>>> 2f067ad90cd85d8bbf09c2143870541a4578eef7
             </span>
           </h2>
 
-<<<<<<< HEAD
-            <h2 className="mt-4 text-3xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-4xl lg:text-5xl">
-              One Partner.{" "}
-              <span className="text-blue-600 dark:text-blue-400">
-                Complete Ecosystem.
-              </span>
-            </h2>
-
-            <p className="mt-6 max-w-2xl text-base sm:text-lg leading-7 sm:leading-8 text-slate-600 dark:text-slate-300">
-              From classroom programs to innovation infrastructure, BeFutureKids
-              helps schools create a connected future-ready learning ecosystem.
-            </p>
-          </div>
-
-          <div className="hidden rounded-full border border-blue-100 dark:border-slate-800 bg-white dark:bg-slate-900 px-5 py-3 text-sm font-medium text-slate-600 dark:text-slate-300 shadow-sm lg:block">
-            Robotics • STEM • AI • Coding • AR/VR
-          </div>
-        </motion.div>
-
-        {/* Solution cards */}
-        <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {solutions.map((solution, index) => {
-            const Icon = solution.icon;
-
-            return (
-              <motion.div
-                key={solution.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.15 }}
-                transition={{
-                  duration: 0.5,
-                  delay: index * 0.07,
-                }}
-                className="group relative overflow-hidden rounded-3xl border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900/90 p-5 sm:p-7 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-blue-100 dark:hover:border-blue-800/80 hover:shadow-2xl"
-              >
-                {/* Decorative circle */}
-                <div className="absolute -right-12 -top-12 h-32 w-32 rounded-full bg-blue-50 dark:bg-blue-950/40 opacity-0 transition-all duration-500 group-hover:scale-150 group-hover:opacity-100" />
-
-                <div className="relative">
-                  <div className="flex items-start justify-between">
-                    <div className="rounded-2xl bg-blue-50 dark:bg-blue-950/60 p-4 transition-all duration-300 group-hover:bg-blue-600">
-                      <Icon className="h-7 w-7 text-blue-600 dark:text-blue-400 group-hover:text-white" />
-                    </div>
-
-                    <ArrowUpRight className="h-5 w-5 text-slate-300 dark:text-slate-600 transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-blue-600 dark:group-hover:text-blue-400" />
-                  </div>
-
-                  <div className="mt-7">
-                    <span className="text-xs font-semibold uppercase tracking-wider text-blue-600 dark:text-blue-400">
-                      {solution.tag}
-                    </span>
-
-                    <h3 className="mt-2 text-2xl font-bold text-slate-900 dark:text-white">
-                      {solution.title}
-                    </h3>
-
-                    <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">
-                      {solution.description}
-                    </p>
-                  </div>
-
-                  <div className="mt-7 flex items-center gap-2 text-sm font-semibold text-slate-700 dark:text-slate-200">
-                    Explore solution
-                    <ArrowUpRight className="h-4 w-4 text-blue-600 dark:text-blue-400 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-                  </div>
-=======
           <p className="mt-6 text-lg leading-relaxed text-slate-400 sm:text-xl">
             From future-ready learning programs to robotics kits, IoT devices,
             innovation labs, and expert mentorship — we provide a complete
@@ -215,7 +129,6 @@ export default function EcosystemGrid() {
                 {/* Icon */}
                 <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl border border-cyan-400/20 bg-cyan-400/10 transition-all duration-300 group-hover:scale-110 group-hover:bg-cyan-400/20">
                   <Icon className="h-7 w-7 text-cyan-400" />
->>>>>>> 2f067ad90cd85d8bbf09c2143870541a4578eef7
                 </div>
 
                 <h3 className="mb-3 text-xl font-bold text-white">

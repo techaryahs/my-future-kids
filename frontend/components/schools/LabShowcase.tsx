@@ -71,41 +71,13 @@ export default function LabShowcase() {
   return (
     <section className="relative overflow-hidden bg-white dark:bg-[#0b101b] py-24 sm:py-28 transition-colors duration-200">
       {/* Background */}
-<<<<<<< HEAD
-      <div className="pointer-events-none absolute right-0 top-20 h-96 w-96 rounded-full bg-blue-50/70 dark:bg-blue-600/10 blur-3xl" />
-=======
       <div className="absolute inset-0">
         <div className="absolute left-0 top-20 h-80 w-80 rounded-full bg-blue-100/70 blur-[100px]" />
         <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-cyan-100/60 blur-[120px]" />
       </div>
->>>>>>> 2f067ad90cd85d8bbf09c2143870541a4578eef7
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Heading */}
-<<<<<<< HEAD
-        <motion.div
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="max-w-3xl"
-        >
-          <span className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600 dark:text-blue-400">
-            Built For Your Campus
-          </span>
-
-          <h2 className="mt-4 text-3xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-4xl lg:text-5xl">
-            What We Can Build{" "}
-            <span className="text-blue-600 dark:text-blue-400">
-              For Your School
-            </span>
-          </h2>
-
-          <p className="mt-6 max-w-2xl text-base sm:text-lg leading-7 sm:leading-8 text-slate-600 dark:text-slate-300">
-            Transform classrooms and dedicated learning spaces into environments
-            where students can build, experiment, create and solve real-world
-            problems.
-=======
         <div className="mx-auto mb-16 max-w-3xl text-center">
           <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-blue-600">
             <CircuitBoard className="h-4 w-4" />
@@ -123,7 +95,6 @@ export default function LabShowcase() {
             We help schools create technology-rich learning environments with
             the right infrastructure, hardware, devices, and practical tools
             students need to experiment and bring ideas to life.
->>>>>>> 2f067ad90cd85d8bbf09c2143870541a4578eef7
           </p>
         </div>
 
@@ -135,22 +106,7 @@ export default function LabShowcase() {
             return (
               <div
                 key={lab.title}
-<<<<<<< HEAD
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.15 }}
-                transition={{
-                  duration: 0.55,
-                  delay: index * 0.08,
-                }}
-                className={`group relative overflow-hidden rounded-[2rem] border border-slate-100 dark:border-slate-800 bg-slate-950 dark:bg-slate-900/90 p-5 sm:p-7 text-white shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl ${
-                  largeCard
-                    ? "lg:col-span-7 lg:min-h-[420px]"
-                    : "lg:col-span-5"
-                }`}
-=======
                 className="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-blue-200 hover:shadow-2xl"
->>>>>>> 2f067ad90cd85d8bbf09c2143870541a4578eef7
               >
                 {/* Background Glow */}
                 <div className="absolute -right-16 -top-16 h-40 w-40 rounded-full bg-blue-100 opacity-0 blur-3xl transition-opacity duration-300 group-hover:opacity-100" />
@@ -202,30 +158,6 @@ export default function LabShowcase() {
           })}
         </div>
 
-<<<<<<< HEAD
-        {/* Bottom message */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mt-10 flex flex-col justify-between gap-6 rounded-3xl border border-blue-100 dark:border-blue-900/40 bg-blue-50/60 dark:bg-blue-950/40 p-5 sm:p-8 sm:flex-row sm:items-center"
-        >
-          <div>
-            <p className="text-lg font-bold text-slate-900 dark:text-white">
-              More than a room filled with equipment.
-            </p>
-
-            <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-600 dark:text-slate-300">
-              We combine infrastructure, curriculum, teacher training,
-              activities, projects and continuous support to create a complete
-              learning ecosystem.
-            </p>
-          </div>
-
-          <div className="shrink-0 rounded-full bg-white dark:bg-slate-800 px-5 py-3 text-sm font-semibold text-blue-600 dark:text-blue-400 border border-transparent dark:border-slate-700 shadow-sm">
-            Infrastructure + Curriculum + Support
-=======
         {/* Equipment Section */}
         <div className="mt-16 overflow-hidden rounded-3xl bg-slate-950 p-8 sm:p-12">
           <div className="grid items-center gap-10 lg:grid-cols-[1fr_1.3fr]">
@@ -267,7 +199,6 @@ export default function LabShowcase() {
                 </div>
               ))}
             </div>
->>>>>>> 2f067ad90cd85d8bbf09c2143870541a4578eef7
           </div>
         </div>
 
