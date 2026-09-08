@@ -240,43 +240,21 @@ function IconBadge({
 
 export default function InnovationLabsPage() {
   return (
-    <main className="min-h-screen overflow-hidden bg-[#f6f8fb] text-[#071015]">
-      <section className="relative isolate overflow-hidden bg-[#050708] px-4 pb-20 pt-5 text-white sm:px-6 sm:pb-24 lg:px-8">
+    <main className="min-h-screen overflow-hidden bg-[#f6f8fb] dark:bg-[#090d16] text-[#071015] dark:text-slate-100">
+      <section className="relative isolate overflow-hidden bg-[#050708] px-4 pb-20 pt-28 text-white sm:px-6 sm:pb-24 sm:pt-32 lg:px-8 lg:pt-36">
         <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_15%_18%,rgba(45,212,191,0.18),transparent_30%),radial-gradient(circle_at_82%_12%,rgba(250,204,21,0.1),transparent_28%),radial-gradient(circle_at_72%_84%,rgba(34,197,94,0.12),transparent_32%),linear-gradient(135deg,#050708,#0b100f_48%,#11100b)]" />
         <div className="absolute inset-0 -z-10 bg-[linear-gradient(rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.035)_1px,transparent_1px)] bg-[size:64px_64px] opacity-[0.22] motion-safe:animate-[grid-drift_18s_linear_infinite]" />
         <div className="mx-auto max-w-7xl">
-          {/* <header className="flex items-center justify-between rounded-lg border border-white/[0.16] bg-[#071015]/[0.88] px-3 py-3 shadow-[0_16px_70px_rgba(0,0,0,0.28)] backdrop-blur-md">
-            <a
-              aria-label="BeFutureKids innovation labs page"
-              className="flex items-center gap-3 rounded-full pr-2 focus:outline-none focus:ring-2 focus:ring-cyan-200"
-              href="/schools"
-            >
-              <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-white text-sm font-black text-[#071015]">
-                BF
-              </span>
-              <span className="hidden text-sm font-semibold tracking-tight text-white sm:inline">
-                BeFutureKids
-              </span>
-            </a>
-            <a
-              className="inline-flex min-h-10 items-center justify-center gap-2 rounded-full bg-white px-4 text-sm font-semibold text-[#071015] transition hover:-translate-y-0.5 hover:bg-cyan-50 focus:outline-none focus:ring-2 focus:ring-cyan-200"
-              href="#request-demo"
-            >
-              Demo
-              <Icon className="h-4 w-4" name="arrowRight" />
-            </a>
-          </header> */}
-
-          <div className="grid gap-10 pt-16 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:pt-20">
+          <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
             <div>
               <div className="inline-flex items-center gap-2 rounded-full border border-white/[0.18] bg-[#071015]/[0.76] px-3 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-cyan-50 shadow-[0_16px_60px_rgba(20,184,166,0.14)] backdrop-blur-md">
                 <Icon className="h-4 w-4 text-emerald-200" name="lab" />
                 Innovation labs for schools
               </div>
-              <h1 className="mt-7 max-w-4xl text-balance text-5xl font-semibold tracking-tight sm:text-6xl lg:text-7xl">
+              <h1 className="mt-7 max-w-4xl text-balance text-3xl font-semibold tracking-tight sm:text-5xl lg:text-6xl xl:text-7xl">
                 Future-skills labs that feel like a school advantage.
               </h1>
-              <p className="mt-6 max-w-2xl text-pretty text-lg leading-8 text-white/[0.84] sm:text-xl">
+              <p className="mt-6 max-w-2xl text-pretty text-base leading-7 text-white/[0.84] sm:text-lg sm:leading-8">
                 Build a premium campus ecosystem for STEM, robotics, AI, AR/VR,
                 and coding with guided curriculum, modern equipment, teacher
                 support, and showcase-ready student outcomes.
@@ -296,7 +274,7 @@ export default function InnovationLabsPage() {
                   Explore Lab Stack
                 </a>
               </div>
-              <dl className="mt-10 grid max-w-xl grid-cols-3 gap-3">
+              <dl className="mt-10 grid max-w-xl grid-cols-1 gap-3 min-[420px]:grid-cols-3">
                 {heroStats.map((stat) => (
                   <div
                     className="rounded-lg border border-white/[0.16] bg-[#071015]/[0.74] p-4 shadow-[0_14px_40px_rgba(0,0,0,0.22)] backdrop-blur-md"
@@ -359,7 +337,7 @@ export default function InnovationLabsPage() {
       </section>
 
       <section
-        className="bg-white px-4 py-20 sm:px-6 sm:py-24 lg:px-8"
+        className="bg-white dark:bg-[#0b101b] px-4 py-20 sm:px-6 sm:py-24 lg:px-8"
         id="overview"
       >
         <div className="mx-auto max-w-7xl">
@@ -376,13 +354,13 @@ export default function InnovationLabsPage() {
                 variant="light"
               >
                 <IconBadge
-                  className="border-black/10 bg-[#e8fbf6] text-teal-700"
+                  className="border-black/10 dark:border-slate-700 bg-[#e8fbf6] dark:bg-teal-950/40 text-teal-700 dark:text-teal-400"
                   icon={card.icon as IconName}
                 />
-                <h2 className="mt-6 text-xl font-semibold tracking-tight text-[#061014]">
+                <h2 className="mt-6 text-xl font-semibold tracking-tight text-[#061014] dark:text-white">
                   {card.title}
                 </h2>
-                <p className="mt-4 text-sm leading-7 text-[#3f5056]">
+                <p className="mt-4 text-sm leading-7 text-[#3f5056] dark:text-slate-300">
                   {card.description}
                 </p>
               </PremiumCard>
@@ -392,10 +370,10 @@ export default function InnovationLabsPage() {
       </section>
 
       <section
-        className="relative bg-[#f6f8fb] px-4 py-20 sm:px-6 sm:py-24 lg:px-8"
+        className="relative bg-[#f6f8fb] dark:bg-[#090d16] px-4 py-20 sm:px-6 sm:py-24 lg:px-8"
         id="labs"
       >
-        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-black/10 to-transparent" />
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-black/10 dark:via-white/10 to-transparent" />
         <div className="mx-auto max-w-7xl">
           <SectionHeader
             description="Each lab can stand alone or combine into a complete school innovation ecosystem for exploratory, project-based, and competition-ready learning."
@@ -405,7 +383,7 @@ export default function InnovationLabsPage() {
           <div className="mt-12 grid gap-5">
             {labs.map((lab, index) => (
               <article
-                className="grid overflow-hidden rounded-lg border border-black/10 bg-white shadow-[0_22px_80px_rgba(15,23,42,0.08)] lg:grid-cols-[0.82fr_1.18fr]"
+                className="grid overflow-hidden rounded-lg border border-black/10 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-[0_22px_80px_rgba(15,23,42,0.08)] lg:grid-cols-[0.82fr_1.18fr]"
                 id={lab.id}
                 key={lab.title}
               >
@@ -446,17 +424,17 @@ export default function InnovationLabsPage() {
                   </div>
                 </div>
                 <div className="p-6 sm:p-8">
-                  <p className="text-pretty text-lg leading-8 text-[#33454c]">
+                  <p className="text-pretty text-lg leading-8 text-[#33454c] dark:text-slate-300">
                     {lab.summary}
                   </p>
                   <div className="mt-8 grid gap-4 sm:grid-cols-3">
                     {lab.outcomes.map((outcome) => (
                       <div
-                        className="rounded-lg border border-black/10 bg-[#f8fbfb] p-4"
+                        className="rounded-lg border border-black/10 dark:border-slate-800 bg-[#f8fbfb] dark:bg-slate-800/60 p-4"
                         key={outcome}
                       >
-                        <Icon className="h-5 w-5 text-teal-700" name="check" />
-                        <p className="mt-3 text-sm font-semibold leading-6 text-[#071015]">
+                        <Icon className="h-5 w-5 text-teal-700 dark:text-teal-400" name="check" />
+                        <p className="mt-3 text-sm font-semibold leading-6 text-[#071015] dark:text-slate-100">
                           {outcome}
                         </p>
                       </div>
@@ -465,7 +443,7 @@ export default function InnovationLabsPage() {
                   <div className="mt-8 flex flex-wrap gap-2">
                     {lab.features.map((feature) => (
                       <span
-                        className="rounded-full border border-black/10 bg-white px-3 py-1 text-xs font-semibold text-[#26343a]"
+                        className="rounded-full border border-black/10 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-1 text-xs font-semibold text-[#26343a] dark:text-slate-200"
                         key={feature}
                       >
                         {feature}
@@ -480,7 +458,7 @@ export default function InnovationLabsPage() {
       </section>
 
       <section
-        className="bg-white px-4 py-20 sm:px-6 sm:py-24 lg:px-8"
+        className="bg-white dark:bg-[#0b101b] px-4 py-20 sm:px-6 sm:py-24 lg:px-8"
         id="equipment"
       >
         <div className="mx-auto max-w-7xl">
@@ -491,14 +469,14 @@ export default function InnovationLabsPage() {
               eyebrow="Equipment showcase"
               title="Curated equipment for active learning and polished demonstrations."
             />
-            <div className="rounded-lg border border-black/10 bg-[#f8fbfb] p-4 shadow-[0_18px_70px_rgba(15,23,42,0.06)]">
+            <div className="rounded-lg border border-black/10 dark:border-slate-800 bg-[#f8fbfb] dark:bg-slate-900 p-4 shadow-[0_18px_70px_rgba(15,23,42,0.06)]">
               <div className="grid gap-3 sm:grid-cols-3">
                 {["Plan", "Procure", "Operate"].map((step, index) => (
-                  <div className="rounded-lg bg-white p-4" key={step}>
-                    <p className="text-xs font-semibold uppercase tracking-[0.22em] text-teal-800">
+                  <div className="rounded-lg bg-white dark:bg-slate-800 border border-transparent dark:border-slate-700 p-4" key={step}>
+                    <p className="text-xs font-semibold uppercase tracking-[0.22em] text-teal-800 dark:text-teal-400">
                       Kit 0{index + 1}
                     </p>
-                    <p className="mt-2 text-sm font-semibold text-[#071015]">
+                    <p className="mt-2 text-sm font-semibold text-[#071015] dark:text-slate-100">
                       {step}
                     </p>
                   </div>
@@ -514,19 +492,19 @@ export default function InnovationLabsPage() {
                 variant="light"
               >
                 <IconBadge
-                  className="border-black/10 bg-[#eef5ff] text-cyan-700"
+                  className="border-black/10 dark:border-slate-700 bg-[#eef5ff] dark:bg-cyan-950/40 text-cyan-700 dark:text-cyan-400"
                   icon={kit.icon}
                 />
-                <h2 className="mt-6 text-xl font-semibold tracking-tight text-[#061014]">
+                <h2 className="mt-6 text-xl font-semibold tracking-tight text-[#061014] dark:text-white">
                   {kit.category}
                 </h2>
                 <ul className="mt-5 space-y-3">
                   {kit.items.map((item) => (
                     <li
-                      className="flex items-center gap-3 text-sm font-medium text-[#3f5056]"
+                      className="flex items-center gap-3 text-sm font-medium text-[#3f5056] dark:text-slate-300"
                       key={item}
                     >
-                      <span className="h-1.5 w-1.5 rounded-full bg-teal-600" />
+                      <span className="h-1.5 w-1.5 rounded-full bg-teal-600 dark:bg-teal-400" />
                       {item}
                     </li>
                   ))}
@@ -571,7 +549,7 @@ export default function InnovationLabsPage() {
       </section>
 
       <section
-        className="bg-[#f6f8fb] px-4 py-20 sm:px-6 sm:py-24 lg:px-8"
+        className="bg-[#f6f8fb] dark:bg-[#090d16] px-4 py-20 sm:px-6 sm:py-24 lg:px-8"
         id="process"
       >
         <div className="mx-auto max-w-7xl">
@@ -585,17 +563,17 @@ export default function InnovationLabsPage() {
             <div className="grid gap-5">
               {processSteps.map((step, index) => (
                 <article
-                  className="relative grid gap-4 rounded-lg border border-black/10 bg-white p-6 shadow-[0_18px_60px_rgba(15,23,42,0.06)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_80px_rgba(15,23,42,0.1)] md:grid-cols-[auto_1fr]"
+                  className="relative grid gap-4 rounded-lg border border-black/10 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-[0_18px_60px_rgba(15,23,42,0.06)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_80px_rgba(15,23,42,0.1)] md:grid-cols-[auto_1fr]"
                   key={step.label}
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#071015] text-sm font-semibold text-white shadow-[0_14px_40px_rgba(7,16,21,0.2)]">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#071015] dark:bg-slate-800 border border-transparent dark:border-slate-700 text-sm font-semibold text-white shadow-[0_14px_40px_rgba(7,16,21,0.2)]">
                     {String(index + 1).padStart(2, "0")}
                   </div>
                   <div>
-                    <h2 className="text-xl font-semibold tracking-tight text-[#071015]">
+                    <h2 className="text-xl font-semibold tracking-tight text-[#071015] dark:text-white">
                       {step.label}
                     </h2>
-                    <p className="mt-3 max-w-3xl text-sm leading-7 text-[#48585e]">
+                    <p className="mt-3 max-w-3xl text-sm leading-7 text-[#48585e] dark:text-slate-300">
                       {step.text}
                     </p>
                   </div>

@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { LayoutDashboard, Users, Calendar, BarChart3, Settings, LogOut, X } from 'lucide-react'
+import { LayoutDashboard, Users, Calendar, Settings, LogOut, X } from 'lucide-react'
 import { ADMIN_ROUTES } from '@/src/lib/bookingRoutes'
 import { createClient } from '@/src/lib/supabase/client'
 import { useRouter } from 'next/navigation'
@@ -53,7 +53,7 @@ export function AdminSidebar({ isOpen = true, onClose }: AdminSidebarProps) {
             <p className="text-[11px] font-medium text-slate-500 uppercase tracking-widest mt-0.5">Admin Portal</p>
           </div>
           {onClose && (
-            <button onClick={onClose} className="lg:hidden p-1 text-slate-400 hover:text-white">
+            <button onClick={onClose} className="lg:hidden p-1 text-slate-400 hover:text-white" aria-label="Close sidebar">
               <X className="w-5 h-5" />
             </button>
           )}
@@ -61,7 +61,12 @@ export function AdminSidebar({ isOpen = true, onClose }: AdminSidebarProps) {
 
         <nav className="flex-1 px-4 py-6 space-y-1.5 overflow-y-auto">
           {navItems.map((item) => {
-            const isActive = pathname === item.href || pathname.startsWith(item.href + '/')
+            const isActive =
+              item.href === ADMIN_ROUTES.LEADS
+                ? pathname === ADMIN_ROUTES.LEADS ||
+                  (pathname.startsWith(ADMIN_ROUTES.LEADS + '/') &&
+                    !pathname.startsWith(ADMIN_ROUTES.PIPELINE))
+                : pathname === item.href || pathname.startsWith(item.href + '/')
             return (
               <Link
                 key={item.name}

@@ -2,7 +2,7 @@
 
 import { createClient } from '@supabase/supabase-js'
 
-export async function submitBooking(formData: any) {
+export async function submitBooking(formData: Record<string, unknown>) {
   // Use a clean server-side Supabase client with Anon Key
   // This completely bypasses any authenticated browser sessions
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!
@@ -28,7 +28,7 @@ export async function submitBooking(formData: any) {
 
   // Remove undefined values to ensure strict payload validity
   const cleanBookingData = Object.fromEntries(
-    Object.entries(bookingData).filter(([_, value]) => value !== undefined)
+    Object.entries(bookingData).filter(([, value]) => value !== undefined)
   )
 
   // Do NOT use .select() here. 

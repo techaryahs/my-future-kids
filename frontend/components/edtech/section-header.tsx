@@ -29,7 +29,7 @@ export function SectionHeader({
         <p
           className={cn(
             "mb-4 text-xs font-semibold uppercase tracking-[0.28em]",
-            inverse ? "text-cyan-100" : "text-teal-800",
+            inverse ? "text-cyan-100" : "text-teal-800 dark:text-teal-400",
           )}
         >
           {eyebrow}
@@ -38,7 +38,7 @@ export function SectionHeader({
       <h2
         className={cn(
           "text-balance text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl",
-          inverse ? "text-white" : "text-[#061014]",
+          inverse ? "text-white" : "text-[#061014] dark:text-white",
         )}
       >
         {title}
@@ -47,7 +47,7 @@ export function SectionHeader({
         <p
           className={cn(
             "mt-5 text-pretty text-base leading-8 sm:text-lg",
-            inverse ? "text-white/[0.82]" : "text-[#3d4d53]",
+            inverse ? "text-white/[0.82]" : "text-[#3d4d53] dark:text-slate-300",
           )}
         >
           {description}

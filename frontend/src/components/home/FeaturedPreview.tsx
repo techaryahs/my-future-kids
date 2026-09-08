@@ -37,7 +37,7 @@ const programs = [
 
 export default function FeaturedPreview() {
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section className="py-16 md:py-24 bg-white dark:bg-[#090d16] transition-colors duration-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="flex flex-col md:flex-row justify-between items-end mb-12">
@@ -46,16 +46,16 @@ export default function FeaturedPreview() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-bold tracking-tight text-slate-900 mb-4"
+              className="text-3xl md:text-5xl font-bold tracking-tight text-slate-900 dark:text-white mb-4"
             >
-              Step into the <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">Future.</span>
+              Step into the <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 dark:from-blue-400 dark:to-cyan-400">Future.</span>
             </motion.h2>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-slate-600"
+              className="text-lg text-slate-600 dark:text-slate-300"
             >
               Discover our premier educational programs designed to ignite passion and build essential skills.
             </motion.p>
@@ -68,8 +68,8 @@ export default function FeaturedPreview() {
             className="mt-6 md:mt-0"
           >
             <Link 
-              href="#" 
-              className="inline-flex items-center text-blue-600 font-semibold hover:text-blue-700 transition-colors group"
+              href="/programs" 
+              className="inline-flex items-center text-blue-600 dark:text-blue-400 font-semibold hover:text-blue-700 dark:hover:text-blue-300 transition-colors group focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
             >
               Explore Our Programs
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -85,14 +85,14 @@ export default function FeaturedPreview() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`group relative h-[360px] rounded-3xl overflow-hidden bg-gradient-to-br ${program.bgGradient} shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-1`}
+              className={`group relative h-[360px] rounded-3xl overflow-hidden bg-gradient-to-br ${program.bgGradient} shadow-lg hover:shadow-2xl border border-transparent dark:border-slate-800/60 transition-all duration-500 hover:-translate-y-1`}
             >
               <div 
                 className="absolute inset-0 opacity-50 mix-blend-overlay transition-opacity duration-500 group-hover:opacity-100"
                 style={{ backgroundImage: program.pattern }}
               />
               
-              <div className="absolute inset-0 p-8 flex flex-col justify-end">
+              <div className="absolute inset-0 p-6 sm:p-8 flex flex-col justify-end">
                 <div className="w-12 h-12 bg-white/20 backdrop-blur-md rounded-xl flex items-center justify-center mb-6 transform transition-transform duration-500 group-hover:scale-110 group-hover:-translate-y-2">
                   <program.icon className="w-6 h-6 text-white" />
                 </div>
@@ -100,7 +100,7 @@ export default function FeaturedPreview() {
                 <h3 className="text-2xl font-bold text-white mb-2 transform transition-transform duration-500 group-hover:-translate-y-1">
                   {program.title}
                 </h3>
-                <p className="text-white/80 text-sm opacity-0 h-0 group-hover:opacity-100 group-hover:h-auto transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+                <p className="text-white/80 text-sm opacity-100 h-auto md:opacity-0 md:h-0 md:group-hover:opacity-100 md:group-hover:h-auto transform md:translate-y-4 md:group-hover:translate-y-0 transition-all duration-500">
                   {program.description}
                 </p>
               </div>

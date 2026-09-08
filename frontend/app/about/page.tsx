@@ -13,37 +13,37 @@ export default function AboutPage() {
       title: 'Robotics',
       description: 'Hands-on learning through designing, building, and experimenting with technology.',
       icon: Bot,
-      color: 'bg-blue-50 text-blue-600',
+      color: 'bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400',
     },
     {
       title: 'STEM Education',
       description: 'Interactive learning experiences that bring Science, Technology, Engineering, and Mathematics to life.',
       icon: FlaskConical,
-      color: 'bg-emerald-50 text-emerald-600',
+      color: 'bg-emerald-50 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-400',
     },
     {
       title: 'Artificial Intelligence',
       description: 'Introducing students to the concepts and possibilities of AI in an age-appropriate and engaging way.',
       icon: Cpu,
-      color: 'bg-purple-50 text-purple-600',
+      color: 'bg-purple-50 dark:bg-purple-950/40 text-purple-600 dark:text-purple-400',
     },
     {
       title: 'Coding',
       description: 'Helping students understand computational thinking and create with technology.',
       icon: Code2,
-      color: 'bg-rose-50 text-rose-600',
+      color: 'bg-rose-50 dark:bg-rose-950/40 text-rose-600 dark:text-rose-400',
     },
     {
       title: 'AR / VR Learning',
       description: 'Immersive educational experiences that make complex concepts easier to explore and understand.',
       icon: Glasses,
-      color: 'bg-amber-50 text-amber-600',
+      color: 'bg-amber-50 dark:bg-amber-950/40 text-amber-600 dark:text-amber-400',
     },
     {
       title: 'School Innovation Programs',
       description: 'Supporting schools with future-focused learning programs and technology-enabled education initiatives.',
       icon: School,
-      color: 'bg-indigo-50 text-indigo-600',
+      color: 'bg-indigo-50 dark:bg-indigo-950/40 text-indigo-600 dark:text-indigo-400',
     },
   ]
 
@@ -64,42 +64,42 @@ export default function AboutPage() {
   ]
 
   return (
-    <div className="bg-white pt-24 pb-16">
+    <div className="bg-white dark:bg-[#090d16] text-slate-900 dark:text-slate-100 pt-24 pb-16">
       {/* Hero Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight max-w-4xl mx-auto mb-6">
-          Building the Future, <span className="text-blue-600">One Young Mind at a Time.</span>
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 dark:text-white tracking-tight max-w-4xl mx-auto mb-6">
+          Building the Future, <span className="text-blue-600 dark:text-blue-400">One Young Mind at a Time.</span>
         </h1>
-        <p className="text-xl text-slate-600 max-w-2xl mx-auto mb-4">
+        <p className="text-lg sm:text-xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto mb-4">
           At BeFutureKids, we believe education should prepare children not just for exams, but for the rapidly changing world ahead.
         </p>
-        <p className="text-lg text-slate-500 max-w-3xl mx-auto mb-10">
+        <p className="text-base sm:text-lg text-slate-500 dark:text-slate-400 max-w-3xl mx-auto mb-10">
           We create engaging, hands-on learning experiences that introduce young minds to Robotics, STEM, Artificial Intelligence, Coding, and emerging technologies.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <Link href="/book/student-program" className="px-8 py-3.5 bg-blue-600 text-white font-medium rounded-full hover:bg-blue-700 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 duration-200">
             Explore Programs
           </Link>
-          <Link href="/book/school-demo" className="px-8 py-3.5 bg-white text-slate-700 border border-slate-200 font-medium rounded-full hover:bg-slate-50 transition-colors shadow-sm">
+          <Link href="/book/school-demo" className="px-8 py-3.5 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 font-medium rounded-full hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors shadow-sm">
             Book a Demo
           </Link>
         </div>
       </section>
 
       {/* Mission & Vision */}
-      <section id="mission" className="bg-slate-50 py-20">
+      <section id="mission" className="bg-slate-50 dark:bg-[#0b101b] py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <div className="bg-white p-10 rounded-3xl shadow-sm border border-slate-100">
-              <div className="inline-block px-4 py-1.5 bg-blue-50 text-blue-600 font-medium rounded-full text-sm mb-6">
+            <div className="bg-white dark:bg-slate-900 p-6 sm:p-10 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-800">
+              <div className="inline-block px-4 py-1.5 bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 font-medium rounded-full text-sm mb-6">
                 Our Mission
               </div>
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">Empowering through active learning</h2>
-              <p className="text-slate-600 text-lg leading-relaxed mb-6">
+              <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-6">Empowering through active learning</h2>
+              <p className="text-slate-600 dark:text-slate-300 text-base sm:text-lg leading-relaxed mb-6">
                 Our mission is to make future-ready learning accessible, engaging, and meaningful for students.
               </p>
-              <p className="text-slate-600 font-medium mb-4">We aim to help children develop:</p>
-              <ul className="grid grid-cols-2 gap-y-3 gap-x-4 text-slate-600">
+              <p className="text-slate-600 dark:text-slate-300 font-medium mb-4">We aim to help children develop:</p>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-4 text-slate-600 dark:text-slate-300">
                 <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-blue-500"></span> Creativity</li>
                 <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-blue-500"></span> Critical Thinking</li>
                 <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-blue-500"></span> Problem Solving</li>
@@ -110,13 +110,13 @@ export default function AboutPage() {
             </div>
             
             <div className="relative">
-              <div className="absolute -inset-4 bg-gradient-to-r from-blue-100 to-indigo-100 rounded-[3rem] blur-xl opacity-50 -z-10"></div>
-              <div className="bg-slate-900 text-white p-10 lg:p-14 rounded-3xl shadow-xl">
+              <div className="absolute -inset-4 bg-gradient-to-r from-blue-100 to-indigo-100 dark:from-blue-900/30 dark:to-indigo-900/30 rounded-[3rem] blur-xl opacity-50 -z-10"></div>
+              <div className="bg-slate-900 dark:bg-slate-850 p-6 sm:p-10 lg:p-14 rounded-3xl shadow-xl border border-transparent dark:border-slate-800">
                 <div className="inline-block px-4 py-1.5 bg-white/10 font-medium rounded-full text-sm mb-6 text-blue-200">
                   Our Vision
                 </div>
-                <h3 className="text-2xl lg:text-3xl font-medium leading-tight text-white mb-6">
-                  "To empower the next generation with the knowledge, skills, and confidence to understand, create, and shape the future."
+                <h3 className="text-xl sm:text-2xl lg:text-3xl font-medium leading-tight text-white mb-6">
+                  &ldquo;To empower the next generation with the knowledge, skills, and confidence to understand, create, and shape the future.&rdquo;
                 </h3>
               </div>
             </div>
@@ -127,20 +127,20 @@ export default function AboutPage() {
       {/* What We Do */}
       <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl font-bold text-slate-900 mb-4">Learning Beyond Textbooks</h2>
-          <p className="text-lg text-slate-600">
+          <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">Learning Beyond Textbooks</h2>
+          <p className="text-lg text-slate-600 dark:text-slate-300">
             We offer comprehensive programs designed to turn curious minds into confident creators.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {offerings.map((item, index) => (
-            <div key={index} className="bg-white border border-slate-100 rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow">
+            <div key={index} className="bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-2xl p-6 sm:p-8 shadow-sm hover:shadow-md transition-shadow">
               <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-6 ${item.color}`}>
                 <item.icon className="w-6 h-6" />
               </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">{item.title}</h3>
-              <p className="text-slate-600 leading-relaxed">{item.description}</p>
+              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">{item.title}</h3>
+              <p className="text-slate-600 dark:text-slate-300 leading-relaxed">{item.description}</p>
             </div>
           ))}
         </div>
@@ -152,7 +152,7 @@ export default function AboutPage() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="text-3xl font-bold mb-8 text-white">Our Approach</h2>
-              <p className="text-lg text-slate-300 mb-10 leading-relaxed">
+              <p className="text-base sm:text-lg text-slate-300 mb-10 leading-relaxed">
                 We believe children learn best when they actively participate. Instead of simply consuming information, students should have opportunities to explore ideas, experiment with technology, build projects, and solve problems.
               </p>
               
@@ -171,14 +171,14 @@ export default function AboutPage() {
               </div>
             </div>
 
-            <div className="bg-slate-800 p-10 rounded-3xl border border-slate-700 relative overflow-hidden">
+            <div className="bg-slate-800 p-6 sm:p-10 rounded-3xl border border-slate-700 relative overflow-hidden">
               <div className="absolute top-0 right-0 p-8 opacity-5">
                 <Bot className="w-48 h-48" />
               </div>
               <h2 className="text-3xl font-bold mb-8 relative z-10 text-white">Why BeFutureKids?</h2>
               <ul className="space-y-6 relative z-10">
                 {reasons.map((reason, index) => (
-                  <li key={index} className="flex items-center gap-4 text-lg text-slate-200">
+                  <li key={index} className="flex items-center gap-4 text-base sm:text-lg text-slate-200">
                     <div className="w-8 h-8 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center shrink-0">
                       <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
@@ -194,15 +194,15 @@ export default function AboutPage() {
       </section>
 
       {/* Target Audiences */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-white dark:bg-[#090d16]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-8">
           
-          <div className="bg-indigo-50 rounded-3xl p-10 flex flex-col items-start border border-indigo-100">
-            <div className="px-4 py-1.5 bg-indigo-100 text-indigo-700 font-semibold rounded-full text-xs tracking-wider uppercase mb-6">
+          <div className="bg-indigo-50 dark:bg-indigo-950/30 rounded-3xl p-6 sm:p-10 flex flex-col items-start border border-indigo-100 dark:border-indigo-900/40">
+            <div className="px-4 py-1.5 bg-indigo-100 dark:bg-indigo-900/50 text-indigo-700 dark:text-indigo-300 font-semibold rounded-full text-xs tracking-wider uppercase mb-6">
               For Schools
             </div>
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">Building Future-Ready Schools</h2>
-            <p className="text-slate-600 mb-8 leading-relaxed flex-grow">
+            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-4">Building Future-Ready Schools</h2>
+            <p className="text-slate-600 dark:text-slate-300 mb-8 leading-relaxed flex-grow">
               BeFutureKids works with educational institutions to introduce engaging technology-based learning experiences. We provide Robotics Programs, STEM Learning, AI Awareness, Innovation Labs, and Teacher Support to help your school lead the future of education.
             </p>
             <Link href="/book/partnership" className="px-6 py-3 bg-indigo-600 text-white font-medium rounded-xl hover:bg-indigo-700 transition-colors shadow-sm">
@@ -210,12 +210,12 @@ export default function AboutPage() {
             </Link>
           </div>
 
-          <div className="bg-emerald-50 rounded-3xl p-10 flex flex-col items-start border border-emerald-100">
-            <div className="px-4 py-1.5 bg-emerald-100 text-emerald-700 font-semibold rounded-full text-xs tracking-wider uppercase mb-6">
+          <div className="bg-emerald-50 dark:bg-emerald-950/30 rounded-3xl p-6 sm:p-10 flex flex-col items-start border border-emerald-100 dark:border-emerald-900/40">
+            <div className="px-4 py-1.5 bg-emerald-100 dark:bg-emerald-900/50 text-emerald-700 dark:text-emerald-300 font-semibold rounded-full text-xs tracking-wider uppercase mb-6">
               For Parents & Students
             </div>
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">Helping Young Minds Explore Their Potential</h2>
-            <p className="text-slate-600 mb-8 leading-relaxed flex-grow">
+            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-4">Helping Young Minds Explore Their Potential</h2>
+            <p className="text-slate-600 dark:text-slate-300 mb-8 leading-relaxed flex-grow">
               Technology should not only be consumed. Children should understand how it works, explore it, and learn to create with it. Our programs provide a safe, engaging, and enriching environment for your child to discover their passion for innovation.
             </p>
             <Link href="/book/student-program" className="px-6 py-3 bg-emerald-600 text-white font-medium rounded-xl hover:bg-emerald-700 transition-colors shadow-sm">
@@ -227,19 +227,19 @@ export default function AboutPage() {
       </section>
 
       {/* Final CTA */}
-      <section className="bg-blue-600 text-center py-20 px-4 sm:px-6 lg:px-8">
+      <section className="bg-blue-600 dark:bg-blue-700 text-center py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
             The Future Belongs to Those Who Create It.
           </h2>
-          <p className="text-xl text-blue-100 mb-10">
-            Let's help the next generation become confident thinkers, creators, and innovators.
+          <p className="text-lg sm:text-xl text-blue-100 mb-10">
+            Let&apos;s help the next generation become confident thinkers, creators, and innovators.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Link href="/book/student-program" className="px-8 py-3.5 bg-white text-blue-600 font-medium rounded-full hover:bg-slate-50 transition-colors shadow-lg">
               Explore Programs
             </Link>
-            <Link href="/book/school-demo" className="px-8 py-3.5 bg-blue-700 text-white border border-blue-500 font-medium rounded-full hover:bg-blue-800 transition-colors shadow-sm">
+            <Link href="/book/school-demo" className="px-8 py-3.5 bg-blue-700 dark:bg-blue-800 text-white border border-blue-500 dark:border-blue-600 font-medium rounded-full hover:bg-blue-800 dark:hover:bg-blue-900 transition-colors shadow-sm">
               Book a Demo
             </Link>
           </div>

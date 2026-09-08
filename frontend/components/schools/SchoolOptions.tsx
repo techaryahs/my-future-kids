@@ -41,29 +41,29 @@ const studentBenefits = [
 
 export default function SchoolOptions() {
   return (
-    <section className="px-6 py-20 lg:px-10">
+    <section className="px-4 py-16 sm:px-6 sm:py-20 lg:px-8 bg-[#f8fbff] dark:bg-[#090d16] transition-colors duration-200">
       <div className="mx-auto max-w-7xl">
 
         {/* INTRODUCTION */}
         <div className="mx-auto max-w-4xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600 dark:text-blue-400">
             Building Future-Ready Kids
           </p>
 
-          <h2 className="mt-5 text-4xl font-bold tracking-tight text-gray-950 md:text-6xl">
+          <h2 className="mt-5 text-3xl sm:text-4xl font-bold tracking-tight text-gray-950 dark:text-white md:text-6xl">
             Develop Young Minds.
-            <span className="block text-gray-400">
+            <span className="block text-gray-400 dark:text-gray-500">
               Build Future-Ready Kids.
             </span>
           </h2>
 
-          <p className="mx-auto mt-7 max-w-3xl text-lg leading-8 text-gray-600 md:text-xl">
-            We help schools create an environment where students don't just
+          <p className="mx-auto mt-7 max-w-3xl text-base sm:text-lg leading-8 text-gray-600 dark:text-slate-300 md:text-xl">
+            We help schools create an environment where students don&apos;t just
             learn technology — they learn how to think, create, experiment and
             solve real-world problems.
           </p>
 
-          <p className="mx-auto mt-5 max-w-3xl text-base leading-7 text-gray-500">
+          <p className="mx-auto mt-5 max-w-3xl text-sm sm:text-base leading-7 text-gray-500 dark:text-slate-400">
             Through Robotics, AI/ML, STEM, Coding and Innovation, students get
             practical exposure to emerging technologies while developing
             logical thinking, creativity, problem-solving, collaboration and
@@ -72,7 +72,7 @@ export default function SchoolOptions() {
         </div>
 
         {/* TECHNOLOGY MESSAGE */}
-        <div className="mt-16 rounded-[2rem] bg-gray-950 px-8 py-12 text-white md:px-12 md:py-14">
+        <div className="mt-16 rounded-[2rem] bg-gray-950 dark:bg-slate-900 border border-transparent dark:border-slate-800 px-6 py-10 text-white md:px-12 md:py-14">
           <div className="grid gap-10 lg:grid-cols-[1fr_auto] lg:items-center">
             <div className="max-w-4xl">
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-400">
@@ -107,15 +107,15 @@ export default function SchoolOptions() {
         {/* STUDENT BENEFITS */}
         <div className="mt-20">
           <div className="max-w-3xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600 dark:text-blue-400">
               Student Development
             </p>
 
-            <h3 className="mt-4 text-3xl font-bold tracking-tight text-gray-950 md:text-4xl">
+            <h3 className="mt-4 text-3xl font-bold tracking-tight text-gray-950 dark:text-white md:text-4xl">
               What students develop through future-ready learning
             </h3>
 
-            <p className="mt-5 text-lg leading-8 text-gray-600">
+            <p className="mt-5 text-lg leading-8 text-gray-600 dark:text-slate-300">
               Our programs are designed to develop both technology skills and
               the thinking abilities students need to grow with confidence.
             </p>
@@ -125,17 +125,17 @@ export default function SchoolOptions() {
             {studentBenefits.map((benefit) => (
               <div
                 key={benefit.title}
-                className="group rounded-[1.5rem] border border-gray-200 bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl"
+                className="group rounded-[1.5rem] border border-gray-200 dark:border-slate-800 bg-white dark:bg-slate-900/90 p-7 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 dark:hover:border-blue-800/80 hover:shadow-xl"
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-50 text-2xl transition group-hover:bg-blue-50">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-50 dark:bg-slate-800 text-2xl transition group-hover:bg-blue-50 dark:group-hover:bg-blue-950/60">
                   {benefit.icon}
                 </div>
 
-                <h4 className="mt-5 text-xl font-bold text-gray-950">
+                <h4 className="mt-5 text-xl font-bold text-gray-950 dark:text-white">
                   {benefit.title}
                 </h4>
 
-                <p className="mt-3 text-sm leading-6 text-gray-600">
+                <p className="mt-3 text-sm leading-6 text-gray-600 dark:text-slate-300">
                   {benefit.description}
                 </p>
               </div>
@@ -146,17 +146,17 @@ export default function SchoolOptions() {
         {/* SOLUTIONS & PROGRAMS */}
         <div className="mt-24">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600 dark:text-blue-400">
               Choose Your Path
             </p>
 
-            <h3 className="mt-4 text-3xl font-bold tracking-tight text-gray-950 md:text-5xl">
+            <h3 className="mt-4 text-3xl font-bold tracking-tight text-gray-950 dark:text-white md:text-5xl">
               Solutions & Programs for Your School
             </h3>
 
-            <p className="mt-5 text-lg leading-8 text-gray-600">
+            <p className="mt-5 text-lg leading-8 text-gray-600 dark:text-slate-300">
               Choose the right combination of school technology solutions and
-              student learning programs based on your school's goals and
+              student learning programs based on your school&apos;s goals and
               student needs.
             </p>
           </div>
@@ -164,7 +164,7 @@ export default function SchoolOptions() {
           <div className="mt-12 grid gap-8 md:grid-cols-2">
 
             {/* SCHOOL SOLUTIONS */}
-            <div className="group rounded-[2rem] border border-gray-200 bg-gray-950 p-8 text-white transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl md:p-10">
+            <div className="group rounded-[2rem] border border-gray-200/20 dark:border-slate-800 bg-gray-950 dark:bg-slate-900 p-6 sm:p-8 text-white transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl md:p-10">
 
               <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/10 text-2xl">
                 ⚙️
@@ -193,34 +193,34 @@ export default function SchoolOptions() {
 
               <Link
                 href="/school-solutions"
-                className="mt-8 inline-flex rounded-full bg-white px-6 py-3 text-sm font-semibold text-gray-950 transition hover:-translate-y-1 hover:shadow-lg"
+                className="mt-8 inline-flex rounded-full bg-white px-6 py-3 text-sm font-semibold text-gray-950 transition hover:-translate-y-1 hover:shadow-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
               >
                 Explore Solutions →
               </Link>
             </div>
 
             {/* SCHOOL PROGRAMS */}
-            <div className="group rounded-[2rem] border border-gray-200 bg-white p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl md:p-10">
+            <div className="group rounded-[2rem] border border-gray-200 dark:border-slate-800 bg-white dark:bg-slate-900/90 p-6 sm:p-8 transition-all duration-300 hover:-translate-y-2 hover:border-blue-200 dark:hover:border-blue-800/80 hover:shadow-2xl md:p-10">
 
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-50 text-2xl">
+              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-50 dark:bg-blue-950/60 text-2xl">
                 🚀
               </div>
 
-              <p className="mt-8 text-sm font-semibold uppercase tracking-widest text-blue-600">
+              <p className="mt-8 text-sm font-semibold uppercase tracking-widest text-blue-600 dark:text-blue-400">
                 For Students
               </p>
 
-              <h3 className="mt-3 text-3xl font-bold text-gray-950">
+              <h3 className="mt-3 text-3xl font-bold text-gray-950 dark:text-white">
                 School Programs
               </h3>
 
-              <p className="mt-5 leading-7 text-gray-600">
+              <p className="mt-5 leading-7 text-gray-600 dark:text-slate-300">
                 Give students practical learning experiences through Coding,
                 Robotics, STEM, AI/ML, Innovation workshops and technology
                 programs.
               </p>
 
-              <div className="mt-6 space-y-2 text-sm text-gray-600">
+              <div className="mt-6 space-y-2 text-sm text-gray-600 dark:text-slate-300">
                 <p>✓ Hands-on technology learning</p>
                 <p>✓ Robotics & coding activities</p>
                 <p>✓ AI/ML exploration</p>
@@ -229,7 +229,7 @@ export default function SchoolOptions() {
 
               <Link
                 href="/school-programs"
-                className="mt-8 inline-flex rounded-full bg-gray-950 px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-1 hover:shadow-lg"
+                className="mt-8 inline-flex rounded-full bg-gray-950 dark:bg-blue-600 px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-1 hover:bg-slate-800 dark:hover:bg-blue-500 hover:shadow-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
               >
                 Explore Programs →
               </Link>
@@ -240,11 +240,11 @@ export default function SchoolOptions() {
 
         {/* FINAL MESSAGE */}
         <div className="mt-20 text-center">
-          <p className="text-xl font-semibold text-gray-950 md:text-2xl">
+          <p className="text-xl font-semibold text-gray-950 dark:text-white md:text-2xl">
             Thinkers. Creators. Problem Solvers. Innovators.
           </p>
 
-          <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-gray-500">
+          <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-gray-500 dark:text-slate-400">
             Give students the opportunity to explore, experiment and build
             today — so they can confidently create the future tomorrow.
           </p>

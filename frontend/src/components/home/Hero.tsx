@@ -6,15 +6,15 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden bg-slate-50">
+    <section className="relative min-h-[90vh] flex items-center justify-center pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden bg-slate-50 dark:bg-[#090d16] transition-colors duration-200">
       {/* Abstract Background Elements */}
-      <div className="absolute inset-0 z-0 overflow-hidden">
-        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-blue-100/50 blur-[100px]" />
-        <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] rounded-full bg-cyan-100/50 blur-[120px]" />
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-blue-100/50 dark:bg-blue-600/10 blur-[100px]" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] rounded-full bg-cyan-100/50 dark:bg-cyan-600/10 blur-[120px]" />
         
         {/* Orbital lines */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border border-slate-200/50 rounded-full border-dashed animate-[spin_60s_linear_infinite]" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[1200px] border border-slate-200/50 rounded-full border-dashed animate-[spin_90s_linear_infinite_reverse]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border border-slate-200/50 dark:border-slate-800/40 rounded-full border-dashed animate-[spin_60s_linear_infinite]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[1200px] border border-slate-200/50 dark:border-slate-800/40 rounded-full border-dashed animate-[spin_90s_linear_infinite_reverse]" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
@@ -27,39 +27,39 @@ export default function Hero() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="max-w-2xl"
           >
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-sm font-medium mb-8">
-              <Sparkles className="w-4 h-4 mr-2 text-blue-500" />
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-50 dark:bg-blue-950/60 border border-blue-100 dark:border-blue-800/50 text-blue-700 dark:text-blue-300 text-sm font-medium mb-8">
+              <Sparkles className="w-4 h-4 mr-2 text-blue-500 dark:text-blue-400" />
               <span>Next-Generation Education</span>
             </div>
             
-            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight text-slate-900 mb-6 leading-[1.1]">
+            <h1 className="text-3xl sm:text-5xl lg:text-7xl font-bold tracking-tight text-slate-900 dark:text-white mb-6 leading-[1.15]">
               Empowering <br className="hidden lg:block" />
               Young Minds <br className="hidden lg:block" />
-              to Build the <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">Future</span>.
+              to Build the <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 dark:from-blue-400 dark:to-cyan-400">Future</span>.
             </h1>
             
-            <p className="text-lg lg:text-xl text-slate-600 mb-8 max-w-xl leading-relaxed">
-              Hands-on learning experiences in <span className="font-medium text-slate-800">Robotics</span>, STEM, <span className="font-medium text-slate-800">AI</span>, Coding and immersive technologies designed to prepare students for tomorrow.
+            <p className="text-lg lg:text-xl text-slate-600 dark:text-slate-300 mb-8 max-w-xl leading-relaxed">
+              Hands-on learning experiences in <span className="font-medium text-slate-800 dark:text-slate-100">Robotics</span>, STEM, <span className="font-medium text-slate-800 dark:text-slate-100">AI</span>, Coding and immersive technologies designed to prepare students for tomorrow.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
               <Link 
-                href="#" 
-                className="inline-flex justify-center items-center px-8 py-4 text-base font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1"
+                href="/programs" 
+                className="inline-flex justify-center items-center px-8 py-4 text-base font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 focus:ring-2 focus:ring-blue-500 focus:outline-none"
               >
                 Explore Programs
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
               <Link 
-                href="#" 
-                className="inline-flex justify-center items-center px-8 py-4 text-base font-medium text-slate-700 bg-white border border-slate-200 rounded-full hover:bg-slate-50 hover:border-slate-300 transition-all shadow-sm"
+                href="/book/school-demo" 
+                className="inline-flex justify-center items-center px-8 py-4 text-base font-medium text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700/80 rounded-full hover:bg-slate-50 dark:hover:bg-slate-800 hover:border-slate-300 dark:hover:border-slate-600 transition-all shadow-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
               >
                 Book a School Demo
               </Link>
             </div>
             
             {/* Trust Indicators */}
-            <div className="flex items-center gap-6 text-sm font-medium text-slate-500">
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-3 text-sm font-medium text-slate-500 dark:text-slate-400">
               <div className="flex items-center">
                 <div className="w-2 h-2 rounded-full bg-green-500 mr-2" />
                 Hands-on Learning
@@ -81,10 +81,10 @@ export default function Hero() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, delay: 0.2 }}
-              className="relative w-full max-w-md aspect-square rounded-full bg-gradient-to-tr from-blue-100 to-cyan-50 border border-white/60 shadow-2xl backdrop-blur-3xl flex items-center justify-center"
+              className="relative w-full max-w-md aspect-square rounded-full bg-gradient-to-tr from-blue-100 to-cyan-50 dark:from-slate-800 dark:to-slate-900 border border-white/60 dark:border-slate-700/60 shadow-2xl backdrop-blur-3xl flex items-center justify-center"
             >
               {/* Central glowing core */}
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-cyan-400/10 rounded-full animate-pulse" />
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-cyan-400/10 dark:from-blue-500/20 dark:to-cyan-400/20 rounded-full animate-pulse" />
               <div className="w-32 h-32 rounded-full bg-gradient-to-br from-blue-600 to-cyan-400 shadow-[0_0_60px_rgba(37,99,235,0.4)] flex items-center justify-center z-20">
                 <Atom className="w-16 h-16 text-white animate-pulse" />
               </div>
@@ -93,28 +93,28 @@ export default function Hero() {
               <motion.div 
                 animate={{ y: [-10, 10, -10] }}
                 transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-                className="absolute top-10 -left-12 bg-white/90 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-3 z-30"
+                className="absolute top-10 -left-12 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-800 flex items-center gap-3 z-30"
               >
-                <div className="bg-orange-100 p-2 rounded-lg text-orange-600">
+                <div className="bg-orange-100 dark:bg-orange-950/60 p-2 rounded-lg text-orange-600 dark:text-orange-400">
                   <Cpu className="w-6 h-6" />
                 </div>
                 <div>
-                  <div className="text-sm font-bold text-slate-800">Robotics</div>
-                  <div className="text-xs text-slate-500">Active Module</div>
+                  <div className="text-sm font-bold text-slate-800 dark:text-slate-100">Robotics</div>
+                  <div className="text-xs text-slate-500 dark:text-slate-400">Active Module</div>
                 </div>
               </motion.div>
 
               <motion.div 
                 animate={{ y: [10, -10, 10] }}
                 transition={{ repeat: Infinity, duration: 5, ease: "easeInOut", delay: 1 }}
-                className="absolute bottom-20 -right-8 bg-white/90 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-3 z-30"
+                className="absolute bottom-20 -right-8 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-800 flex items-center gap-3 z-30"
               >
-                <div className="bg-purple-100 p-2 rounded-lg text-purple-600">
+                <div className="bg-purple-100 dark:bg-purple-950/60 p-2 rounded-lg text-purple-600 dark:text-purple-400">
                   <Code className="w-6 h-6" />
                 </div>
                 <div>
-                  <div className="text-sm font-bold text-slate-800">Coding</div>
-                  <div className="text-xs text-slate-500">Syntax & Logic</div>
+                  <div className="text-sm font-bold text-slate-800 dark:text-slate-100">Coding</div>
+                  <div className="text-xs text-slate-500 dark:text-slate-400">Syntax & Logic</div>
                 </div>
               </motion.div>
               

@@ -29,7 +29,7 @@ export default function SchoolDemoBooking() {
     source: 'website'
   })
 
-  const updateForm = (key: string, value: any) => {
+  const updateForm = (key: string, value: string | string[]) => {
     setFormData(prev => ({ ...prev, [key]: value }))
   }
 
@@ -77,31 +77,31 @@ export default function SchoolDemoBooking() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-32 pb-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-2xl mx-auto bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
-        <div className="bg-indigo-600 px-6 py-8 text-center text-white">
-          <h2 className="text-3xl font-bold">Book a School Demo</h2>
+    <div className="min-h-screen bg-gray-50 dark:bg-[#090d16] pt-32 pb-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-2xl mx-auto bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-gray-100 dark:border-slate-800 overflow-hidden">
+        <div className="bg-indigo-600 px-4 sm:px-6 py-8 text-center text-white">
+          <h2 className="text-2xl sm:text-3xl font-bold">Book a School Demo</h2>
           <p className="mt-2 text-indigo-100">Step {step} of 5</p>
         </div>
 
-        <div className="p-8">
+        <div className="p-5 sm:p-8">
           {error && (
-            <div className="mb-6 p-4 bg-red-50 text-red-700 rounded-lg">
+            <div className="mb-6 p-4 bg-red-50 dark:bg-red-950/40 text-red-700 dark:text-red-300 rounded-lg border border-red-200 dark:border-red-900/50">
               {error}
             </div>
           )}
 
           {step === 1 && (
             <div className="space-y-6">
-              <h3 className="text-xl font-semibold text-gray-900 border-b pb-2">School Details</h3>
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white border-b border-gray-200 dark:border-slate-800 pb-2">School Details</h3>
               <div>
-                <label className="block text-sm font-medium text-gray-700">School Name *</label>
-                <input type="text" className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2 border" 
+                <label className="block text-sm font-medium text-gray-700 dark:text-slate-300">School Name *</label>
+                <input type="text" className="mt-1 block w-full rounded-md border-gray-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-gray-900 dark:text-slate-100 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2 border" 
                   value={formData.organization_name} onChange={e => updateForm('organization_name', e.target.value)} required />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700">School Type</label>
-                <select className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2 border"
+                <label className="block text-sm font-medium text-gray-700 dark:text-slate-300">School Type</label>
+                <select className="mt-1 block w-full rounded-md border-gray-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-gray-900 dark:text-slate-100 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2 border"
                   value={formData.school_type} onChange={e => updateForm('school_type', e.target.value)}>
                   <option value="">Select Type</option>
                   <option value="Private">Private</option>
@@ -112,13 +112,13 @@ export default function SchoolDemoBooking() {
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700">City</label>
-                  <input type="text" className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2 border"
+                  <label className="block text-sm font-medium text-gray-700 dark:text-slate-300">City</label>
+                  <input type="text" className="mt-1 block w-full rounded-md border-gray-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-gray-900 dark:text-slate-100 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2 border"
                     value={formData.city} onChange={e => updateForm('city', e.target.value)} />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700">State</label>
-                  <input type="text" className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2 border"
+                  <label className="block text-sm font-medium text-gray-700 dark:text-slate-300">State</label>
+                  <input type="text" className="mt-1 block w-full rounded-md border-gray-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-gray-900 dark:text-slate-100 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2 border"
                     value={formData.state} onChange={e => updateForm('state', e.target.value)} />
                 </div>
               </div>
@@ -127,15 +127,15 @@ export default function SchoolDemoBooking() {
 
           {step === 2 && (
             <div className="space-y-6">
-              <h3 className="text-xl font-semibold text-gray-900 border-b pb-2">Contact Person</h3>
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white border-b border-gray-200 dark:border-slate-800 pb-2">Contact Person</h3>
               <div>
-                <label className="block text-sm font-medium text-gray-700">Full Name *</label>
-                <input type="text" className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2 border"
+                <label className="block text-sm font-medium text-gray-700 dark:text-slate-300">Full Name *</label>
+                <input type="text" className="mt-1 block w-full rounded-md border-gray-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-gray-900 dark:text-slate-100 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2 border"
                   value={formData.full_name} onChange={e => updateForm('full_name', e.target.value)} required />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700">Designation</label>
-                <select className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2 border"
+                <label className="block text-sm font-medium text-gray-700 dark:text-slate-300">Designation</label>
+                <select className="mt-1 block w-full rounded-md border-gray-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-gray-900 dark:text-slate-100 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2 border"
                   value={formData.designation} onChange={e => updateForm('designation', e.target.value)}>
                   <option value="">Select Designation</option>
                   <option value="Principal">Principal</option>
@@ -147,13 +147,13 @@ export default function SchoolDemoBooking() {
                 </select>
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700">Email *</label>
-                <input type="email" className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2 border"
+                <label className="block text-sm font-medium text-gray-700 dark:text-slate-300">Email *</label>
+                <input type="email" className="mt-1 block w-full rounded-md border-gray-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-gray-900 dark:text-slate-100 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2 border"
                   value={formData.email} onChange={e => updateForm('email', e.target.value)} required />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700">Phone *</label>
-                <input type="tel" className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2 border"
+                <label className="block text-sm font-medium text-gray-700 dark:text-slate-300">Phone *</label>
+                <input type="tel" className="mt-1 block w-full rounded-md border-gray-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-gray-900 dark:text-slate-100 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2 border"
                   value={formData.phone} onChange={e => updateForm('phone', e.target.value)} required />
               </div>
             </div>
@@ -161,21 +161,21 @@ export default function SchoolDemoBooking() {
 
           {step === 3 && (
             <div className="space-y-6">
-              <h3 className="text-xl font-semibold text-gray-900 border-b pb-2">Requirement</h3>
-              <p className="text-sm text-gray-500">What are you interested in?</p>
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white border-b border-gray-200 dark:border-slate-800 pb-2">Requirement</h3>
+              <p className="text-sm text-gray-500 dark:text-slate-400">What are you interested in?</p>
               <div className="space-y-2">
                 {['Robotics Program', 'STEM Program', 'AI Education', 'Coding Program', 'AR/VR Learning', 'Innovation Lab', 'Teacher Training', 'Complete School Solution'].map(interest => (
                   <label key={interest} className="flex items-center">
-                    <input type="checkbox" className="rounded border-gray-300 text-indigo-600 focus:ring-indigo-500 h-4 w-4"
+                    <input type="checkbox" className="rounded border-gray-300 dark:border-slate-700 text-indigo-600 focus:ring-indigo-500 h-4 w-4 bg-white dark:bg-slate-800"
                       checked={formData.program_interest.includes(interest)}
                       onChange={() => toggleInterest(interest)} />
-                    <span className="ml-2 text-sm text-gray-700">{interest}</span>
+                    <span className="ml-2 text-sm text-gray-700 dark:text-slate-300">{interest}</span>
                   </label>
                 ))}
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700">Approximate Number of Students</label>
-                <input type="text" className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2 border"
+                <label className="block text-sm font-medium text-gray-700 dark:text-slate-300">Approximate Number of Students</label>
+                <input type="text" className="mt-1 block w-full rounded-md border-gray-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-gray-900 dark:text-slate-100 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2 border"
                   value={formData.student_age} onChange={e => updateForm('student_age', e.target.value)} placeholder="e.g. 500+" />
               </div>
             </div>
@@ -183,22 +183,22 @@ export default function SchoolDemoBooking() {
 
           {step === 4 && (
             <div className="space-y-6">
-              <h3 className="text-xl font-semibold text-gray-900 border-b pb-2">Preferred Demo</h3>
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white border-b border-gray-200 dark:border-slate-800 pb-2">Preferred Demo</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700">Preferred Date</label>
-                  <input type="date" className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2 border"
+                  <label className="block text-sm font-medium text-gray-700 dark:text-slate-300">Preferred Date</label>
+                  <input type="date" className="mt-1 block w-full rounded-md border-gray-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-gray-900 dark:text-slate-100 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2 border"
                     value={formData.preferred_date} onChange={e => updateForm('preferred_date', e.target.value)} />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700">Preferred Time</label>
-                  <input type="time" className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2 border"
+                  <label className="block text-sm font-medium text-gray-700 dark:text-slate-300">Preferred Time</label>
+                  <input type="time" className="mt-1 block w-full rounded-md border-gray-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-gray-900 dark:text-slate-100 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2 border"
                     value={formData.preferred_time} onChange={e => updateForm('preferred_time', e.target.value)} />
                 </div>
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700">Additional Message</label>
-                <textarea rows={4} className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2 border"
+                <label className="block text-sm font-medium text-gray-700 dark:text-slate-300">Additional Message</label>
+                <textarea rows={4} className="mt-1 block w-full rounded-md border-gray-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-gray-900 dark:text-slate-100 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2 border"
                   value={formData.message} onChange={e => updateForm('message', e.target.value)} />
               </div>
             </div>
@@ -206,9 +206,9 @@ export default function SchoolDemoBooking() {
 
           {step === 5 && (
             <div className="space-y-6 text-center">
-              <h3 className="text-2xl font-semibold text-gray-900">Review Request</h3>
-              <p className="text-gray-500">Please confirm your details to submit.</p>
-              <div className="bg-gray-50 p-6 rounded-lg text-left text-sm text-gray-700 space-y-2">
+              <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">Review Request</h3>
+              <p className="text-gray-500 dark:text-slate-400">Please confirm your details to submit.</p>
+              <div className="bg-gray-50 dark:bg-slate-800/60 p-6 rounded-lg text-left text-sm text-gray-700 dark:text-slate-300 space-y-2 border border-transparent dark:border-slate-700">
                 <p><strong>School:</strong> {formData.organization_name}</p>
                 <p><strong>Name:</strong> {formData.full_name} ({formData.designation})</p>
                 <p><strong>Contact:</strong> {formData.email} | {formData.phone}</p>
@@ -217,10 +217,10 @@ export default function SchoolDemoBooking() {
             </div>
           )}
 
-          <div className="mt-8 flex justify-between pt-6 border-t border-gray-100">
+          <div className="mt-8 flex justify-between pt-6 border-t border-gray-100 dark:border-slate-800">
             {step > 1 ? (
               <button type="button" onClick={handlePrev} disabled={loading}
-                className="px-6 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50 transition-colors">
+                className="px-6 py-2 border border-gray-300 dark:border-slate-700 rounded-md text-gray-700 dark:text-slate-300 hover:bg-gray-50 dark:hover:bg-slate-800 transition-colors">
                 Back
               </button>
             ) : <div></div>}

@@ -25,8 +25,8 @@ export default function Logo({ className = "", isLight = false, onClick }: LogoP
           />
         </div>
       ) : (
-        <span className={`text-2xl font-bold tracking-tight transition-colors duration-300 ${isLight ? "text-white" : "text-[#071A3D]"}`}>
-          BeFuture<span className={isLight ? "text-cyan-400" : "text-[#2563EB]"}>Kids</span>
+        <span className={`text-2xl font-bold tracking-tight transition-colors duration-300 ${isLight ? "text-white" : "text-[#071A3D] dark:text-white"}`}>
+          BeFuture<span className={isLight ? "text-cyan-400" : "text-[#2563EB] dark:text-cyan-400"}>Kids</span>
         </span>
       )}
     </Link>

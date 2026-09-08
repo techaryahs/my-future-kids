@@ -73,7 +73,7 @@ export default function BookingForm() {
 
       <div className="absolute bottom-0 right-1/4 h-80 w-80 rounded-full bg-purple-600/20 blur-[120px]" />
 
-      <div className="relative mx-auto grid max-w-6xl gap-12 px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
+      <div className="relative mx-auto grid max-w-6xl gap-12 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
         {/* LEFT CONTENT */}
         <div className="flex flex-col justify-center">
           <div className="mb-6 inline-flex w-fit items-center gap-2 rounded-full border border-blue-400/20 bg-blue-500/10 px-4 py-2 text-sm font-semibold text-blue-300">
@@ -81,7 +81,7 @@ export default function BookingForm() {
             START THE JOURNEY
           </div>
 
-          <h2 className="text-4xl font-bold leading-tight text-white md:text-5xl">
+          <h2 className="text-3xl sm:text-4xl font-bold leading-tight text-white md:text-5xl">
             Give Your Child a
             <span className="block bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
               Future-Ready Advantage.
@@ -146,13 +146,13 @@ export default function BookingForm() {
         </div>
 
         {/* FORM */}
-        <div className="rounded-[2rem] border border-white/10 bg-white p-6 shadow-2xl md:p-9">
+        <div className="rounded-[2rem] border border-white/10 dark:border-slate-800 bg-white dark:bg-slate-900 p-5 sm:p-7 md:p-9 shadow-2xl transition-colors duration-200">
           <div className="mb-8">
-            <h3 className="text-2xl font-bold text-slate-950">
+            <h3 className="text-xl sm:text-2xl font-bold text-slate-950 dark:text-white">
               Book a Free Consultation
             </h3>
 
-            <p className="mt-2 text-sm text-slate-500">
+            <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
               Fill in the details below and our team will contact you shortly.
             </p>
           </div>
@@ -161,7 +161,7 @@ export default function BookingForm() {
             {/* Names */}
             <div className="grid gap-5 md:grid-cols-2">
               <div>
-                <label className="mb-2 block text-sm font-semibold text-slate-700">
+                <label className="mb-2 block text-sm font-semibold text-slate-700 dark:text-slate-300">
                   Parent Name *
                 </label>
 
@@ -172,12 +172,12 @@ export default function BookingForm() {
                   value={form.parentName}
                   onChange={handleChange}
                   placeholder="Enter parent name"
-                  className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm outline-none transition placeholder:text-slate-400 focus:border-blue-500 focus:bg-white focus:ring-4 focus:ring-blue-500/10"
+                  className="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/80 px-4 py-3 text-sm text-slate-900 dark:text-slate-100 outline-none transition placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-blue-500 focus:bg-white dark:focus:bg-slate-800 focus:ring-4 focus:ring-blue-500/10"
                 />
               </div>
 
               <div>
-                <label className="mb-2 block text-sm font-semibold text-slate-700">
+                <label className="mb-2 block text-sm font-semibold text-slate-700 dark:text-slate-300">
                   Student Name
                 </label>
 
@@ -187,7 +187,7 @@ export default function BookingForm() {
                   value={form.studentName}
                   onChange={handleChange}
                   placeholder="Enter student name"
-                  className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm outline-none transition placeholder:text-slate-400 focus:border-blue-500 focus:bg-white focus:ring-4 focus:ring-blue-500/10"
+                  className="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/80 px-4 py-3 text-sm text-slate-900 dark:text-slate-100 outline-none transition placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-blue-500 focus:bg-white dark:focus:bg-slate-800 focus:ring-4 focus:ring-blue-500/10"
                 />
               </div>
             </div>
@@ -195,7 +195,7 @@ export default function BookingForm() {
             {/* Email Phone */}
             <div className="grid gap-5 md:grid-cols-2">
               <div>
-                <label className="mb-2 block text-sm font-semibold text-slate-700">
+                <label className="mb-2 block text-sm font-semibold text-slate-700 dark:text-slate-300">
                   Email Address *
                 </label>
 
@@ -206,12 +206,12 @@ export default function BookingForm() {
                   value={form.email}
                   onChange={handleChange}
                   placeholder="you@email.com"
-                  className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm outline-none transition placeholder:text-slate-400 focus:border-blue-500 focus:bg-white focus:ring-4 focus:ring-blue-500/10"
+                  className="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/80 px-4 py-3 text-sm text-slate-900 dark:text-slate-100 outline-none transition placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-blue-500 focus:bg-white dark:focus:bg-slate-800 focus:ring-4 focus:ring-blue-500/10"
                 />
               </div>
 
               <div>
-                <label className="mb-2 block text-sm font-semibold text-slate-700">
+                <label className="mb-2 block text-sm font-semibold text-slate-700 dark:text-slate-300">
                   Phone Number *
                 </label>
 
@@ -222,7 +222,7 @@ export default function BookingForm() {
                   value={form.phone}
                   onChange={handleChange}
                   placeholder="+91 00000 00000"
-                  className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm outline-none transition placeholder:text-slate-400 focus:border-blue-500 focus:bg-white focus:ring-4 focus:ring-blue-500/10"
+                  className="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/80 px-4 py-3 text-sm text-slate-900 dark:text-slate-100 outline-none transition placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-blue-500 focus:bg-white dark:focus:bg-slate-800 focus:ring-4 focus:ring-blue-500/10"
                 />
               </div>
             </div>
@@ -230,7 +230,7 @@ export default function BookingForm() {
             {/* Age City */}
             <div className="grid gap-5 md:grid-cols-2">
               <div>
-                <label className="mb-2 block text-sm font-semibold text-slate-700">
+                <label className="mb-2 block text-sm font-semibold text-slate-700 dark:text-slate-300">
                   Student Age
                 </label>
 
@@ -238,17 +238,17 @@ export default function BookingForm() {
                   name="studentAge"
                   value={form.studentAge}
                   onChange={handleChange}
-                  className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm outline-none transition focus:border-blue-500 focus:bg-white focus:ring-4 focus:ring-blue-500/10"
+                  className="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/80 px-4 py-3 text-sm text-slate-900 dark:text-slate-100 outline-none transition focus:border-blue-500 focus:bg-white dark:focus:bg-slate-800 focus:ring-4 focus:ring-blue-500/10"
                 >
-                  <option value="">Select age</option>
-                  <option value="6-9">6 - 9 Years</option>
-                  <option value="10-13">10 - 13 Years</option>
-                  <option value="14-17">14 - 17 Years</option>
+                  <option value="" className="text-slate-500 dark:bg-slate-800">Select age</option>
+                  <option value="6-9" className="dark:bg-slate-800">6 - 9 Years</option>
+                  <option value="10-13" className="dark:bg-slate-800">10 - 13 Years</option>
+                  <option value="14-17" className="dark:bg-slate-800">14 - 17 Years</option>
                 </select>
               </div>
 
               <div>
-                <label className="mb-2 block text-sm font-semibold text-slate-700">
+                <label className="mb-2 block text-sm font-semibold text-slate-700 dark:text-slate-300">
                   City
                 </label>
 
@@ -258,14 +258,14 @@ export default function BookingForm() {
                   value={form.city}
                   onChange={handleChange}
                   placeholder="Enter your city"
-                  className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm outline-none transition placeholder:text-slate-400 focus:border-blue-500 focus:bg-white focus:ring-4 focus:ring-blue-500/10"
+                  className="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/80 px-4 py-3 text-sm text-slate-900 dark:text-slate-100 outline-none transition placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-blue-500 focus:bg-white dark:focus:bg-slate-800 focus:ring-4 focus:ring-blue-500/10"
                 />
               </div>
             </div>
 
             {/* Program */}
             <div>
-              <label className="mb-2 block text-sm font-semibold text-slate-700">
+              <label className="mb-2 block text-sm font-semibold text-slate-700 dark:text-slate-300">
                 Interested Program
               </label>
 
@@ -273,12 +273,12 @@ export default function BookingForm() {
                 name="interestedIn"
                 value={form.interestedIn}
                 onChange={handleChange}
-                className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm outline-none transition focus:border-blue-500 focus:bg-white focus:ring-4 focus:ring-blue-500/10"
+                className="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/80 px-4 py-3 text-sm text-slate-900 dark:text-slate-100 outline-none transition focus:border-blue-500 focus:bg-white dark:focus:bg-slate-800 focus:ring-4 focus:ring-blue-500/10"
               >
-                <option value="">Select a program</option>
+                <option value="" className="text-slate-500 dark:bg-slate-800">Select a program</option>
 
                 {programs.map((program) => (
-                  <option key={program.slug} value={program.title}>
+                  <option key={program.slug} value={program.title} className="dark:bg-slate-800">
                     {program.title}
                   </option>
                 ))}
@@ -288,7 +288,7 @@ export default function BookingForm() {
             {/* Experience */}
             <div className="grid gap-5 md:grid-cols-2">
               <div>
-                <label className="mb-2 block text-sm font-semibold text-slate-700">
+                <label className="mb-2 block text-sm font-semibold text-slate-700 dark:text-slate-300">
                   Experience Level
                 </label>
 
@@ -296,17 +296,17 @@ export default function BookingForm() {
                   name="experienceLevel"
                   value={form.experienceLevel}
                   onChange={handleChange}
-                  className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm outline-none transition focus:border-blue-500 focus:bg-white focus:ring-4 focus:ring-blue-500/10"
+                  className="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/80 px-4 py-3 text-sm text-slate-900 dark:text-slate-100 outline-none transition focus:border-blue-500 focus:bg-white dark:focus:bg-slate-800 focus:ring-4 focus:ring-blue-500/10"
                 >
-                  <option value="">Select level</option>
-                  <option value="Beginner">Beginner</option>
-                  <option value="Intermediate">Intermediate</option>
-                  <option value="Advanced">Advanced</option>
+                  <option value="" className="text-slate-500 dark:bg-slate-800">Select level</option>
+                  <option value="Beginner" className="dark:bg-slate-800">Beginner</option>
+                  <option value="Intermediate" className="dark:bg-slate-800">Intermediate</option>
+                  <option value="Advanced" className="dark:bg-slate-800">Advanced</option>
                 </select>
               </div>
 
               <div>
-                <label className="mb-2 block text-sm font-semibold text-slate-700">
+                <label className="mb-2 block text-sm font-semibold text-slate-700 dark:text-slate-300">
                   Preferred Learning
                 </label>
 
@@ -314,19 +314,19 @@ export default function BookingForm() {
                   name="preferredLearning"
                   value={form.preferredLearning}
                   onChange={handleChange}
-                  className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm outline-none transition focus:border-blue-500 focus:bg-white focus:ring-4 focus:ring-blue-500/10"
+                  className="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/80 px-4 py-3 text-sm text-slate-900 dark:text-slate-100 outline-none transition focus:border-blue-500 focus:bg-white dark:focus:bg-slate-800 focus:ring-4 focus:ring-blue-500/10"
                 >
-                  <option value="">Select type</option>
-                  <option value="Online">Online</option>
-                  <option value="Offline">Offline</option>
-                  <option value="Hybrid">Hybrid</option>
+                  <option value="" className="text-slate-500 dark:bg-slate-800">Select type</option>
+                  <option value="Online" className="dark:bg-slate-800">Online</option>
+                  <option value="Offline" className="dark:bg-slate-800">Offline</option>
+                  <option value="Hybrid" className="dark:bg-slate-800">Hybrid</option>
                 </select>
               </div>
             </div>
 
             {/* Message */}
             <div>
-              <label className="mb-2 block text-sm font-semibold text-slate-700">
+              <label className="mb-2 block text-sm font-semibold text-slate-700 dark:text-slate-300">
                 Additional Message
               </label>
 
@@ -336,7 +336,7 @@ export default function BookingForm() {
                 value={form.message}
                 onChange={handleChange}
                 placeholder="Tell us anything else you'd like us to know..."
-                className="w-full resize-none rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm outline-none transition placeholder:text-slate-400 focus:border-blue-500 focus:bg-white focus:ring-4 focus:ring-blue-500/10"
+                className="w-full resize-none rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/80 px-4 py-3 text-sm text-slate-900 dark:text-slate-100 outline-none transition placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-blue-500 focus:bg-white dark:focus:bg-slate-800 focus:ring-4 focus:ring-blue-500/10"
               />
             </div>
 
@@ -344,7 +344,7 @@ export default function BookingForm() {
             <button
               type="submit"
               disabled={status === "loading"}
-              className="group flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 py-4 font-semibold text-white shadow-lg shadow-blue-600/20 transition hover:from-blue-700 hover:to-indigo-700 disabled:cursor-not-allowed disabled:opacity-70"
+              className="group flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 py-4 font-semibold text-white shadow-lg shadow-blue-600/20 transition hover:from-blue-700 hover:to-indigo-700 disabled:cursor-not-allowed disabled:opacity-70 focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
               {status === "loading" ? (
                 <>
@@ -363,14 +363,14 @@ export default function BookingForm() {
             </button>
 
             {status === "success" && (
-              <div className="flex items-center justify-center gap-2 rounded-xl bg-green-50 p-4 text-sm font-medium text-green-700">
+              <div className="flex items-center justify-center gap-2 rounded-xl bg-green-50 dark:bg-green-950/50 border border-green-200 dark:border-green-850 p-4 text-sm font-medium text-green-700 dark:text-green-300">
                 <CheckCircle2 size={18} />
-                Thank you! We've received your enquiry.
+                Thank you! We&apos;ve received your enquiry.
               </div>
             )}
 
             {status === "error" && (
-              <div className="rounded-xl bg-red-50 p-4 text-center text-sm font-medium text-red-600">
+              <div className="rounded-xl bg-red-50 dark:bg-red-950/50 border border-red-200 dark:border-red-850 p-4 text-center text-sm font-medium text-red-600 dark:text-red-300">
                 Something went wrong. Please try again.
               </div>
             )}

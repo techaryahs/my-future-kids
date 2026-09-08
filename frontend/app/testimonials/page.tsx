@@ -432,7 +432,7 @@ function RatingMeter({
       <span
         className={cn(
           "text-sm font-semibold",
-          inverse ? "text-cyan-100" : "text-teal-800",
+          inverse ? "text-cyan-100" : "text-teal-800 dark:text-teal-400",
         )}
       >
         {rating.toFixed(1)}
@@ -446,7 +446,7 @@ function RatingMeter({
                 ? "bg-amber-400"
                 : inverse
                   ? "bg-white/[0.18]"
-                  : "bg-black/[0.1]",
+                  : "bg-black/[0.1] dark:bg-white/[0.15]",
             )}
             key={index}
           />
@@ -469,7 +469,7 @@ function TestimonialCard({
         "rounded-lg border p-6 shadow-[0_18px_60px_rgba(15,23,42,0.06)] transition duration-300 hover:-translate-y-1",
         inverse
           ? "border-white/[0.16] bg-white/[0.11] text-white shadow-[0_18px_70px_rgba(0,0,0,0.22)] backdrop-blur-md hover:border-white/[0.28] hover:bg-white/[0.15]"
-          : "border-black/10 bg-white text-[#071015] hover:bg-[#fdfefe] hover:shadow-[0_24px_80px_rgba(15,23,42,0.1)]",
+          : "border-black/10 dark:border-slate-800 bg-white dark:bg-slate-900 text-[#071015] dark:text-white hover:bg-[#fdfefe] dark:hover:bg-slate-800/90 hover:shadow-[0_24px_80px_rgba(15,23,42,0.1)]",
       )}
     >
       <div className="flex items-start justify-between gap-4">
@@ -479,7 +479,7 @@ function TestimonialCard({
       <blockquote
         className={cn(
           "mt-6 text-base leading-8",
-          inverse ? "text-white/[0.86]" : "text-[#33454c]",
+          inverse ? "text-white/[0.86]" : "text-[#33454c] dark:text-slate-300",
         )}
       >
         &quot;{testimonial.quote}&quot;
@@ -488,7 +488,7 @@ function TestimonialCard({
         <p
           className={cn(
             "text-base font-semibold tracking-tight",
-            inverse ? "text-white" : "text-[#071015]",
+            inverse ? "text-white" : "text-[#071015] dark:text-white",
           )}
         >
           {testimonial.name}
@@ -496,7 +496,7 @@ function TestimonialCard({
         <p
           className={cn(
             "mt-1 text-sm font-medium",
-            inverse ? "text-cyan-100" : "text-teal-800",
+            inverse ? "text-cyan-100" : "text-teal-800 dark:text-cyan-400",
           )}
         >
           {testimonial.role}
@@ -504,7 +504,7 @@ function TestimonialCard({
         <p
           className={cn(
             "mt-1 text-sm",
-            inverse ? "text-white/[0.7]" : "text-[#4e5f66]",
+            inverse ? "text-white/[0.7]" : "text-[#4e5f66] dark:text-slate-400",
           )}
         >
           {testimonial.institution} · {testimonial.location}
@@ -514,7 +514,7 @@ function TestimonialCard({
             "mt-5 inline-flex rounded-full border px-3 py-1 text-xs font-semibold",
             inverse
               ? "border-white/[0.18] bg-white/[0.1] text-white"
-              : "border-black/10 bg-[#e8fbf6] text-teal-800",
+              : "border-black/10 dark:border-slate-700 bg-[#e8fbf6] dark:bg-emerald-950/40 text-teal-800 dark:text-emerald-300",
           )}
         >
           {testimonial.result}
@@ -536,8 +536,8 @@ function TestimonialSection({
         section.inverse
           ? "relative isolate overflow-hidden bg-[#071015] text-white"
           : section.id === "teachers"
-            ? "bg-[#f6f8fb]"
-            : "bg-white",
+            ? "bg-[#f6f8fb] dark:bg-[#0b101b]"
+            : "bg-white dark:bg-[#090d16]",
       )}
       id={section.id}
     >
@@ -570,7 +570,7 @@ function TestimonialSection({
 
 function SuccessStoryCard({ story }: { story: SuccessStory }) {
   return (
-    <article className="group overflow-hidden rounded-lg border border-black/10 bg-white shadow-[0_20px_80px_rgba(15,23,42,0.08)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_30px_100px_rgba(15,23,42,0.14)]">
+    <article className="group overflow-hidden rounded-lg border border-black/10 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-[0_20px_80px_rgba(15,23,42,0.08)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_30px_100px_rgba(15,23,42,0.14)]">
       <div className="relative h-72 overflow-hidden bg-[#071015]">
         <Image
           alt={story.imageAlt}
@@ -593,10 +593,10 @@ function SuccessStoryCard({ story }: { story: SuccessStory }) {
         </div>
       </div>
       <div className="p-6">
-        <h3 className="text-2xl font-semibold tracking-tight text-[#071015]">
+        <h3 className="text-2xl font-semibold tracking-tight text-[#071015] dark:text-white">
           {story.title}
         </h3>
-        <p className="mt-4 text-sm leading-7 text-[#3f5056]">
+        <p className="mt-4 text-sm leading-7 text-[#3f5056] dark:text-slate-300">
           {story.description}
         </p>
       </div>
@@ -646,7 +646,7 @@ function VideoCard({ video }: { video: VideoStory }) {
 
 export default function TestimonialsPage() {
   return (
-    <main className="min-h-screen overflow-hidden bg-[#f6f8fb] text-[#071015]">
+    <main className="min-h-screen overflow-hidden bg-[#f6f8fb] dark:bg-[#090d16] text-[#071015] dark:text-slate-100">
       <section className="relative isolate overflow-hidden bg-[#050708] px-4 pb-20 pt-5 text-white sm:px-6 sm:pb-24 lg:px-8">
         <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_15%_18%,rgba(45,212,191,0.18),transparent_30%),radial-gradient(circle_at_82%_12%,rgba(250,204,21,0.1),transparent_28%),radial-gradient(circle_at_72%_84%,rgba(34,197,94,0.12),transparent_32%),linear-gradient(135deg,#050708,#0b100f_48%,#11100b)]" />
         <div className="absolute inset-0 -z-10 bg-[linear-gradient(rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.035)_1px,transparent_1px)] bg-[size:64px_64px] opacity-[0.22] motion-safe:animate-[grid-drift_18s_linear_infinite]" />
@@ -785,7 +785,7 @@ export default function TestimonialsPage() {
       ))}
 
       <section
-        className="bg-[#f6f8fb] px-4 py-20 sm:px-6 sm:py-24 lg:px-8"
+        className="bg-[#f6f8fb] dark:bg-[#0b101b] px-4 py-20 sm:px-6 sm:py-24 lg:px-8"
         id="success-stories"
       >
         <div className="mx-auto max-w-7xl">
@@ -858,7 +858,7 @@ export default function TestimonialsPage() {
         </div>
       </section>
 
-      <section className="bg-white px-4 py-20 sm:px-6 sm:py-24 lg:px-8">
+      <section className="bg-white dark:bg-[#090d16] px-4 py-20 sm:px-6 sm:py-24 lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
           <SectionHeader
             align="left"
@@ -869,18 +869,18 @@ export default function TestimonialsPage() {
           <div className="grid gap-4">
             {impactStats.map((stat) => (
               <article
-                className="rounded-lg border border-black/10 bg-[#f8fbfb] p-6 shadow-[0_18px_60px_rgba(15,23,42,0.06)] transition duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-[0_24px_80px_rgba(15,23,42,0.1)]"
+                className="rounded-lg border border-black/10 dark:border-slate-800 bg-[#f8fbfb] dark:bg-slate-900 p-6 shadow-[0_18px_60px_rgba(15,23,42,0.06)] transition duration-300 hover:-translate-y-1 hover:bg-white dark:hover:bg-slate-800/80 hover:shadow-[0_24px_80px_rgba(15,23,42,0.1)]"
                 key={stat.label}
               >
                 <div className="flex items-center justify-between gap-4">
-                  <h2 className="text-base font-semibold tracking-tight text-[#071015]">
+                  <h2 className="text-base font-semibold tracking-tight text-[#071015] dark:text-white">
                     {stat.label}
                   </h2>
-                  <p className="text-2xl font-semibold tracking-tight text-teal-800">
+                  <p className="text-2xl font-semibold tracking-tight text-teal-800 dark:text-teal-400">
                     {stat.value}
                   </p>
                 </div>
-                <div className="mt-5 h-2 overflow-hidden rounded-full bg-black/[0.08]">
+                <div className="mt-5 h-2 overflow-hidden rounded-full bg-black/[0.08] dark:bg-slate-800">
                   <div
                     className={cn(
                       "h-full rounded-full bg-gradient-to-r from-teal-500 via-cyan-500 to-emerald-500",

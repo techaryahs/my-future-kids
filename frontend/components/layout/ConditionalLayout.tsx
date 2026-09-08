@@ -13,7 +13,7 @@ export function ConditionalLayout({ children, navbar, footer }: ConditionalLayou
   const isAdmin = pathname?.startsWith('/admin')
 
   if (isAdmin) {
-    return <main className="flex-grow flex flex-col h-full bg-slate-50">{children}</main>
+    return <main className="flex-grow flex flex-col h-full bg-slate-50 dark:bg-[#090d16] text-slate-900 dark:text-slate-100">{children}</main>
   }
 
   return (

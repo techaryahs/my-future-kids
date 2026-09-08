@@ -20,8 +20,8 @@ export function CtaBand({
   title,
 }: CtaBandProps) {
   return (
-    <section className="bg-[#f6f8fb] px-4 py-20 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-7xl overflow-hidden rounded-lg border border-black/10 bg-[#071015] text-white shadow-[0_30px_120px_rgba(7,16,21,0.26)]">
+    <section className="bg-[#f6f8fb] dark:bg-[#090d16] px-4 py-20 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl overflow-hidden rounded-lg border border-black/10 dark:border-slate-800 bg-[#071015] text-white shadow-[0_30px_120px_rgba(7,16,21,0.26)]">
         <div className="relative isolate px-6 py-12 sm:px-10 sm:py-16 lg:px-14">
           <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_10%,rgba(45,212,191,0.18),transparent_32%),radial-gradient(circle_at_86%_15%,rgba(250,204,21,0.12),transparent_28%),linear-gradient(135deg,#071015,#0b1415_46%,#10180f)]" />
           <div className="absolute inset-x-8 top-0 -z-10 h-px bg-gradient-to-r from-transparent via-white/[0.55] to-transparent" />

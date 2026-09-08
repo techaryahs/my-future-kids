@@ -8,8 +8,8 @@ export default function CTASection() {
   return (
     <section className="py-16 md:py-24 relative overflow-hidden">
       {/* Premium Futuristic Gradient Background */}
-      <div className="absolute inset-0 bg-blue-900 z-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900 via-indigo-900 to-slate-900" />
+      <div className="absolute inset-0 bg-blue-900 dark:bg-[#070b14] z-0 transition-colors duration-200">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900 via-indigo-900 to-slate-900 dark:from-blue-950/90 dark:via-[#0c1322] dark:to-[#070b14]" />
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-blue-500 rounded-full blur-[150px] opacity-20 -translate-y-1/2 translate-x-1/3" />
         <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-cyan-500 rounded-full blur-[150px] opacity-20 translate-y-1/3 -translate-x-1/4" />
         
@@ -34,20 +34,20 @@ export default function CTASection() {
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link 
-              href="#" 
+              href="/book/school-demo" 
               className="w-full sm:w-auto inline-flex justify-center items-center px-8 py-4 text-base font-medium text-blue-900 bg-white rounded-full hover:bg-blue-50 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1"
             >
               Book a Free Demo
               <ArrowRight className="ml-2 w-5 h-5" />
             </Link>
             
-            <Link 
-              href="#" 
+            <a 
+              href="mailto:info@aryahsworld.com" 
               className="w-full sm:w-auto inline-flex justify-center items-center px-8 py-4 text-base font-medium text-white bg-blue-800/50 backdrop-blur-md border border-blue-400/30 rounded-full hover:bg-blue-800/70 hover:border-blue-400/50 transition-all shadow-lg"
             >
               <MessageSquare className="mr-2 w-5 h-5" />
               Talk to Our Team
-            </Link>
+            </a>
           </div>
         </motion.div>
       </div>

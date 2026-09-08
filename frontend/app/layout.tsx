@@ -15,6 +15,7 @@ const geistMono = Geist_Mono({
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { ConditionalLayout } from "@/components/layout/ConditionalLayout";
+import { ThemeProvider } from "@/src/context/ThemeContext";
 
 export const metadata: Metadata = {
   title: "BeFutureKids | Learn Today. Be The Future.",
@@ -25,12 +26,32 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col m-0 p-0">
-        <ConditionalLayout navbar={<Navbar />} footer={<Footer />}>
-          {children}
-        </ConditionalLayout>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              try {
+                var stored = localStorage.getItem('befuturekids-theme');
+                var isDark = stored === 'dark' || (!stored && window.matchMedia('(prefers-color-scheme: dark)').matches);
+                if (isDark) {
+                  document.documentElement.classList.add('dark');
+                } else {
+                  document.documentElement.classList.remove('dark');
+                }
+              } catch (e) {}
+            `,
+          }}
+        />
+      </head>
+      <body className="min-h-full flex flex-col m-0 p-0 bg-background text-foreground">
+        <ThemeProvider>
+          <ConditionalLayout navbar={<Navbar />} footer={<Footer />}>
+            {children}
+          </ConditionalLayout>
+        </ThemeProvider>
       </body>
     </html>
   );

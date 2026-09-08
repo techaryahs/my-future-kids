@@ -20,13 +20,15 @@ export function PremiumCard({
   const variantClassName = {
     dark: "border-white/[0.15] bg-[#071015] text-white",
     glass: "border-white/[0.15] bg-white/[0.12] text-white backdrop-blur-md",
-    light: "border-black/[0.1] bg-[#fdfefe] text-[#071015]",
+    light:
+      "border-black/[0.1] bg-[#fdfefe] text-[#071015] dark:border-slate-800 dark:bg-slate-900/90 dark:text-slate-100",
   }[variant];
 
   const interactiveClassName = {
     dark: "hover:border-cyan-200/[0.35] hover:bg-[#0b1a1c]",
     glass: "hover:border-white/[0.28] hover:bg-white/[0.16]",
-    light: "hover:border-teal-500/[0.24] hover:bg-white",
+    light:
+      "hover:border-teal-500/[0.24] hover:bg-white dark:hover:border-teal-500/40 dark:hover:bg-slate-800",
   }[variant];
 
   return (

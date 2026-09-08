@@ -9,13 +9,13 @@ export const metadata = {
 
 export default function BookPage() {
   return (
-    <div className="min-h-screen bg-gray-50 py-16 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gray-50 dark:bg-[#090d16] py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-3xl mx-auto">
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-extrabold text-gray-900 sm:text-5xl">
+          <h1 className="text-4xl font-extrabold text-gray-900 dark:text-white sm:text-5xl">
             How Can We Help You?
           </h1>
-          <p className="mt-4 text-lg text-gray-500">
+          <p className="mt-4 text-lg text-gray-500 dark:text-slate-400">
             Select an option below to schedule your consultation or demo with our education team.
           </p>
         </div>

@@ -8,7 +8,7 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
 
   return (
-    <div className="flex h-screen bg-[#F8FAFC] overflow-hidden">
+    <div className="flex h-screen bg-[#F8FAFC] dark:bg-[#090d16] text-slate-900 dark:text-slate-100 overflow-hidden">
       {/* Sidebar */}
       <AdminSidebar 
         isOpen={isSidebarOpen} 

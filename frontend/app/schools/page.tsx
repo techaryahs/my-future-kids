@@ -11,7 +11,7 @@ import SchoolCTA from "@/components/schools/SchoolCTA";
 
 export default function SchoolsPage() {
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-white dark:bg-[#090d16] text-slate-900 dark:text-slate-100 transition-colors duration-200">
       <SchoolHero />
 
       <SchoolOptions />

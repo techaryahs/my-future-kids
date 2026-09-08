@@ -140,10 +140,10 @@ const benefits = [
 
 export default function SchoolProgramsPage() {
   return (
-    <main className="min-h-screen bg-white text-gray-950">
+    <main className="min-h-screen bg-white dark:bg-[#090d16] text-gray-950 dark:text-slate-100 transition-colors duration-200">
 
       {/* HERO */}
-      <section className="relative overflow-hidden bg-gray-950 px-6 py-28 text-white lg:px-10 lg:py-36">
+      <section className="relative overflow-hidden bg-gray-950 dark:bg-[#080d1a] border-b border-transparent dark:border-slate-800/80 px-4 pt-28 pb-20 text-white sm:px-6 sm:pt-32 sm:pb-24 lg:px-8 lg:pt-36 lg:pb-32">
         <div className="relative z-10 mx-auto max-w-7xl">
           <div className="max-w-5xl">
 
@@ -151,14 +151,14 @@ export default function SchoolProgramsPage() {
               School Programs
             </p>
 
-            <h1 className="mt-6 text-5xl font-bold leading-[1.05] tracking-tight md:text-7xl">
+            <h1 className="mt-6 text-3xl font-bold leading-[1.08] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
               Learning programs
               <span className="block text-white/40">
                 built for the future.
               </span>
             </h1>
 
-            <p className="mt-8 max-w-3xl text-lg leading-8 text-white/65 md:text-xl">
+            <p className="mt-8 max-w-3xl text-base leading-7 text-white/65 sm:text-lg sm:leading-8 md:text-xl">
               Flexible school programs that bring robotics, STEM, AI, coding,
               innovation and emerging technologies into meaningful student
               experiences.
@@ -166,16 +166,16 @@ export default function SchoolProgramsPage() {
 
             <div className="mt-10 flex flex-col gap-3 sm:flex-row">
 
-              <button
-                type="button"
-                className="rounded-full bg-white px-7 py-4 text-sm font-semibold text-gray-950 transition hover:-translate-y-1 hover:shadow-xl"
+              <Link
+                href="/book/school-demo"
+                className="inline-flex items-center justify-center rounded-full bg-white px-7 py-4 text-sm font-semibold text-gray-950 transition hover:-translate-y-1 hover:shadow-xl focus:ring-2 focus:ring-blue-500 focus:outline-none"
               >
                 Book a School Demo →
-              </button>
+              </Link>
 
               <Link
                 href="/schools"
-                className="rounded-full border border-white/20 px-7 py-4 text-center text-sm font-semibold text-white transition hover:bg-white/10"
+                className="rounded-full border border-white/20 px-7 py-4 text-center text-sm font-semibold text-white transition hover:bg-white/10 focus:ring-2 focus:ring-blue-500 focus:outline-none"
               >
                 Explore School Experience
               </Link>
@@ -195,20 +195,20 @@ export default function SchoolProgramsPage() {
       </section>
 
       {/* INTRO */}
-      <section className="px-6 py-24 lg:px-10">
+      <section className="px-4 py-20 sm:px-6 sm:py-24 lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-2 lg:items-end">
 
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600 dark:text-blue-400">
               Program Architecture
             </p>
 
-            <h2 className="mt-5 text-4xl font-bold tracking-tight md:text-6xl">
+            <h2 className="mt-5 text-3xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-4xl md:text-5xl lg:text-6xl">
               Programs that turn technology into capability.
             </h2>
           </div>
 
-          <p className="text-lg leading-8 text-gray-600">
+          <p className="text-base sm:text-lg leading-7 sm:leading-8 text-gray-600 dark:text-slate-300">
             Every program is designed to move students beyond passive
             technology consumption and into building, experimenting,
             collaborating and solving real problems.
@@ -218,7 +218,7 @@ export default function SchoolProgramsPage() {
       </section>
 
       {/* BENEFITS */}
-      <section className="px-6 pb-24 lg:px-10">
+      <section className="px-4 pb-20 sm:px-6 sm:pb-24 lg:px-8">
         <div className="mx-auto max-w-7xl">
 
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -226,13 +226,13 @@ export default function SchoolProgramsPage() {
             {benefits.map((benefit, index) => (
               <div
                 key={benefit}
-                className="rounded-3xl border border-black/10 bg-gray-50 p-6"
+                className="rounded-3xl border border-black/10 dark:border-slate-800 bg-gray-50 dark:bg-slate-900/80 p-5 sm:p-6"
               >
-                <span className="text-xs font-bold text-blue-600">
+                <span className="text-xs font-bold text-blue-600 dark:text-blue-400">
                   0{index + 1}
                 </span>
 
-                <h3 className="mt-7 text-lg font-semibold">
+                <h3 className="mt-5 sm:mt-7 text-base sm:text-lg font-semibold text-slate-950 dark:text-white">
                   {benefit}
                 </h3>
               </div>
@@ -244,20 +244,20 @@ export default function SchoolProgramsPage() {
       </section>
 
       {/* PROGRAMS */}
-      <section className="bg-gray-50 px-6 py-24 lg:px-10">
+      <section className="bg-gray-50 dark:bg-[#0b101b] px-4 py-20 sm:px-6 sm:py-24 lg:px-8 transition-colors duration-200">
         <div className="mx-auto max-w-7xl">
 
           <div className="max-w-3xl">
 
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600 dark:text-blue-400">
               Program Portfolio
             </p>
 
-            <h2 className="mt-5 text-4xl font-bold tracking-tight md:text-6xl">
+            <h2 className="mt-5 text-3xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-4xl md:text-5xl lg:text-6xl">
               Choose the right starting point.
             </h2>
 
-            <p className="mt-6 text-lg leading-8 text-gray-600">
+            <p className="mt-6 text-base sm:text-lg leading-7 sm:leading-8 text-gray-600 dark:text-slate-300">
               Start with a focused program or create a broader future-ready
               learning roadmap across multiple technologies.
             </p>
@@ -269,47 +269,47 @@ export default function SchoolProgramsPage() {
             {programs.map((program) => (
               <article
                 key={program.number}
-                className="overflow-hidden rounded-[2rem] border border-black/10 bg-white transition duration-300 hover:-translate-y-1 hover:shadow-2xl"
+                className="overflow-hidden rounded-[2rem] border border-black/10 dark:border-slate-800 bg-white dark:bg-slate-900/90 text-slate-900 dark:text-slate-100 transition duration-300 hover:-translate-y-1 hover:border-blue-200 dark:hover:border-blue-800/80 hover:shadow-2xl"
               >
 
                 <div className="grid lg:grid-cols-[0.2fr_0.9fr_1.1fr]">
 
                   {/* Number */}
-                  <div className="border-b border-black/10 p-8 lg:border-b-0 lg:border-r">
-                    <span className="text-sm font-bold text-blue-600">
+                  <div className="border-b border-black/10 dark:border-slate-800 p-6 lg:border-b-0 lg:border-r lg:p-8">
+                    <span className="text-sm font-bold text-blue-600 dark:text-blue-400">
                       {program.number}
                     </span>
                   </div>
 
                   {/* Main */}
-                  <div className="p-8 lg:p-10">
+                  <div className="p-6 sm:p-8 lg:p-10">
 
-                    <h3 className="text-3xl font-bold tracking-tight">
+                    <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-950 dark:text-white">
                       {program.title}
                     </h3>
 
-                    <p className="mt-5 leading-7 text-gray-600">
+                    <p className="mt-4 sm:mt-5 text-sm sm:text-base leading-6 sm:leading-7 text-gray-600 dark:text-slate-300">
                       {program.description}
                     </p>
 
-                    <div className="mt-8 grid grid-cols-2 gap-4">
+                    <div className="mt-6 sm:mt-8 grid grid-cols-1 gap-4 min-[440px]:grid-cols-2">
 
                       <div>
-                        <p className="text-xs font-bold uppercase tracking-widest text-gray-400">
+                        <p className="text-xs font-bold uppercase tracking-widest text-gray-400 dark:text-slate-400">
                           Target
                         </p>
 
-                        <p className="mt-2 text-sm font-medium">
+                        <p className="mt-2 text-sm font-medium text-slate-900 dark:text-slate-200">
                           {program.audience}
                         </p>
                       </div>
 
                       <div>
-                        <p className="text-xs font-bold uppercase tracking-widest text-gray-400">
+                        <p className="text-xs font-bold uppercase tracking-widest text-gray-400 dark:text-slate-400">
                           Duration
                         </p>
 
-                        <p className="mt-2 text-sm font-medium">
+                        <p className="mt-2 text-sm font-medium text-slate-900 dark:text-slate-200">
                           {program.duration}
                         </p>
                       </div>
@@ -319,19 +319,19 @@ export default function SchoolProgramsPage() {
                   </div>
 
                   {/* Details */}
-                  <div className="border-t border-black/10 p-8 lg:border-l lg:border-t-0 lg:p-10">
+                  <div className="border-t border-black/10 dark:border-slate-800 p-6 sm:p-8 lg:border-l lg:border-t-0 lg:p-10">
 
-                    <p className="text-xs font-bold uppercase tracking-widest text-gray-400">
+                    <p className="text-xs font-bold uppercase tracking-widest text-gray-400 dark:text-slate-400">
                       Learning Format
                     </p>
 
-                    <p className="mt-2 text-sm font-semibold">
+                    <p className="mt-2 text-sm font-semibold text-slate-900 dark:text-slate-200">
                       {program.format}
                     </p>
 
                     <div className="mt-7">
 
-                      <p className="text-xs font-bold uppercase tracking-widest text-gray-400">
+                      <p className="text-xs font-bold uppercase tracking-widest text-gray-400 dark:text-slate-400">
                         Activities
                       </p>
 
@@ -339,7 +339,7 @@ export default function SchoolProgramsPage() {
                         {program.activities.map((activity) => (
                           <span
                             key={activity}
-                            className="rounded-full bg-gray-100 px-3 py-1.5 text-xs font-medium"
+                            className="rounded-full bg-gray-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 px-3 py-1.5 text-xs font-medium"
                           >
                             {activity}
                           </span>
@@ -348,13 +348,13 @@ export default function SchoolProgramsPage() {
 
                     </div>
 
-                    <div className="mt-7 border-t border-black/10 pt-6">
+                    <div className="mt-7 border-t border-black/10 dark:border-slate-800 pt-6">
 
-                      <p className="text-xs font-bold uppercase tracking-widest text-gray-400">
+                      <p className="text-xs font-bold uppercase tracking-widest text-gray-400 dark:text-slate-400">
                         Expected Outcome
                       </p>
 
-                      <p className="mt-2 text-sm leading-6 text-gray-700">
+                      <p className="mt-2 text-sm leading-6 text-gray-700 dark:text-slate-300">
                         {program.outcome}
                       </p>
 
@@ -373,13 +373,13 @@ export default function SchoolProgramsPage() {
       </section>
 
       {/* CUSTOM PROGRAM */}
-      <section className="px-6 py-24 lg:px-10">
+      <section className="px-4 py-20 sm:px-6 sm:py-24 lg:px-8">
 
         <div className="mx-auto max-w-7xl">
 
-          <div className="overflow-hidden rounded-[2.5rem] bg-gray-950 px-8 py-16 text-white md:px-16 md:py-20">
+          <div className="overflow-hidden rounded-[2.5rem] bg-gray-950 dark:bg-slate-900 border border-transparent dark:border-slate-800 px-6 py-12 text-white sm:px-12 sm:py-16 md:px-16 md:py-20 shadow-2xl">
 
-            <div className="grid gap-12 lg:grid-cols-[1fr_auto] lg:items-center">
+            <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center lg:gap-12">
 
               <div className="max-w-3xl">
 
@@ -387,24 +387,24 @@ export default function SchoolProgramsPage() {
                   Custom School Programs
                 </p>
 
-                <h2 className="mt-5 text-4xl font-bold tracking-tight md:text-5xl">
-                  Don't see the right fit?
+                <h2 className="mt-5 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
+                  Don&apos;t see the right fit?
                 </h2>
 
-                <p className="mt-6 text-lg leading-8 text-white/60">
+                <p className="mt-6 text-base sm:text-lg leading-7 sm:leading-8 text-white/60">
                   We can combine programs, labs, workshops and technology
                   experiences into a customized roadmap designed around your
-                  school's curriculum, students and goals.
+                  school&apos;s curriculum, students and goals.
                 </p>
 
               </div>
 
-              <button
-                type="button"
-                className="rounded-full bg-white px-7 py-4 text-sm font-semibold text-gray-950 transition hover:-translate-y-1 hover:shadow-xl"
+              <Link
+                href="/book/school-demo"
+                className="inline-flex items-center justify-center rounded-full bg-white px-7 py-4 text-sm font-semibold text-gray-950 transition hover:-translate-y-1 hover:shadow-xl shrink-0 focus:ring-2 focus:ring-blue-500 focus:outline-none"
               >
                 Request a Proposal →
-              </button>
+              </Link>
 
             </div>
 
@@ -415,29 +415,29 @@ export default function SchoolProgramsPage() {
       </section>
 
       {/* FINAL CTA */}
-      <section className="px-6 pb-28 lg:px-10">
+      <section className="px-4 pb-20 sm:px-6 sm:pb-28 lg:px-8">
 
         <div className="mx-auto max-w-4xl text-center">
 
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">
-            Let's Build Together
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600 dark:text-blue-400">
+            Let&apos;s Build Together
           </p>
 
-          <h2 className="mt-5 text-4xl font-bold tracking-tight md:text-6xl">
-            Ready to create your school's future?
+          <h2 className="mt-5 text-3xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-4xl md:text-5xl lg:text-6xl">
+            Ready to create your school&apos;s future?
           </h2>
 
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-gray-600">
+          <p className="mx-auto mt-6 max-w-2xl text-base sm:text-lg leading-7 sm:leading-8 text-gray-600 dark:text-slate-300">
             Talk to the BeFutureKids education team and discover the programs
             that can make your students future-ready.
           </p>
 
-          <button
-            type="button"
-            className="mt-9 rounded-full bg-gray-950 px-8 py-4 text-sm font-semibold text-white transition hover:-translate-y-1 hover:shadow-xl"
+          <Link
+            href="/book/school-demo"
+            className="mt-9 inline-flex items-center justify-center rounded-full bg-gray-950 dark:bg-blue-600 px-8 py-4 text-sm font-semibold text-white transition hover:-translate-y-1 hover:bg-slate-800 dark:hover:bg-blue-500 hover:shadow-xl focus:ring-2 focus:ring-blue-500 focus:outline-none"
           >
             Book a School Demo →
-          </button>
+          </Link>
 
         </div>
 

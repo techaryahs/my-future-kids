@@ -292,11 +292,11 @@ function GalleryCard({
   const meta = categoryMeta[item.category];
 
   return (
-    <article className="group mb-5 break-inside-avoid overflow-hidden rounded-lg border border-black/10 bg-white shadow-[0_18px_70px_rgba(15,23,42,0.08)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_28px_90px_rgba(15,23,42,0.13)]">
+    <article className="group mb-5 break-inside-avoid overflow-hidden rounded-lg border border-black/10 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-[0_18px_70px_rgba(15,23,42,0.08)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_28px_90px_rgba(15,23,42,0.13)]">
       <button
         aria-label={`Preview ${item.title}`}
         className={cn(
-          "relative block w-full overflow-hidden bg-[#071015] text-left focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-4 focus:ring-offset-white",
+          "relative block w-full overflow-hidden bg-[#071015] text-left focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-4 focus:ring-offset-white dark:focus:ring-offset-slate-900",
           item.heightClassName,
         )}
         onClick={() => onPreview(item)}
@@ -335,9 +335,9 @@ function GalleryCard({
         </div>
       </button>
       <div className="p-5">
-        <p className="text-sm leading-7 text-[#3f5056]">{item.description}</p>
+        <p className="text-sm leading-7 text-[#3f5056] dark:text-slate-300">{item.description}</p>
         <button
-          className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-teal-800 transition hover:text-[#071015] focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-4 focus:ring-offset-white"
+          className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-teal-800 dark:text-teal-400 transition hover:text-[#071015] dark:hover:text-white focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-4 focus:ring-offset-white dark:focus:ring-offset-slate-900"
           onClick={() => onPreview(item)}
           type="button"
         >
@@ -490,55 +490,18 @@ export default function GalleryPage() {
   }
 
   return (
-    <main className="min-h-screen overflow-hidden bg-[#f6f8fb] text-[#071015]">
-      <section className="relative isolate overflow-hidden bg-[#050708] px-4 pb-20 pt-5 text-white sm:px-6 sm:pb-24 lg:px-8">
+    <main className="min-h-screen overflow-hidden bg-[#f6f8fb] dark:bg-[#090d16] text-[#071015] dark:text-slate-100">
+      <section className="relative isolate overflow-hidden bg-[#050708] px-4 pb-20 pt-28 text-white sm:px-6 sm:pb-24 sm:pt-32 lg:px-8 lg:pt-36">
         <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_15%_18%,rgba(45,212,191,0.18),transparent_30%),radial-gradient(circle_at_82%_12%,rgba(250,204,21,0.1),transparent_28%),radial-gradient(circle_at_72%_84%,rgba(34,197,94,0.12),transparent_32%),linear-gradient(135deg,#050708,#0b100f_48%,#11100b)]" />
         <div className="absolute inset-0 -z-10 bg-[linear-gradient(rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.035)_1px,transparent_1px)] bg-[size:64px_64px] opacity-[0.22] motion-safe:animate-[grid-drift_18s_linear_infinite]" />
         <div className="mx-auto max-w-7xl">
-          <header className="flex items-center justify-between rounded-lg border border-white/[0.16] bg-[#071015]/[0.88] px-3 py-3 shadow-[0_16px_70px_rgba(0,0,0,0.28)] backdrop-blur-md">
-            <a
-              aria-label="BeFutureKids gallery page"
-              className="flex items-center gap-3 rounded-full pr-2 focus:outline-none focus:ring-2 focus:ring-cyan-200"
-              href="/schools"
-            >
-              <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-white text-sm font-black text-[#071015]">
-                BF
-              </span>
-              <span className="hidden text-sm font-semibold tracking-tight text-white sm:inline">
-                BeFutureKids
-              </span>
-            </a>
-            <nav
-              aria-label="Gallery page navigation"
-              className="hidden items-center gap-1 rounded-full border border-white/[0.16] bg-black/[0.32] p-1 lg:flex"
-            >
-              {filterTabs.slice(1).map((tab) => (
-                <a
-                  className="rounded-full px-4 py-2 text-sm font-medium text-white/[0.82] transition hover:bg-white/[0.12] hover:text-white focus:outline-none focus:ring-2 focus:ring-cyan-200"
-                  href="#filters"
-                  key={tab.key}
-                  onClick={() => handleFilterChange(tab.key)}
-                >
-                  {tab.label}
-                </a>
-              ))}
-            </nav>
-            <a
-              className="inline-flex min-h-10 items-center justify-center gap-2 rounded-full bg-white px-4 text-sm font-semibold text-[#071015] transition hover:-translate-y-0.5 hover:bg-cyan-50 focus:outline-none focus:ring-2 focus:ring-cyan-200"
-              href="#request-demo"
-            >
-              Demo
-              <Icon className="h-4 w-4" name="arrowRight" />
-            </a>
-          </header>
-
-          <div className="grid gap-10 pt-16 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:pt-20">
+          <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
             <div>
               <div className="inline-flex items-center gap-2 rounded-full border border-white/[0.18] bg-[#071015]/[0.76] px-3 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-cyan-50 shadow-[0_16px_60px_rgba(20,184,166,0.14)] backdrop-blur-md">
                 <Icon className="h-4 w-4 text-emerald-200" name="spark" />
                 School innovation gallery
               </div>
-              <h1 className="mt-7 max-w-4xl text-balance text-5xl font-semibold tracking-tight sm:text-6xl lg:text-7xl">
+              <h1 className="mt-7 max-w-4xl text-balance text-3xl font-semibold tracking-tight sm:text-5xl lg:text-6xl xl:text-7xl">
                 A visual showcase of future skills in action.
               </h1>
               <p className="mt-6 max-w-2xl text-pretty text-lg leading-8 text-white/[0.84] sm:text-xl">
@@ -629,7 +592,7 @@ export default function GalleryPage() {
         </div>
       </section>
 
-      <section className="bg-white px-4 py-20 sm:px-6 sm:py-24 lg:px-8">
+      <section className="bg-white dark:bg-[#0b101b] px-4 py-20 sm:px-6 sm:py-24 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <SectionHeader
             description="The gallery is designed to help schools communicate momentum: what students do, what teachers guide, what families see, and what leaders can proudly showcase."
@@ -644,13 +607,13 @@ export default function GalleryPage() {
                 variant="light"
               >
                 <IconBadge
-                  className="border-black/10 bg-[#e8fbf6] text-teal-700"
+                  className="border-black/10 dark:border-slate-700 bg-[#e8fbf6] dark:bg-teal-950/40 text-teal-700 dark:text-teal-400"
                   icon={card.icon as IconName}
                 />
-                <h2 className="mt-6 text-xl font-semibold tracking-tight text-[#061014]">
+                <h2 className="mt-6 text-xl font-semibold tracking-tight text-[#061014] dark:text-white">
                   {card.title}
                 </h2>
-                <p className="mt-4 text-sm leading-7 text-[#3f5056]">
+                <p className="mt-4 text-sm leading-7 text-[#3f5056] dark:text-slate-300">
                   {card.description}
                 </p>
               </PremiumCard>
@@ -660,10 +623,10 @@ export default function GalleryPage() {
       </section>
 
       <section
-        className="relative bg-[#f6f8fb] px-4 py-20 sm:px-6 sm:py-24 lg:px-8"
+        className="relative bg-[#f6f8fb] dark:bg-[#090d16] px-4 py-20 sm:px-6 sm:py-24 lg:px-8"
         id="filters"
       >
-        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-black/10 to-transparent" />
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-black/10 dark:via-white/10 to-transparent" />
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-10 lg:grid-cols-[0.74fr_1.26fr] lg:items-end">
             <SectionHeader
@@ -672,7 +635,7 @@ export default function GalleryPage() {
               eyebrow="Filter tabs"
               title="Browse the gallery by the story a school wants to tell."
             />
-            <div className="rounded-lg border border-black/10 bg-white p-3 shadow-[0_18px_70px_rgba(15,23,42,0.08)]">
+            <div className="rounded-lg border border-black/10 dark:border-slate-800 bg-white dark:bg-slate-900 p-3 shadow-[0_18px_70px_rgba(15,23,42,0.08)]">
               <div
                 aria-label="Gallery filters"
                 className="grid gap-2 sm:grid-cols-5"
@@ -685,10 +648,10 @@ export default function GalleryPage() {
                     <button
                       aria-selected={active}
                       className={cn(
-                        "inline-flex min-h-11 items-center justify-center rounded-full px-4 text-sm font-semibold transition focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 focus:ring-offset-white",
+                        "inline-flex min-h-11 items-center justify-center rounded-full px-4 text-sm font-semibold transition focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-slate-900",
                         active
-                          ? "bg-[#071015] text-white shadow-[0_16px_45px_rgba(7,16,21,0.18)]"
-                          : "border border-black/10 bg-[#f8fbfb] text-[#33454c] hover:bg-white hover:text-[#071015]",
+                          ? "bg-[#071015] dark:bg-teal-600 text-white shadow-[0_16px_45px_rgba(7,16,21,0.18)]"
+                          : "border border-black/10 dark:border-slate-700 bg-[#f8fbfb] dark:bg-slate-800 text-[#33454c] dark:text-slate-300 hover:bg-white dark:hover:bg-slate-700 hover:text-[#071015] dark:hover:text-white",
                       )}
                       key={tab.key}
                       onClick={() => handleFilterChange(tab.key)}
@@ -703,10 +666,10 @@ export default function GalleryPage() {
             </div>
           </div>
 
-          <div className="mt-8 flex items-center justify-between gap-4 rounded-lg border border-black/10 bg-white p-4 shadow-[0_14px_50px_rgba(15,23,42,0.05)]">
+          <div className="mt-8 flex items-center justify-between gap-4 rounded-lg border border-black/10 dark:border-slate-800 bg-white dark:bg-slate-900 p-4 shadow-[0_14px_50px_rgba(15,23,42,0.05)]">
             <p
               aria-live="polite"
-              className="text-sm font-semibold text-[#33454c]"
+              className="text-sm font-semibold text-[#33454c] dark:text-slate-300"
             >
               Showing {filteredItems.length}{" "}
               {activeFilter === "all"
@@ -714,11 +677,11 @@ export default function GalleryPage() {
                 : `${categoryMeta[activeFilter].label.toLowerCase()} moments`}
             </p>
             {isFiltering ? (
-              <span className="rounded-full bg-[#e8fbf6] px-3 py-1 text-xs font-semibold text-teal-800 motion-safe:animate-pulse">
+              <span className="rounded-full bg-[#e8fbf6] dark:bg-teal-950/40 px-3 py-1 text-xs font-semibold text-teal-800 dark:text-teal-300 motion-safe:animate-pulse">
                 Refreshing
               </span>
             ) : (
-              <span className="rounded-full bg-[#eef5ff] px-3 py-1 text-xs font-semibold text-cyan-800">
+              <span className="rounded-full bg-[#eef5ff] dark:bg-cyan-950/40 px-3 py-1 text-xs font-semibold text-cyan-800 dark:text-cyan-300">
                 Masonry view
               </span>
             )}

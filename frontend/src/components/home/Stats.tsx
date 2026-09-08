@@ -33,7 +33,7 @@ function Counter({ from = 0, to, suffix }: { from?: number; to: number; suffix: 
 
 export default function Stats() {
   return (
-    <section className="py-16 md:py-24 bg-blue-900 relative overflow-hidden text-white">
+    <section className="py-16 md:py-24 bg-[#0a1636] dark:bg-[#080d1a] border-y border-blue-950 dark:border-slate-800/60 relative overflow-hidden text-white transition-colors duration-200">
       {/* Background patterns */}
       <h2 className="sr-only">Our Impact in Numbers</h2>
       <div className="absolute inset-0 opacity-10">
@@ -44,7 +44,7 @@ export default function Stats() {
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-cyan-500 rounded-full blur-[128px] opacity-30 translate-y-1/2 -translate-x-1/3" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-8 text-center">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 text-center">
           {stats.map((stat, index) => (
             <motion.div 
               key={stat.label}
@@ -54,7 +54,7 @@ export default function Stats() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="flex flex-col items-center justify-center"
             >
-              <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-br from-white to-blue-200">
+              <div className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-br from-white to-blue-200">
                 <Counter to={stat.value} suffix={stat.suffix} />
               </div>
               <div className="text-sm md:text-base font-medium text-blue-200 uppercase tracking-wider">

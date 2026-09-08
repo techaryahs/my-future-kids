@@ -55,11 +55,11 @@ const labs = [
 
 export default function LabShowcase() {
   return (
-    <section className="relative overflow-hidden bg-white py-24 sm:py-28">
+    <section className="relative overflow-hidden bg-white dark:bg-[#0b101b] py-24 sm:py-28 transition-colors duration-200">
       {/* Background */}
-      <div className="pointer-events-none absolute right-0 top-20 h-96 w-96 rounded-full bg-blue-50/70 blur-3xl" />
+      <div className="pointer-events-none absolute right-0 top-20 h-96 w-96 rounded-full bg-blue-50/70 dark:bg-blue-600/10 blur-3xl" />
 
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 25 }}
@@ -68,18 +68,18 @@ export default function LabShowcase() {
           transition={{ duration: 0.6 }}
           className="max-w-3xl"
         >
-          <span className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">
+          <span className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600 dark:text-blue-400">
             Built For Your Campus
           </span>
 
-          <h2 className="mt-4 text-4xl font-bold tracking-tight text-slate-950 sm:text-5xl">
+          <h2 className="mt-4 text-3xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-4xl lg:text-5xl">
             What We Can Build{" "}
-            <span className="text-blue-600">
+            <span className="text-blue-600 dark:text-blue-400">
               For Your School
             </span>
           </h2>
 
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
+          <p className="mt-6 max-w-2xl text-base sm:text-lg leading-7 sm:leading-8 text-slate-600 dark:text-slate-300">
             Transform classrooms and dedicated learning spaces into environments
             where students can build, experiment, create and solve real-world
             problems.
@@ -107,7 +107,7 @@ export default function LabShowcase() {
                   duration: 0.55,
                   delay: index * 0.08,
                 }}
-                className={`group relative overflow-hidden rounded-[2rem] border border-slate-100 bg-slate-950 p-7 text-white shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl ${
+                className={`group relative overflow-hidden rounded-[2rem] border border-slate-100 dark:border-slate-800 bg-slate-950 dark:bg-slate-900/90 p-5 sm:p-7 text-white shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl ${
                   largeCard
                     ? "lg:col-span-7 lg:min-h-[420px]"
                     : "lg:col-span-5"
@@ -176,21 +176,21 @@ export default function LabShowcase() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mt-10 flex flex-col justify-between gap-6 rounded-3xl border border-blue-100 bg-blue-50/60 p-7 sm:flex-row sm:items-center sm:p-8"
+          className="mt-10 flex flex-col justify-between gap-6 rounded-3xl border border-blue-100 dark:border-blue-900/40 bg-blue-50/60 dark:bg-blue-950/40 p-5 sm:p-8 sm:flex-row sm:items-center"
         >
           <div>
-            <p className="text-lg font-bold text-slate-900">
+            <p className="text-lg font-bold text-slate-900 dark:text-white">
               More than a room filled with equipment.
             </p>
 
-            <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-600">
+            <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-600 dark:text-slate-300">
               We combine infrastructure, curriculum, teacher training,
               activities, projects and continuous support to create a complete
               learning ecosystem.
             </p>
           </div>
 
-          <div className="shrink-0 rounded-full bg-white px-5 py-3 text-sm font-semibold text-blue-600 shadow-sm">
+          <div className="shrink-0 rounded-full bg-white dark:bg-slate-800 px-5 py-3 text-sm font-semibold text-blue-600 dark:text-blue-400 border border-transparent dark:border-slate-700 shadow-sm">
             Infrastructure + Curriculum + Support
           </div>
         </motion.div>

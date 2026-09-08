@@ -27,18 +27,18 @@ const reasons = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="px-6 py-24 lg:px-10">
+    <section className="px-4 py-20 sm:px-6 sm:py-24 lg:px-8 bg-white dark:bg-[#0b101b] transition-colors duration-200">
       <div className="mx-auto max-w-7xl">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600 dark:text-blue-400">
             Why BeFutureKids
           </p>
 
-          <h2 className="mt-5 text-4xl font-bold md:text-5xl">
+          <h2 className="mt-5 text-3xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-4xl md:text-5xl">
             More than a technology provider.
           </h2>
 
-          <p className="mt-6 text-lg leading-8 text-gray-600">
+          <p className="mt-6 text-base sm:text-lg leading-7 sm:leading-8 text-slate-600 dark:text-slate-300">
             A long-term partner for building future-ready learning
             environments.
           </p>
@@ -48,15 +48,15 @@ export default function WhyChooseUs() {
           {reasons.map((reason) => (
             <div
               key={reason.title}
-              className="rounded-3xl border border-black/10 p-7 transition-all hover:-translate-y-1 hover:shadow-xl"
+              className="rounded-3xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/90 p-5 sm:p-7 transition-all hover:-translate-y-1 hover:border-blue-200 dark:hover:border-blue-800/80 hover:shadow-xl"
             >
-              <div className="mb-6 h-10 w-10 rounded-2xl bg-gray-950" />
+              <div className="mb-6 h-10 w-10 rounded-2xl bg-blue-600 dark:bg-blue-500 shadow-md shadow-blue-500/20" />
 
-              <h3 className="text-xl font-semibold">
+              <h3 className="text-xl font-semibold text-slate-950 dark:text-white">
                 {reason.title}
               </h3>
 
-              <p className="mt-3 leading-7 text-gray-600">
+              <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300 sm:text-base sm:leading-7">
                 {reason.text}
               </p>
             </div>
