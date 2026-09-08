@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import {
   Bot,
   FlaskConical,
@@ -18,6 +19,7 @@ const labs = [
     description:
       "A hands-on environment where students learn robotics, engineering, automation and problem-solving by building real projects.",
     features: ["Robotics Kits", "Sensors", "Automation", "Project Building"],
+    href: "/programs#robotics",
   },
   {
     icon: FlaskConical,
@@ -26,6 +28,7 @@ const labs = [
     description:
       "A collaborative space designed for experimentation, scientific thinking, prototyping and project-based STEM learning.",
     features: ["Science Tools", "Experiments", "Prototyping", "Maker Activities"],
+    href: "/programs#stem",
   },
   {
     icon: BrainCircuit,
@@ -34,6 +37,7 @@ const labs = [
     description:
       "Introduce students to artificial intelligence through age-appropriate concepts, experiments and practical applications.",
     features: ["AI Concepts", "Machine Learning", "Computer Vision", "AI Projects"],
+    href: "/programs#ai",
   },
   {
     icon: Glasses,
@@ -42,6 +46,7 @@ const labs = [
     description:
       "Create immersive learning experiences that help students explore concepts through interactive virtual and augmented environments.",
     features: ["VR Experiences", "AR Learning", "3D Content", "Immersive Projects"],
+    href: "/programs#ar-vr",
   },
   {
     icon: Code2,
@@ -50,6 +55,7 @@ const labs = [
     description:
       "A dedicated technology environment where students develop coding, computational thinking and digital creation skills.",
     features: ["Programming", "Web Development", "App Ideas", "Digital Projects"],
+    href: "/programs#coding",
   },
 ];
 
@@ -96,10 +102,10 @@ export default function LabShowcase() {
              * Remaining cards use normal grid sizing.
              */
             const largeCard = index === 0;
+            const hasLink = lab.href;
 
-            return (
+            const card = (
               <motion.div
-                key={lab.title}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.15 }}
@@ -107,10 +113,10 @@ export default function LabShowcase() {
                   duration: 0.55,
                   delay: index * 0.08,
                 }}
-                className={`group relative overflow-hidden rounded-[2rem] border border-slate-100 bg-slate-950 p-7 text-white shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl ${
+                className={`group relative overflow-hidden rounded-[2rem] border border-slate-100 bg-slate-950 p-7 text-white shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl h-full ${hasLink ? "cursor-pointer" : ""} ${
                   largeCard
-                    ? "lg:col-span-7 lg:min-h-[420px]"
-                    : "lg:col-span-5"
+                    ? "lg:min-h-[420px]"
+                    : ""
                 }`}
               >
                 {/* Decorative circles */}
@@ -166,6 +172,20 @@ export default function LabShowcase() {
                   </div>
                 </div>
               </motion.div>
+            );
+
+            return hasLink ? (
+              <Link
+                key={lab.title}
+                href={lab.href as string}
+                className={`block ${largeCard ? "lg:col-span-7" : "lg:col-span-5"}`}
+              >
+                {card}
+              </Link>
+            ) : (
+              <div key={lab.title} className={largeCard ? "lg:col-span-7" : "lg:col-span-5"}>
+                {card}
+              </div>
             );
           })}
         </div>

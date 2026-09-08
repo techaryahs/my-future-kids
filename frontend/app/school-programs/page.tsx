@@ -166,12 +166,12 @@ export default function SchoolProgramsPage() {
 
             <div className="mt-10 flex flex-col gap-3 sm:flex-row">
 
-              <button
-                type="button"
+              <Link
+                href="/book/school-demo"
                 className="rounded-full bg-white px-7 py-4 text-sm font-semibold text-gray-950 transition hover:-translate-y-1 hover:shadow-xl"
               >
                 Book a School Demo →
-              </button>
+              </Link>
 
               <Link
                 href="/schools"
@@ -432,12 +432,12 @@ export default function SchoolProgramsPage() {
             that can make your students future-ready.
           </p>
 
-          <button
-            type="button"
+          <Link
+            href="/book/school-demo"
             className="mt-9 rounded-full bg-gray-950 px-8 py-4 text-sm font-semibold text-white transition hover:-translate-y-1 hover:shadow-xl"
           >
             Book a School Demo →
-          </button>
+          </Link>
 
         </div>
 
