@@ -2,8 +2,13 @@ import Link from 'next/link'
 import { CheckCircle } from 'lucide-react'
 import { BOOKING_ROUTES } from '@/src/lib/bookingRoutes'
 
-export default function SuccessPage({ searchParams }: { searchParams: { ref?: string } }) {
-  const referenceId = searchParams.ref
+export default async function SuccessPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ ref?: string }>
+}) {
+  const params = await searchParams
+  const referenceId = params.ref
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-[#090d16] py-16 px-4 flex flex-col items-center justify-center">
