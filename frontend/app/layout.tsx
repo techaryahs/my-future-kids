@@ -20,6 +20,14 @@ import { ThemeProvider } from "@/src/context/ThemeContext";
 export const metadata: Metadata = {
   title: "BeFutureKids | Learn Today. Be The Future.",
   description: "Empowering young minds through future-ready education including Robotics, STEM, AI, and Innovation.",
+  icons: {
+    icon: [
+      { url: "/logo.png?v=2", type: "image/png" },
+      { url: "/favicon.ico?v=2", sizes: "any" },
+    ],
+    shortcut: "/logo.png?v=2",
+    apple: "/logo.png?v=2",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -30,6 +38,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <head>
+        <link rel="icon" href="/logo.png?v=2" type="image/png" />
+        <link rel="shortcut icon" href="/logo.png?v=2" type="image/png" />
+        <link rel="apple-touch-icon" href="/logo.png?v=2" />
         <script
           dangerouslySetInnerHTML={{
             __html: `
